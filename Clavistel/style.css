@@ -137,6 +137,8 @@
     border-radius: 15px;
     padding: 30px;
     transition: all 0.3s ease;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #info-container:hover{
@@ -144,7 +146,7 @@
 }
 
 #info-description {
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .bloqueTitulo {
@@ -159,7 +161,7 @@
 
 .textoDetalle{
     display: inline-block;
-    margin: 68px 70px 0 70px ;
+    margin-left: 3% ;
     padding: 0;
     width: 250px;
     height: 200px;
@@ -236,20 +238,50 @@
 }
 
     /* PROMOCIONES CELULARES */
+    
 
-#promo
-
-                /* FOOTER */
+        /* FOOTER */
 
 .footer{
-    padding: 20px;
     margin: 0;
     background-color: #141230;
     color: rgb(255, 255, 255);
     margin-bottom: 0%;
 }
 
+
+
 .footer__li {
     list-style-type: none;
 }
 
+.bloqueTextoFormulario1{
+    text-align: center;
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.bloqueTextoFormulario2{
+    text-align: justify;
+    padding: 5px;
+    border: solid black 1px;
+    border-radius: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+}
+#bloqueFormulario{
+    background-color: #C3E3FD;
+    /* background-color: rgba(28, 122, 55, 0.319); */
+    margin: 2% auto;
+    border-radius: 25px;
+    width: 60%;
+    padding: 2%;
+    }
+
+#validationTextarea{
+    height: 149px;
+}

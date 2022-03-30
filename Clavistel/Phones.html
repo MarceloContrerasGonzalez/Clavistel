@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
+    <title>Teléfonos</title>
+</head>
+
+<body>
+    <!-- NAV -->
+    <nav>
+        <div class="categoryList">
+            <div class="logo">Clavistel</div>
+            <label for="btn" class="icon">
+                <span><i class="fi-xnsuxl-three-bars-solid"></i></span>
+            </label>
+            <input type="checkbox" id="btn">
+            <ul>
+                <li>
+                    <label class="show"> Marcas</label>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <label for="btn-2" class="show">Tipo de envio</label>
+                    <a href="Phones.html">Celulares</a>
+                    <input type="checkbox" id="btn-2">
+                </li>
+                <li>
+                    <label for="btn-3" class="show">Tipo de plan</label>
+                    <a href="Nesecitas_Ayuda.html">Dudas</a>
+                    <input type="checkbox" id="btn-3">
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <nav>
+        <div class="categoryList">
+            <div  class="logop"><a href="index.html">Otakus</a></div>
+            <label for="btn" class="icon">
+                <span><i class="fi-xnsuxl-three-bars-solid"></i></span>
+            </label>
+            <input type="checkbox" id="btn">
+            <ul>
+                <li>
+                    <label for="btn-1" class="show"> Marcas</label>
+                    <a href="#">Marcas</a>
+                    <input type="checkbox" id="btn-1">
+                    <ul>
+                        <li data-filter="samsung"><a href="#" class="btn-menu">Samsung</a></li>
+                        <li><a href="#" class="btn-menu" data-filter="motorola">Motorola</a></li>
+                        <li><a href="#" class="btn-menu" data-filter="apple">Apple</a></li>
+                        <li><a href="#" class="btn-menu" data-filter="huawei">Huawei</a></li>
+                        <li><a href="#" class="btn-menu" data-filter="xiaomi">Xiaomi</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <label for="btn-2" class="show">Tipo de envio</label>
+                    <a href="#">Tipo de envio</a>
+                    <input type="checkbox" id="btn-2">
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="normal">Normal</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="gratis">Gratis</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="descuento">Descuento</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <label for="btn-3" class="show">Tipo de plan</label>
+                    <a href="#">Tipo de plan</a>
+                    <input type="checkbox" id="btn-3">
+                    <ul>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="1-mes">1 Mes</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="3-meses">3 Meses</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="6-meses">6 Meses</a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-menu" data-filter="12-meses">12 Meses</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <hr>
+
+    <div class="imagen-div">
+        <a href="#" class="imagen-a"><img src="img/fondos/paint-fondo.png" alt="" class="imagen-img"></a>
+    </div>
+
+    <!-- FILTRO Y PRODUCTOS -->
+
+    <div class="panel-productos">
+        <section class="section-grid">
+
+            <div class="producto product-item samsung gratis 1-meses">
+                <img src="img/telefonos/samsung-galaxy-s20.jpg" alt="phone1">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung normal 3-meses">
+                <img src="img/telefonos/samsung/Y2_Lockup_CosmicBlack-1600x1200.jpg" alt="phone1">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung con descuento 6-meses">
+                <img src="img/telefonos/samsung/galaxy-a13-5g-1.jpg" alt="phone2">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con Descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung gratis 12-meses">
+                <img src="img/telefonos/samsung/galaxy-a42-5g.jpg" alt="phone3">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung normal 3-meses">
+                <img src="img/telefonos/samsung/galaxy-s21-5g.jpg" alt="phone4">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung gratis 6-meses">
+                <img src="img/telefonos/samsung/galaxy-s21-ulta-5g.jpg" alt="phone5">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung descuento 1-meses">
+                <img src="img/telefonos/samsung/galaxy-s20-5g-128gb.jpg" alt="phone6">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item samsung descuento 1-meses">
+                <img src="img/telefonos/samsung/galaxy-s20-5g-128gb-negro-mate.jpg" alt="phone7">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple normal 3-meses">
+                <img src="img/telefonos/apple/apple-iphone-8-plus-64gb.jpg" alt="phone8">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple normal 12-meses">
+                <img src="img/telefonos/apple/apple-iphone-se-128gb-blanco.png" alt="phone9">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 1-meses">
+                <img src="img/telefonos/apple/Apple_iPhone-9-138-gb.jpg" alt="phone10">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 12-meses">
+                <img src="img/telefonos/apple/apple-iphone-11-pro-max-.jpg" alt="phone11">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 3-meses">
+                <img src="img/telefonos/apple/iPhone-13-128-gb.jpg" alt="phone12">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 3-meses">
+                <img src="img/telefonos/apple/iPhone-7-128-GB-negro-mate.jpg" alt="phone13">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 3-meses">
+                <img src="img/telefonos/apple/apple-iphone-6s-plus.jpg" alt="phone14">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item apple gratis 3-meses">
+                <img src="img/telefonos/apple/iPhone-XS-Max-256GB.jpg" alt="phone15">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola normal 6-meses">
+                <img src="img/telefonos/motorola/motorola-edge-20-fusion-128gb.jpg" alt="phone16">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola gratis 1-meses">
+                <img src="img/telefonos/motorola/motorola-edge-2021-256gb.jpg" alt="phone17">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola normal 12-meses">
+                <img src="img/telefonos/motorola/motorola-moto-edge-s-256gb.jpg" alt="phone18">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola descuento 3-meses">
+                <img src="img/telefonos/motorola/motorola-moto-edge-s30-256gb.jpg" alt="phone19">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola normal 6-meses">
+                <img src="img/telefonos/motorola/motorola-moto-edge-x30-138gb.jpg" alt="phone20">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola gratis 12-meses">
+                <img src="img/telefonos/motorola/motorola-moto-g-stylus-2021-128gb.jpg" alt="phone21">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola normal">
+                <img src="img/telefonos/motorola/motorola-moto-g22-64gb.jpg" alt="phone22">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item motorola gratis">
+                <img src="img/telefonos/motorola/motorola-moto-g60-138gb.jpg" alt="phone23">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei gratis 3-meses">
+                <img src="img/telefonos/huawei/huawei-enjoy-10-e-128gb.jpg" alt="phone24">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei normal 6-meses">
+                <img src="img/telefonos/huawei/huawei-enjoy-20-se-128gb.jpg" alt="phone25">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei normal 12-meses">
+                <img src="img/telefonos/huawei/huawei-mate-x2-4g-256gb.jpg" alt="phone26">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei descuento 6-meses">
+                <img src="img/telefonos/huawei/huawei-mate40-pro-128gb.jpg" alt="phone27">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei gratis 3-meses">
+                <img src="img/telefonos/huawei/huawei-nova-y60-63gb.jpg" alt="phone28">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei normal">
+                <img src="img/telefonos/huawei/huawei-p50-pro-128gb.jpg" alt="phone29">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei gratis">
+                <img src="img/telefonos/huawei/huawei-p50e-256gb.jpg" alt="phone30">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item huawei gratis">
+                <img src="img/telefonos/huawei/huawei-y6s-64gb.jpg" alt="phone31">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi normal 1-meses">
+                <img src="img/telefonos/xiaomi/xiaomi-11t-128gb.jpg" alt="phone32">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi normal 6-meses">
+                <img src="img/telefonos/xiaomi/128gb.jpg" alt="phone33">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi gratis 12-meses">
+                <img src="img/telefonos/xiaomi/xiaomi-12-pro-256gb.jpg" alt="phone34">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi normal 1-meses">
+                <img src="img/telefonos/xiaomi/xiaomi-poco-c31-64gb.jpg" alt="phone35">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi descuento">
+                <img src="img/telefonos/xiaomi/xiaomi-redmi-9i-sport-128gb.jpg" alt="phone36">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio con descuento</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi normal">
+                <img src="img/telefonos/xiaomi/xiaomi-redmi-k50-gaming-256gb.jpg" alt="phone37">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio normal</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi gratis">
+                <img src="img/telefonos/xiaomi/xiaomi-redmi-note-10-lite-128gb.jpg" alt="phone38">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+            <div class="producto product-item xiaomi gratis">
+                <img src="img/telefonos/xiaomi/xiaomi-redmi-note11-pro-plus-256gb.jpg" alt="phone39">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">$250.990</span>
+                    <span class="costo-envio">Envio gratis</span>
+                    <span class="descipcion">Teléfono Samsung Galaxy S20</span>
+                    <div class="calificacion">
+                        <span><i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i>
+                            <i class="fi-xnsuxl-star-solid"></i></span>
+                        <span>1919</span>
+                    </div>
+                    <span class="ubicacion">Ciudad</span>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="grupo1">
+            <div class="caja">
+                <figure>
+                    <a href="#">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="caja">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+
+            <div class="caja">
+                <h2>SIGUENOS</h2>
+                <div class="redes">
+                    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                    <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo2">
+            <small>&copy; 2021 <b>Clavistel CL</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -39,6 +39,7 @@ nav .logo {
     font-weight: 800;
     line-height: 70px;
     padding-left: 60px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 nav ul{
@@ -60,6 +61,7 @@ nav ul li a {
     line-height: 70px;
     font-size: 18px;
     padding: 8px 15px;
+    font-family: 'Noto Sans', sans-serif;
 
 }
 
@@ -288,9 +290,6 @@ nav ul ul ul li{
     margin: auto;
     border-radius: 20px;
     padding: 1%;
-    
-
-    
 }
 
 
@@ -311,7 +310,6 @@ nav ul ul ul li{
     margin: auto;
     position: relative;
     display: block;
-    
 }
 
 .beneficios-carta h1 {
@@ -326,7 +324,6 @@ nav ul ul ul li{
     padding-left: 130px;
     font-size: 20px;
     line-height: 60px;
-
 }
 
 .beneficios-li{
@@ -334,9 +331,287 @@ nav ul ul ul li{
     color: black;
 }
 
-    /* PROMOCIONES CELULARES */
+    /*--------------- PROMOCIONES CELULARES --------------------*/
 
-    /* Terminos y Condiciones */
+    .color-inicial {
+        color: rgb(255, 255, 255);
+    }
+    
+    /* nav {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        background: #1b1b1b;
+        height: auto;
+    }
+    
+    nav::after{
+        content: '';
+        clear: both;
+        display: table;
+    }
+    
+    nav .logop {
+        float:left;
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 70px;
+        padding-left: 60px;
+    }
+    
+    nav .logop a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    nav ul{
+        float: left;
+        list-style: none;
+        margin-right: 40px;
+        position: relative;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        background: #1b1b1b;
+        margin: 0 0.5px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        line-height: 70px;
+        font-size: 18px;
+        padding: 8px 15px;
+    
+    }
+    
+    nav ul li a:hover {
+        color: rgb(49, 111, 165);
+    } 
+    
+    nav ul ul li a:hover{
+        box-shadow: none;
+    }
+    
+    nav ul ul {
+        position: absolute;
+        top: 80px;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+    }
+    
+    nav ul li:hover > ul{
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    nav ul ul li{
+        position: relative;
+        margin: 0;
+        width: 150px;
+        float: none;
+        display: list-item;
+        border-bottom: 1px solid rgb(0,0,0,0.3);
+    }
+    
+    nav ul ul ul a{
+        line-height: 50px;
+    }
+    
+    nav ul ul ul li{
+        position: relative;
+        top: -70px;
+        left: 150px;
+    }
+    
+    @media all and (max-width: 968px) {
+        nav ul {
+            margin-right: 0;
+            float: left;
+        }
+        nav .logop{
+            padding-left: 30px;
+            width: 100%; 
+        }
+        nav ul li, nav ul ul{
+            display: block;
+            width: 100%;
+        }
+        nav ul ul{
+            top: 70px;
+            position: static;
+            border-top: none;
+            float: none;
+            display: none;
+            opacity: 1;
+            visibility: visible;
+        }
+        nav ul ul ul li{
+            position: static;
+            
+        }
+        /* nav ul ul a {
+            padding-left: 80px;
+        } 
+    
+        nav ul ul li{
+            border-bottom: none;
+        }
+    
+        .show{
+            display: block;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            line-height:70px;
+            cursor: pointer;
+        }
+        .show:hover{
+            color: cyan;
+        }
+        .icon{
+            display: block;
+            color: white;
+            position: absolute;
+            right: 40px;
+            line-height: 70px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    
+        nav ul a:hover{
+            box-shadow: none;
+        }
+        .show + a, ul{
+            display: none;
+        }
+        [id^=btn]:checked + ul{
+            display: block;
+        }
+    } */
+    
+    .imagen-div {
+        margin-bottom: 7%;
+        }
+        
+        .imagen-a {
+            display: flex;
+            margin: 0 5% 0 5%;
+        }
+        
+        .imagen-img {
+            width: 100%;
+        } 
+    .panel-productos {
+        margin: 0 17%;
+    }
+    
+        .section-grid {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 280px);
+            grid-template-rows: 1fr;
+            grid-gap: 2em;
+        }
+        
+        .producto img{
+            height: 273px;
+        }
+    
+        .producto {
+            max-width: 280px;
+            display: flex;
+            flex-flow: column;
+            border-radius: 6px;
+            box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition-property: box-shadow;
+            transition-duration: 0.3s;
+        }
+        
+        .producto:hover {
+            box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+        
+        }
+        
+        .producto > img {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .informacion {
+            border-top: 1px solid rgb(230, 230, 230);
+            background-color: rgb(255, 255, 255);
+            padding: 1em;
+            display: flex;
+            flex-flow: column;
+        }
+        
+        .informacion * +* {
+            margin-bottom: 0.5em;
+        }
+        
+        .tipo-envio {
+            background-color: rgb(52, 131, 250);
+            color: rgb(255, 255, 255);
+            font-weight: 600;
+            max-width: max-content;
+            padding: 0 0.2em;
+            border-radius: 3px;
+        }
+        
+        .precio {
+            font-size: 1.5em;
+        }
+        
+        .precio-envio {
+            color: rgb(0, 166, 80);
+        }
+        
+        .descripcion, .ubicacion{
+            font-weight: 300;
+        }
+        
+        .precio-envio, .descripcion, .ubicacion{
+            font-size: 0.9em;
+        }
+        
+        .calificacion, .ubicacion {
+            opacity: 0;
+            transition-duration: 0.3s;
+            transition-property: opacity;
+        }
+        
+        .producto:hover 
+        .calificacion, 
+        .producto:hover 
+        .ubicacion {
+            opacity: 1 ;
+        }
+        
+        .calificacion {
+            display: flex;
+            flex-flow: row;
+            align-items: flex-end;
+        }
+        
+        .calificacion > * {
+            margin: 0;
+        }
+        
+        .tipo-envio, .calificacion {
+            font-size: 0.8em;
+        }
+        
+        .calificacion > span:first-child {
+            color: rgb(52, 131, 250);
+        }
+
+    /* -----------Terminos y Condiciones-------------------- */
 
     
         /* FOOTER */
@@ -441,12 +716,25 @@ nav ul ul ul li{
     font-size: 15px;
 }
 
+.footer small,.footer b{
+    color: white;
+}
+
 @media screen and (max-width:800px){
-    
     .footer .grupo1{
     width: 90%;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 30px;
     padding: 35px 0px;
+    }
+    .beneficios-ul  {
+        padding-left: 50px;
+    }
+
+    .nav-principal ul{
+        float: left;
+        list-style: none;
+        margin: 0;
+        position: relative;
     }
 }

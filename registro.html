@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- NAV MENU -->
+  <nav class="nav-principal">
+    <div class="categoryList">
+      <div class="logo">Clavistel</div>
+      <label for="btn" class="icon">
+        <span><i class="fi-xnsuxl-three-bars-solid"></i></span>
+      </label>
+      <input type="checkbox" id="btn">
+      <ul>
+        <li>
+          <label class="show"> Marcas</label>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li>
+          <label for="btn-2" class="show">Tipo de envio</label>
+          <a href="Phones.html">Celulares</a>
+          <input type="checkbox" id="btn-2">
+        </li>
+        <li>
+          <label for="btn-3" class="show">Tipo de plan</label>
+          <a href="Nesecitas_Ayuda.html">Dudas</a>
+          <input type="checkbox" id="btn-3">
+        </li>
+        <li>
+          <label for="btn-3" class="show">Tipo de plan</label>
+          <a href="login.html">Inicio De Sesion</a>
+          <input type="checkbox" id="btn-3">
+      </li>
+      <li>
+          <label for="btn-3" class="show">Tipo de plan</label>
+          <a href="registro.html">Registro</a>
+          <input type="checkbox" id="btn-3">
+      </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- formulario -->
+  <section id="bloqueFormularioRegistro">
+    <h1>REGISTRO</h1>
+    <hr>
+    <form>
+      <div>
+        <p class= "uppertext">Ingrese Su Usuario</p>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Usuario</label>
+      </div>
+
+      <p class="uppertext">Ingrese su Correo</p>
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+
+      <p class= "uppertext">Ingrese Su Contraseña</p>
+      
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      
+      <p class= "uppertext">Vuelva A Ingresar Su Contraseña</p>
+      
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      
+      <hr>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Registrarse</button>
+      </div>
+      <hr>
+      <div>
+        <p>Ya tienes una Cuenta? <a class="link" href="login.html"> Ingresa Aqui</a> </p>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="grupo1">
+      <div class="caja">
+        <figure>
+          <a href="#">
+            <img src="img/logo.png" alt="">
+          </a>
+        </figure>
+      </div>
+
+      <div class="caja">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>
+          Clavistel es una empresa pionera en el desarrollo de las telecomunicaciones en Chile. Buscamos ser una de las
+          mayores empresas de telecomunicaciones del país, entregando conectividad y entretenimiento a familias,
+          empresas e instituciones.
+        </p>
+      </div>
+
+      <div class="caja">
+        <h2>SIGUENOS</h2>
+        <div class="redes">
+          <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+          <a href="https://twitter.com/" class="fa fa-twitter"></a>
+          <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo2">
+      <small>&copy; 2021 <b>Clavistel CL</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
+  <script src="js/validacion.js"></script>
+
+
+</body>
+
+</html>

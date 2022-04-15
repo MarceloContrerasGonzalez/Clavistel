@@ -3,9 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
  */
-.rounded-pill {
-    width: 40px;
-}
 
 * {
     /* font-family:'Noto Sans', sans-serif; */
@@ -14,9 +11,6 @@
 }
 
 /* menu */
-.color-inicial {
-    color: rgb(255, 255, 255);
-}
 
 nav {
     margin: 0;
@@ -632,8 +626,8 @@ input {
     border: solid black 1px;
     border-radius: 20px;
     margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 .bloqueTextoFormulario2 {

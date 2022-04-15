@@ -44,31 +44,40 @@
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="login.html">Inicio De Sesion</a>
           <input type="checkbox" id="btn-3">
-      </li>
-      <li>
+        </li>
+        <li>
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="registro.html">Registro</a>
           <input type="checkbox" id="btn-3">
-      </li>
+        </li>
       </ul>
     </div>
   </nav>
+
+
   <!-- formulario -->
   <section id="bloqueFormularioLogin">
     <h1>INICIO DE SESION</h1>
     <hr>
-    <form>
+    <form class="needs-validation" novalidate>
       <div>
-        <p class= "uppertext">Ingrese Su Usuario</p>
+        <p class="uppertext">Ingrese Su Usuario</p>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" required>
         <label for="floatingInput">Usuario</label>
+        <div class="uppertext invalid-feedback">
+          Ingrese su Usuario!
+        </div>
       </div>
-      <p class= "uppertext">Ingrese Su Contraseña</p>
+
+      <p class="uppertext">Ingrese Su Contraseña</p>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
         <label for="floatingPassword">Contraseña</label>
+        <div class="uppertext invalid-feedback">
+          Ingrese su Contraseña!
+        </div>
       </div>
       <hr>
       <div class="col-12">

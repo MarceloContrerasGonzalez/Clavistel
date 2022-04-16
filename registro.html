@@ -44,12 +44,12 @@
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="login.html">Inicio De Sesion</a>
           <input type="checkbox" id="btn-3">
-      </li>
-      <li>
+        </li>
+        <li>
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="registro.html">Registro</a>
           <input type="checkbox" id="btn-3">
-      </li>
+        </li>
       </ul>
     </div>
   </nav>
@@ -58,38 +58,60 @@
     <h1>REGISTRO</h1>
     <hr>
     <form>
+
+
       <div>
-        <p class= "uppertext">Ingrese Su Usuario</p>
+        <p class="uppertext">Ingrese Su Usuario</p>
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputUsuario" placeholder="name@example.com">
         <label for="floatingInput">Usuario</label>
       </div>
 
+      <div class="errortext">
+        <span id="error1">Ingrese su usuario correctamente</span>
+      </div>
+
+
       <p class="uppertext">Ingrese su Correo</p>
 
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="inputCorreo" placeholder="name@example.com">
+        <label for="floatingInput">Correo Electronico</label>
+
       </div>
 
-      <p class= "uppertext">Ingrese Su Contraseña</p>
-      
+      <div class="errortext">
+        <span id="error2">Ingrese su Correo correctamente</span>
+      </div>
+
+      <p class="uppertext">Ingrese Su Contraseña</p>
+
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
         <label for="floatingPassword">Contraseña</label>
       </div>
-      
-      <p class= "uppertext">Vuelva A Ingresar Su Contraseña</p>
-      
+
+      <div class="errortext">
+        <span id="error3">Ingrese su Contraseña correctamente</span>
+      </div>
+
+      <p class="uppertext">Vuelva A Ingresar Su Contraseña</p>
+
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
         <label for="floatingPassword">Contraseña</label>
       </div>
-      
+
+      <div class="errortext">
+        <span id="error4">Sus Contraseñas Son Distintas. Intente Nuevamente</span>
+      </div>
+
       <hr>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Registrarse</button>
+        <button id="bRegistro" class="btn btn-primary" type="submit">Registrarse</button>
       </div>
       <hr>
       <div>
@@ -132,6 +154,9 @@
       <small>&copy; 2021 <b>Clavistel CL</b> - Todos los Derechos Reservados.</small>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>

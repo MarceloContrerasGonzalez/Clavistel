@@ -18,7 +18,7 @@
 <body>
 
   <!-- NAV MENU -->
-  <nav class="nav-principal">
+ <!--  <nav class="nav-principal">
     <div class="categoryList">
       <div class="logo">Clavistel</div>
       <label for="btn" class="icon">
@@ -44,54 +44,68 @@
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="login.html">Inicio De Sesion</a>
           <input type="checkbox" id="btn-3">
-        </li>
-        <li>
+      </li>
+      <li>
           <label for="btn-3" class="show">Tipo de plan</label>
           <a href="registro.html">Registro</a>
           <input type="checkbox" id="btn-3">
-        </li>
+      </li>
       </ul>
     </div>
-  </nav>
-
+  </nav> -->
 
   <!-- formulario -->
-  <section id="bloqueFormularioLogin">
-    <h1>INICIO DE SESION</h1>
-    <hr>
-    <form class="needs-validation" novalidate>
-      <div>
-        <p class="uppertext">Ingrese Su Usuario</p>
+  <div class="separar-pantalla">
+    
+    <div class="lado-derecho">
+      <div class="texto-imagen">
+        <h1> Se parte de la nueva experiencia</h1>
+        <a href="index.html" id="inicio-login">Inicio</a>
       </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-        <label for="floatingInput">Usuario</label>
-        <div class="uppertext invalid-feedback">
-          Ingrese su Usuario!
-        </div>
-      </div>
+    </div>
+    
+    <div class="lado-izquierdo">
+      
+      <section id="bloqueFormularioLogin">
+        <h1>INICIO DE SESION</h1>
+        <hr>
+        <form class="needs-validation" novalidate>
+          <div>
+            <p class="uppertext">Ingrese Su Usuario</p>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" required>
+            <label for="floatingInput">Usuario</label>
+            <div class="uppertext invalid-feedback">
+              Ingrese su Usuario!
+            </div>
+          </div>
 
-      <p class="uppertext">Ingrese Su Contraseña</p>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-        <label for="floatingPassword">Contraseña</label>
-        <div class="uppertext invalid-feedback">
-          Ingrese su Contraseña!
-        </div>
-      </div>
-      <hr>
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Enviar</button>
-      </div>
-      <hr>
-      <div>
-        <p>No Estas Registrado? <a class="link" href="registro.html"> Registrate Aqui</a> </p>
-      </div>
-    </form>
-  </section>
+          <p class="uppertext">Ingrese Su Contraseña</p>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+            <label for="floatingPassword">Contraseña</label>
+            <div class="uppertext invalid-feedback">
+              Ingrese su Contraseña!
+            </div>
+          </div>
+          <hr>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+          </div>
+          <hr>
+          <div>
+            <p>No Estas Registrado? <a class="link" href="registro.html"> Registrate Aqui</a> </p>
+          </div>
+        </form>
+      </section>
+    </div>
+
+  </div>
+  
 
   <!-- Footer -->
-  <footer class="footer">
+  <!-- <footer class="footer">
     <div class="grupo1">
       <div class="caja">
         <figure>
@@ -123,7 +137,11 @@
     <div class="grupo2">
       <small>&copy; 2021 <b>Clavistel CL</b> - Todos los Derechos Reservados.</small>
     </div>
-  </footer>
+  </footer> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>

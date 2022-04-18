@@ -3,14 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
  */
+ @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
 
-* {
+
+* .inicio{
     /* font-family:'Noto Sans', sans-serif; */
     font-family: 'Anton', sans-serif;
     color: #393977;
 }
 
 /* menu */
+.color-inicial {
+    color: rgb(255, 255, 255);
+}
 
 nav {
     margin: 0;
@@ -117,15 +122,17 @@ input {
     background-color: #141230;
 }
 
-.carousel-indicators {
+.carousel-indicators{
     margin-bottom: 30rem;
-    background-color: rgba(59, 31, 31, 0.156);
+    background-color: rgba(0, 0, 0, 0.156);
 }
 
 #carouselExampleIndicators {
     margin: auto;
-    padding: 2%;
 }
+
+
+
 
 /* SECCION/PLAN */
 
@@ -140,9 +147,8 @@ input {
 }
 
 .plans-container {
-    display: inline;
-    width: 1700px;
-    height: 600px;
+    width: auto;
+    height: auto;
 }
 
 #plan-description {
@@ -337,163 +343,6 @@ input {
     color: rgb(255, 255, 255);
 }
 
-/* nav {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        background: #1b1b1b;
-        height: auto;
-    }
-    
-    nav::after{
-        content: '';
-        clear: both;
-        display: table;
-    }
-    
-    nav .logop {
-        float:left;
-        font-size: 30px;
-        font-weight: 800;
-        line-height: 70px;
-        padding-left: 60px;
-    }
-    
-    nav .logop a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
-    }
-
-    nav ul{
-        float: left;
-        list-style: none;
-        margin-right: 40px;
-        position: relative;
-    }
-    
-    nav ul li {
-        display: inline-block;
-        background: #1b1b1b;
-        margin: 0 0.5px;
-    }
-    
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        line-height: 70px;
-        font-size: 18px;
-        padding: 8px 15px;
-    
-    }
-    
-    nav ul li a:hover {
-        color: rgb(49, 111, 165);
-    } 
-    
-    nav ul ul li a:hover{
-        box-shadow: none;
-    }
-    
-    nav ul ul {
-        position: absolute;
-        top: 80px;
-        opacity: 0;
-        visibility: hidden;
-        transition: .3s;
-    }
-    
-    nav ul li:hover > ul{
-        top: 80px;
-        opacity: 1;
-        visibility: visible;
-    }
-    
-    nav ul ul li{
-        position: relative;
-        margin: 0;
-        width: 150px;
-        float: none;
-        display: list-item;
-        border-bottom: 1px solid rgb(0,0,0,0.3);
-    }
-    
-    nav ul ul ul a{
-        line-height: 50px;
-    }
-    
-    nav ul ul ul li{
-        position: relative;
-        top: -70px;
-        left: 150px;
-    }
-    
-    @media all and (max-width: 968px) {
-        nav ul {
-            margin-right: 0;
-            float: left;
-        }
-        nav .logop{
-            padding-left: 30px;
-            width: 100%; 
-        }
-        nav ul li, nav ul ul{
-            display: block;
-            width: 100%;
-        }
-        nav ul ul{
-            top: 70px;
-            position: static;
-            border-top: none;
-            float: none;
-            display: none;
-            opacity: 1;
-            visibility: visible;
-        }
-        nav ul ul ul li{
-            position: static;
-            
-        }
-        /* nav ul ul a {
-            padding-left: 80px;
-        } 
-    
-        nav ul ul li{
-            border-bottom: none;
-        }
-    
-        .show{
-            display: block;
-            color: white;
-            font-size: 18px;
-            padding: 0 20px;
-            line-height:70px;
-            cursor: pointer;
-        }
-        .show:hover{
-            color: cyan;
-        }
-        .icon{
-            display: block;
-            color: white;
-            position: absolute;
-            right: 40px;
-            line-height: 70px;
-            font-size: 25px;
-            cursor: pointer;
-        }
-    
-        nav ul a:hover{
-            box-shadow: none;
-        }
-        .show + a, ul{
-            display: none;
-        }
-        [id^=btn]:checked + ul{
-            display: block;
-        }
-    } */
-
 .imagen-div {
     margin-bottom: 7%;
 }
@@ -620,28 +469,9 @@ input {
 
 /* Formulario */
 
-.bloqueTextoFormulario1 {
-    text-align: center;
-    padding: 5px;
-    border: solid black 1px;
-    border-radius: 20px;
-    margin-top: 2%;
-    margin-left: 40%;
-    margin-right: 40%;
-}
 
-.bloqueTextoFormulario2 {
-    text-align: justify;
-    padding: 5px;
-    border: solid black 1px;
-    border-radius: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 2%;
-}
-
-#bloqueFormulario {
-    background-color: #C3E3FD;
+#bloqueFormulario{
+    background-color: #3c8cee70;
     /* background-color: rgba(28, 122, 55, 0.319); */
     margin: 2% auto;
     border-radius: 25px;
@@ -654,18 +484,18 @@ input {
 }
 
 /* Login */
+/* Login */
 
 #bloqueFormularioLogin {
     text-align: center;
-    background-color: #C3E3FD;
+    background-color: #ffffff;
     /* background-color: rgba(28, 122, 55, 0.319); */
     margin-bottom: 3%;
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 25px;
-    width: 30%;
-    padding: 2%;
+/*     width: 30%; */   
+    padding: 3% 4%;
 }
 
 #bloqueFormularioLogin button {
@@ -682,27 +512,30 @@ input {
 
 .uppertext {
     text-align: justify;
-    margin-bottom: 0;
 }
 
-.link {
+.link{
     text-decoration: none;
 }
-
 /* Registro */
 
 #bloqueFormularioRegistro {
     text-align: center;
-    background-color: #C3E3FD;
+    background-color: #ffffff;
     /* background-color: rgba(28, 122, 55, 0.319); */
     margin-bottom: 3%;
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 25px;
-    width: 30%;
-    padding: 2%;
-    color: #008000;
+    width: 70%;
+/*     width: 30%; */
+
+}
+
+.tipo-letra {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Anek Tamil', sans-serif;
+    
 }
 
 .errortext {
@@ -714,6 +547,7 @@ input {
     color: red;
     display: none;
 }
+
 
 
 
@@ -731,7 +565,7 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
     grid-gap: 50px;
-    padding: 45px 0px;
+    padding-top: 45px;
 }
 
 .footer .grupo1 .caja figure {
@@ -743,7 +577,7 @@ input {
 }
 
 .footer .grupo1 .caja figure img {
-    width: 250px;
+    width: 150px;
 }
 
 .footer .grupo1 .caja h2 {
@@ -782,7 +616,7 @@ input {
 }
 
 .footer .grupo2 small {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .footer small,
@@ -811,29 +645,92 @@ input {
 
     #bloqueFormularioLogin {
         text-align: center;
-        background-color: #C3E3FD;
+        background-color: #ffffff;
         /* background-color: rgba(28, 122, 55, 0.319); */
         margin-bottom: 3%;
-        margin-top: 5%;
+        margin-top: 10%;
         margin-left: auto;
         margin-right: auto;
         border-radius: 25px;
         width: 80%;
         height: 67vh;
-        padding: 2%;
+        padding: 3% 5%;
     }
 
     #bloqueFormularioRegistro {
         text-align: center;
-        background-color: #C3E3FD;
+        background-color: #ffffff;
         /* background-color: rgba(28, 122, 55, 0.319); */
         margin-bottom: 3%;
-        margin-top: 5%;
+        margin-top: 10%;
         margin-left: auto;
         margin-right: auto;
         border-radius: 25px;
         width: 80%;
         height: 100vh;
-        padding: 2%;
+        padding: 3% 5%;
     }
 }
+
+/* split login page */
+
+
+.separar-pantalla {
+    display: flex;
+    flex-direction: column;
+}
+
+.lado-derecho {
+    height: 200px;
+}
+
+.lado-derecho,
+.lado-izquierdo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lado-derecho {
+    background: linear-gradient(rgba(0, 0 , 0 , 0),
+    rgba(0, 0, 0, 0.5)),url(https://www.visa.cl/dam/VCOM/regional/lac/SPA/Default/The%20Visa%20Difference/About%20Visa/sala-noticias/Notas%20de%20Prensa/visa-royalty-solutions/visa-loyalty-solutions-spa-1600x900.jpg);
+    background-size:cover;
+}
+
+.texto-imagen{
+    color: #fff;
+    text-align: center;
+}
+
+@media screen and (min-width: 800px){
+    .separar-pantalla {
+        flex-direction: row-reverse;
+        height: 100vh;
+    }
+    .lado-derecho,
+    .lado-izquierdo {
+        display: flex;
+        /* width: 50%; */
+        height: auto;
+    }
+    .lado-derecho {
+        width: 70%;
+        position: relative;
+    }
+    .lado-izquierdo {
+        width: 30%;
+    }
+
+    .lado-derecho a{
+        position: absolute;
+        top: 3%;
+        left: 5%;
+    }
+
+}
+
+
+
+/* https://www.youtube.com/watch?v=fHqjQBRQxUI  min 8:24 */
+
+

@@ -13,103 +13,19 @@
 }
 
 /* menu */
-.color-inicial {
-    color: rgb(255, 255, 255);
-}
-
-nav {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    background: #1b1b1b;
-    height: auto;
-}
-
-nav::after {
-    content: '';
-    clear: both;
-    display: table;
-}
 
 nav .logo {
-    float: left;
     color: rgb(255, 255, 255);
     font-size: 30px;
-    font-weight: 800;
-    line-height: 70px;
     padding-left: 60px;
+    margin-right: 30px;
     font-family: 'Noto Sans', sans-serif;
-}
-
-nav ul {
-    float: left;
-    list-style: none;
-    margin-right: 40px;
-    position: relative;
-}
-
-nav ul li {
-    display: inline-block;
-    background: #1b1b1b;
-    margin: 0 0.5px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+    font-size: 20px;
     line-height: 70px;
-    font-size: 18px;
-    padding: 8px 15px;
     font-family: 'Noto Sans', sans-serif;
-
-}
-
-nav ul li a:hover {
-    color: rgb(49, 111, 165);
-}
-
-nav ul ul li a:hover {
-    box-shadow: none;
-}
-
-nav ul ul {
-    position: absolute;
-    top: 80px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s;
-}
-
-nav ul li:hover>ul {
-    top: 80px;
-    opacity: 1;
-    visibility: visible;
-}
-
-nav ul ul li {
-    position: relative;
-    margin: 0;
-    width: 150px;
-    float: none;
-    display: list-item;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
-}
-
-nav ul ul ul a {
-    line-height: 50px;
-}
-
-nav ul ul ul li {
-    position: relative;
-    top: -70px;
-    left: 150px;
-}
-
-.show,
-.icon,
-input {
-    display: none;
 }
 
 
@@ -702,6 +618,13 @@ input {
     text-align: center;
 }
 
+#inicio-login {
+    position: absolute;
+    top: 3%;
+    left: 10%;
+}
+
+
 @media screen and (min-width: 800px){
     .separar-pantalla {
         flex-direction: row-reverse;
@@ -721,11 +644,13 @@ input {
         width: 30%;
     }
 
-    .lado-derecho a{
+    #inicio-login {
         position: absolute;
         top: 3%;
-        left: 5%;
+        left: 3%;
     }
+
+    
 
 }
 

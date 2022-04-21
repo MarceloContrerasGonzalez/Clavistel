@@ -1,0 +1,46 @@
+{
+    "categorias": [
+        {
+            "classPanelProductos": "panel-productos",
+            "classSectionGrid": "section-grid",
+            "classProductItem": "producto product-item samsung gratis 1-meses",
+            "imageCard": "img/telefonos/samsung-galaxy-s20.jpg",
+            "imageAlt": "phone 1",
+            "classInformacion": "informacion",
+            "classTipoEnvio": "tipo-envio",
+            "strTipoEnvio": "Envio con Normalidad",
+            "classPrecio": "precio",
+            "strPrecio": "$250.990",
+            "classCostoEnvio": "tipo-envio",
+            "strCostoEnvio": "Envio gratis",
+            "classDescripcion": "descipcion",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "classCalificacion": "calificacion",
+            "classFiStarSolid": "fi-xnsuxl-star-solid",
+            "strCalificacion": "1919",
+            "classUbicacion": "ubicacion",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "classPanelProductos": "panel-productos",
+            "classSectionGrid": "section-grid",
+            "classProductItem": "producto product-item samsung gratis 1-meses",
+            "imageCard": "img/telefonos/samsung-galaxy-s20.jpg",
+            "imageAlt": "phone 2",
+            "classInformacion": "informacion",
+            "classTipoEnvio": "tipo-envio",
+            "strTipoEnvio": "Envio con Normalidad",
+            "classPrecio": "precio",
+            "strPrecio": "$250.990",
+            "classCostoEnvio": "tipo-envio",
+            "strCostoEnvio": "Envio gratis",
+            "classDescripcion": "descipcion",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "classCalificacion": "calificacion",
+            "classFiStarSolid": "fi-xnsuxl-star-solid",
+            "strCalificacion": "1919",
+            "classUbicacion": "ubicacion",
+            "strUbicacion": "Ciudad"
+        }
+    ]
+}

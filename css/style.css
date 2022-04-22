@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
  */
- @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
 
 
-* .inicio{
+* .inicio {
     /* font-family:'Noto Sans', sans-serif; */
     font-family: 'Anton', sans-serif;
     color: #393977;
@@ -38,7 +38,7 @@ nav ul li a {
     background-color: #141230;
 }
 
-.carousel-indicators{
+.carousel-indicators {
     margin-bottom: 30rem;
     background-color: rgba(0, 0, 0, 0.156);
 }
@@ -282,6 +282,7 @@ nav ul li a {
     grid-template-columns: repeat(auto-fit, 280px);
     grid-template-rows: 1fr;
     grid-gap: 2em;
+    justify-content: center;
 }
 
 .producto img {
@@ -386,7 +387,7 @@ nav ul li a {
 /* Formulario */
 
 
-#bloqueFormulario{
+#bloqueFormulario {
     background-color: #3c8cee70;
     /* background-color: rgba(28, 122, 55, 0.319); */
     margin: 2% auto;
@@ -410,7 +411,7 @@ nav ul li a {
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-/*     width: 30%; */   
+    /*     width: 30%; */
     padding: 3% 4%;
 }
 
@@ -428,11 +429,13 @@ nav ul li a {
 
 .uppertext {
     text-align: justify;
+    margin-bottom: 0%;
 }
 
-.link{
+.link {
     text-decoration: none;
 }
+
 /* Registro */
 
 #bloqueFormularioRegistro {
@@ -444,14 +447,14 @@ nav ul li a {
     margin-left: auto;
     margin-right: auto;
     width: 70%;
-/*     width: 30%; */
+    /*     width: 30%; */
 
 }
 
 .tipo-letra {
     font-family: 'Roboto', sans-serif;
     font-family: 'Anek Tamil', sans-serif;
-    
+
 }
 
 .errortext {
@@ -601,19 +604,19 @@ nav ul li a {
 }
 
 .lado-derecho,
-.lado-izquierdo{
+.lado-izquierdo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .lado-derecho {
-    background: linear-gradient(rgba(0, 0 , 0 , 0),
-    rgba(0, 0, 0, 0.5)),url(https://www.visa.cl/dam/VCOM/regional/lac/SPA/Default/The%20Visa%20Difference/About%20Visa/sala-noticias/Notas%20de%20Prensa/visa-royalty-solutions/visa-loyalty-solutions-spa-1600x900.jpg);
-    background-size:cover;
+    background: linear-gradient(rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.5)), url(https://www.visa.cl/dam/VCOM/regional/lac/SPA/Default/The%20Visa%20Difference/About%20Visa/sala-noticias/Notas%20de%20Prensa/visa-royalty-solutions/visa-loyalty-solutions-spa-1600x900.jpg);
+    background-size: cover;
 }
 
-.texto-imagen{
+.texto-imagen {
     color: #fff;
     text-align: center;
 }
@@ -625,21 +628,24 @@ nav ul li a {
 }
 
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 800px) {
     .separar-pantalla {
         flex-direction: row-reverse;
         height: 100vh;
     }
+
     .lado-derecho,
     .lado-izquierdo {
         display: flex;
         /* width: 50%; */
         height: auto;
     }
+
     .lado-derecho {
         width: 70%;
         position: relative;
     }
+
     .lado-izquierdo {
         width: 30%;
     }
@@ -650,12 +656,10 @@ nav ul li a {
         left: 3%;
     }
 
-    
+
 
 }
 
 
 
 /* https://www.youtube.com/watch?v=fHqjQBRQxUI  min 8:24 */
-
-

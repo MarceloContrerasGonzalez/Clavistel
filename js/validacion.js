@@ -84,7 +84,7 @@ $("#bRegistro").click(function (event) {
 $(document).ready(function () {
   $.get("json/script.json", function (data) {
     /* console.log(data); */
-    $.each(data.productos, function (i, item) {
+    $.each(data.categorias, function (i, item) {
       $("#Telefonos").append(
         "<div class='producto product-item samsung gratis 1-meses'><img src='" + item.imageCard +
         "' alt='" + item.imageAlt + "'><div class='informacion'><span class='tipo-envio'>" + item.strTipoEnvio + "</span><span class='precio'>" + item.strPrecio +

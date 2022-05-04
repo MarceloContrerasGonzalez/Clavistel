@@ -668,6 +668,30 @@ nav ul li a {
         top: 3%;
         left: 3%;
     }
+@media screen and (max-width: 1280px){
+    #bloqueFormularioRegistro input {
+        height: 6vh;
+        width: 100%;
+        top: auto;
+        bottom: auto;
+        text-align: justify;
+        
+    }
+
+    .marcador{
+        display: none;
+    }
+    
+    #bloqueFormularioRegistro hr{
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+
+    #bloqueFormularioRegistro h1{
+        font-size: 1.5em;
+        
+    }
+}
 
 
 

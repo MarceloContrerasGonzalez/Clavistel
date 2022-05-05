@@ -8,7 +8,7 @@ def login(request):
     return render(request,'login/login.html')
 
 def consulta(request):
-    return render(request,'Telefonos/Nesecitas_Ayuda.html')
+    return render(request,'consulta/Nesecitas_Ayuda.html')
 
 def telefonos(request):
     return render(request,'Telefonos/Phones.html')

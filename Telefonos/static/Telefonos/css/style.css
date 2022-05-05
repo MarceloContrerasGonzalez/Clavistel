@@ -668,6 +668,7 @@ nav ul li a {
         top: 3%;
         left: 3%;
     }
+
 @media screen and (max-width: 1280px){
     #bloqueFormularioRegistro input {
         height: 6vh;

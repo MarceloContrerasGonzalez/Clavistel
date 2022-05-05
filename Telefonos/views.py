@@ -5,7 +5,7 @@ def home(request):
     return render(request,'Telefonos/index.html')
 
 def login(request):
-    return render(request,'Telefonos/login.html')
+    return render(request,'login/login.html')
 
 def consulta(request):
     return render(request,'Telefonos/Nesecitas_Ayuda.html')
@@ -14,4 +14,4 @@ def telefonos(request):
     return render(request,'Telefonos/Phones.html')
 
 def registro(request):
-    return render(request,'Telefonos/registro.html')
+    return render(request,'registro/registro.html')

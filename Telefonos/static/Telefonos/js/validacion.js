@@ -82,7 +82,7 @@ $("#bRegistro").click(function (event) {
 });
 
 $(document).ready(function () {
-  $.get("json/script.json", function (data) {
+  $.get("/static/Telefonos/json/script.json", function (data) {
     /* console.log(data); */
     $.each(data.categorias, function (i, item) {
       $("#Telefonos").append(

@@ -1,3 +1,4 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nesecitas_Ayuda?</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'Telefonos/css/style.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@500&display=swap" rel="stylesheet">
@@ -28,19 +29,19 @@
             <div class="navbar-collapse collapse" id="navbarsExample03">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li>
-                        <a class="nav-link"  href="index.html">Inicio</a>
+                        <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="Phones.html">Celulares</a>
+                        <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="Nesecitas_Ayuda.html">Dudas</a>
+                        <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="login.html">Inicio De Sesion</a>
+                        <a class="nav-link"  href="{% url 'login' %}">Inicio De Sesion</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="registro.html">Registro</a>
+                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
                 </ul>
             </div>
@@ -101,7 +102,7 @@
             <div class="caja">
                 <figure>
                     <a href="#">
-                        <img src="img/logo.png" alt="">
+                        <img src="{% static 'Telefonos/img/logo.png'%}" alt="">
                     </a>
                 </figure>
             </div>
@@ -137,7 +138,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
-    <script src="js/validacion.js"></script>
+    <script src="{% static 'Telefonos/js/validacion.js'%}"></script>
     
 </body>
 

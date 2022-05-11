@@ -1,0 +1,395 @@
+{
+    "categorias": [
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung-galaxy-s20.jpg",
+            "imageAlt": "phone1",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$450.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/Y2_Lockup_CosmicBlack-1600x1200.jpg",
+            "imageAlt": "phone2",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$630.990",
+            "strCostoEnvio": "Envio normal",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-a13-5g-1.jpg",
+            "imageAlt": "phone3",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$750.990",
+            "strCostoEnvio": "Envio con Descuento",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-a42-5g.jpg",
+            "imageAlt": "phone4",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$530.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-s21-5g.jpg",
+            "imageAlt": "phone5",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$620.990",
+            "strCostoEnvio": "Envio normal",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-s21-ulta-5g.jpg",
+            "imageAlt": "phone6",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$780.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-s20-5g-128gb.jpg",
+            "imageAlt": "phone7",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$640.990",
+            "strCostoEnvio": "Envio con descuento",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/samsung/galaxy-s20-5g-128gb-negro-mate.jpg",
+            "imageAlt": "phone8",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$840.990",
+            "strCostoEnvio": "Envio con descuento",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/apple-iphone-8-plus-64gb.jpg",
+            "imageAlt": "phone9",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$860.990",
+            "strCostoEnvio": "Envio normal",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/apple-iphone-se-128gb-blanco.png",
+            "imageAlt": "phone10",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$820.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/Apple_iPhone-9-138-gb.jpg",
+            "imageAlt": "phone11",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$950.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/apple-iphone-11-pro-max-.jpg",
+            "imageAlt": "phone12",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$1.200.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/iPhone-13-128-gb.jpg",
+            "imageAlt": "phone13",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$930.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/iPhone-7-128-GB-negro-mate.jpg",
+            "imageAlt": "phone14",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$1.050.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/apple-iphone-6s-plus.jpg",
+            "imageAlt": "phone15",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$1.250.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/apple/iPhone-XS-Max-256GB.jpg",
+            "imageAlt": "phone16",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$870.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-edge-20-fusion-128gb.jpg",
+            "imageAlt": "phone17",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$600.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-edge-2021-256gb.jpg",
+            "imageAlt": "phone18",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$540.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-edge-s-256gb.jpg",
+            "imageAlt": "phone19",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$850.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-edge-s30-256gb.jpg",
+            "imageAlt": "phone20",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$790.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-edge-x30-138gb.jpg",
+            "imageAlt": "phone21",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$810.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-g-stylus-2021-128gb.jpg",
+            "imageAlt": "phone22",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$640.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-g22-64gb.jpg",
+            "imageAlt": "phone23",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$750.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/motorola/motorola-moto-g60-138gb.jpg",
+            "imageAlt": "phone24",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$770.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-enjoy-10-e-128gb.jpg",
+            "imageAlt": "phone25",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$440.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-enjoy-20-se-128gb.jpg",
+            "imageAlt": "phone26",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$360.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-mate-x2-4g-256gb.jpg",
+            "imageAlt": "phone27",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$520.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-mate40-pro-128gb.jpg",
+            "imageAlt": "phone28",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$500.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-nova-y60-63gb.jpg",
+            "imageAlt": "phone29",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$480.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-p50-pro-128gb.jpg",
+            "imageAlt": "phone30",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$650.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/huawei/huawei-p50e-256gb.jpg",
+            "imageAlt": "phone31",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$350.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-11t-128gb.jpg",
+            "imageAlt": "phone32",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$380.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/128gb.jpg",
+            "imageAlt": "phone33",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$220.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-12-pro-256gb.jpg",
+            "imageAlt": "phone34",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$270.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-12-pro-256gb.jpg",
+            "imageAlt": "phone35",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$320.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-redmi-9i-sport-128gb.jpg",
+            "imageAlt": "phone36",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$450.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-redmi-k50-gaming-256gb.jpg",
+            "imageAlt": "phone37",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$260.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },  
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-redmi-note-10-lite-128gb.jpg",
+            "imageAlt": "phone38",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$510.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        },
+        {
+            "imageCard": "/static/Telefonos/img/telefonos/xiaomi/xiaomi-redmi-note11-pro-plus-256gb.jpg",
+            "imageAlt": "phone39",
+            "strTipoEnvio": "Envio con Normalidad",
+            "strPrecio": "$400.990",
+            "strCostoEnvio": "Envio gratis",
+            "strDescripcion": "Teléfono Samsung Galaxy S20",
+            "strCalificacion": "1919",
+            "strUbicacion": "Ciudad"
+        }
+        
+    ]
+}

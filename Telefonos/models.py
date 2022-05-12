@@ -19,8 +19,8 @@ class TipoEnvio(models.Model):
 # TABLA Movil.
 class Movil(models.Model):
     id_movil = models.IntegerField(primary_key=True,verbose_name='id_movil')
-    img = models.ImageField(verbose_name='img')
-    costo = models.IntegerField(verbose_name='costo')
+    img = models.ImageField(upload_to='Telefonos/static/Telefonos/img/imgdjango',verbose_name='img')
+    costo = models.IntegerField(verbose_name='precio')
     descripcion = models.CharField(max_length=100,verbose_name='descripcion')
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     id_tipo_envio = models.ForeignKey(TipoEnvio, on_delete=models.CASCADE)

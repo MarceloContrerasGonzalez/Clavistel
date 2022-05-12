@@ -53,6 +53,29 @@
 
     <!-- PRODUCTOS (x JSON) -->
 
+    <table border="1">Lista Vehiculos
+        <tr>
+            <th>ID</th>
+            <th>IMG</th>
+            <th>COSTO</th>
+            <th>DESCRIPCION</th>
+            <th>ID MARCA</th>
+            <th>ID TIPO ENVIO</th>
+        </tr>
+        {% for mov in lista_Movil%}
+        <tr>
+            <td>{{mov.id_movil}}</td>
+            <td>
+                <img src="{{mov.img}}" alt="">
+                </td>
+            <td>{{mov.costo}}</td>
+            <td>{{mov.descripcion}}</td>
+            <td>{{mov.id_marca}}</td>
+            <td>{{mov.id_tipo_envio}}</td>
+        </tr>
+        {% endfor%}
+    </table>
+
     <div class="panel-productos">
         <section id="Telefonos" class="section-grid">
 

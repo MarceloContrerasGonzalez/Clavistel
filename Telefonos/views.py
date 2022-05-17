@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Movil
+from .forms import TelefonoForm
 
 # Create your views here.
 def home(request):
@@ -20,3 +21,18 @@ def telefonos(request):
 
 def registro(request):
     return render(request,'registro/registro.html')
+
+def agregar_telefono(request):
+    datos = {
+        'form' : TelefonoForm()
+    }
+    
+    if (request.method == 'POST'):
+        formulario = TelefonoForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save() #insert a la BD
+            datos['mensaje'] = 'Telefono se guardó'
+        else:
+            datos['mensaje'] = 'Telefono NO se guardó'
+  
+    return render(request,'Telefonos/agregar_telefono.html', datos)

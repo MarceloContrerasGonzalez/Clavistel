@@ -269,7 +269,7 @@ nav ul li a {
 }
 
 .panel-productos {
-    margin: 0 17%;
+    margin: 3% 17%;
 }
 
 .section-grid {
@@ -382,6 +382,16 @@ nav ul li a {
 
 /* Formulario */
 
+#enviar, #limpia{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#datos {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #bloqueFormulario {
     background-color: #3c8cee70;
@@ -516,6 +526,7 @@ nav ul li a {
     display: none;
 }
 
+/* Agregar Telefonos */
 
 
 

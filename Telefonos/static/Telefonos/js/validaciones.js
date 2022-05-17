@@ -81,16 +81,3 @@ $("#bRegistro").click(function (event) {
   }
 });
 
-$(document).ready(function () {
-  $.get("/static/Telefonos/json/script.json", function (data) {
-    /* console.log(data); */
-    $.each(data.categorias, function (i, item) {
-      $("#Telefonos").append(
-        "<div class='producto product-item samsung gratis 1-meses'><img src='" + item.imageCard +
-        "' alt='" + item.imageAlt + "'><div class='informacion'><span class='tipo-envio'>" + item.strTipoEnvio + "</span><span class='precio'>" + item.strPrecio +
-        "</span><span class='tipo-envio'>" + item.strCostoEnvio + "</span><span class='descipcion'>" + item.strDescripcion +
-        "</span><div class='calificacion'></span><span>" + item.strCalificacion + "</span></div><span class='ubicacion'>" + item.strUbicacion + "</span></div>"
-      );
-    }); 
-  });
-});

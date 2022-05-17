@@ -53,30 +53,24 @@
 
     <!-- PRODUCTOS (x JSON) -->
 
-    <table border="1">Lista Vehiculos
-        <tr>
-            <th>ID</th>
-            <th>IMG</th>
-            <th>COSTO</th>
-            <th>DESCRIPCION</th>
-            <th>ID MARCA</th>
-            <th>ID TIPO ENVIO</th>
-        </tr>
-        {% for mov in lista_Movil%}
-        <tr>
-            <td>{{mov.id_movil}}</td>
-            <td><img src="{{mov.img.url}}" alt=""></td>
-            <td>{{mov.costo}}</td>
-            <td>{{mov.descripcion}}</td>
-            <td>{{mov.id_marca}}</td>
-            <td>{{mov.id_tipo_envio}}</td>
-        </tr>
-        {% endfor%}
-    </table>
 
     <div class="panel-productos">
         <section id="Telefonos" class="section-grid">
 
+            {% for mov in lista_Movil%}
+            <div class="producto product-item samsung gratis 1-meses">
+                <img src="{{mov.img.url}}" alt="">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">${{mov.costo}}</span>
+                    <span class="costo-envio">{{mov.id_tipo_envio}}</span>
+                    <span class="descipcion">{{mov.descripcion}}</span>
+                    <span class="ubicacion">Ciudad</span>
+                    <span>1919</span>
+                </div>
+            </div>
+            {% endfor%}
+            
         </section>
     </div>
 
@@ -125,7 +119,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
-    <script src="{% static 'Telefonos/js/validacion.js'%}"></script>
+    <script src="{% static 'Telefonos/js/validaciones.js'%}"></script>
 </body>
 
 </html>

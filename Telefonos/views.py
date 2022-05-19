@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Movil
 from .forms import TelefonoForm
 
@@ -12,6 +12,9 @@ def login(request):
 def consulta(request):
     return render(request,'consulta/Nesecitas_Ayuda.html')
 
+def registro(request):
+    return render(request,'registro/registro.html')
+
 def telefonos(request):
     lista_Movil = Movil.objects.all()
     datos = {
@@ -19,8 +22,6 @@ def telefonos(request):
     }
     return render(request,'Telefonos/Phones.html', datos)
 
-def registro(request):
-    return render(request,'registro/registro.html')
 
 def agregar_telefono(request):
     datos = {
@@ -36,3 +37,26 @@ def agregar_telefono(request):
             datos['mensaje'] = 'Telefono NO se guardó'
   
     return render(request,'Telefonos/agregar_telefono.html', datos)
+
+def modificar_telefono(request, id):
+    movil = Movil.objects.get(id_movil=id)
+    
+    datos = {
+        'form':TelefonoForm(instance=movil)
+    }
+    
+    if (request.method == 'POST'):
+        formulario = TelefonoForm(request.POST, request.FILES, instance=movil)
+        if formulario.is_valid():
+            formulario.save() #insert a la BD
+            datos['mensaje'] = 'Telefono modificado correctamente'
+        else:
+            datos['mensaje'] = 'Telefono NO se modifico'
+    
+    return render(request,'Telefonos/modificar_telefono.html', datos)
+
+def eliminar_telefono(request, id):
+    movil = Movil.objects.get(id_movil=id)
+    movil.delete()
+    
+    return redirect(to= 'telefonos')

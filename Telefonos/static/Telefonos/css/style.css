@@ -605,6 +605,10 @@ nav ul li a {
 
 /* Medias x responsividad */
 @media screen and (max-width:800px) {
+
+    #bloqueFormulario{
+        width: 70%;
+    }
     .footer .grupo1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);

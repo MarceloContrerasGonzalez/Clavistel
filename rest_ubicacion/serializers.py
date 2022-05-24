@@ -1,6 +1,5 @@
 import imp
-from  rest_framework import serializers
-
+from rest_framework import serializers
 from Telefonos.models import Movil
 
 class TelefonoSerializer(serializers.ModelSerializer):

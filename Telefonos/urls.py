@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import home, login, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono
 from django.conf import settings
 from django.conf.urls.static import static
@@ -11,7 +11,8 @@ urlpatterns =[
     path('registro', registro, name='registro'),
     path('agregar', agregar_telefono, name='agregar'),
     path('modificar/<id>', modificar_telefono, name='modificar'),
-    path('eliminar/<id>', eliminar_telefono, name='eliminar')
+    path('eliminar/<id>', eliminar_telefono, name='eliminar'),
+    path('api/', include('rest_ubicacion.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

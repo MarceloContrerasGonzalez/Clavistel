@@ -50,6 +50,7 @@ def modificar_telefono(request, id):
         if formulario.is_valid():
             formulario.save() #insert a la BD
             datos['mensaje'] = 'Telefono modificado correctamente'
+            return redirect(to= 'telefonos')
         else:
             datos['mensaje'] = 'Telefono NO se modifico'
     

@@ -1,8 +1,7 @@
-import imp
 from rest_framework import serializers
-from Telefonos.models import Movil
+from Telefonos.models import Sucursal
 
-class TelefonoSerializer(serializers.ModelSerializer):
+class SucursalSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Movil
-        fields = ['id_movil','nombre','img','costo','marca','tipo_envio']
+        model = Sucursal  
+        fields = ['id_sucursal', 'nombre_sucursal', 'direccion', 'region']

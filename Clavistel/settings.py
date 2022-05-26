@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'consulta',
     'rest_ubicacion',
     'rest_framework',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

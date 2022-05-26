@@ -15,6 +15,9 @@ def consulta(request):
 def registro(request):
     return render(request,'registro/registro.html')
 
+def ubicacion(request):
+    return render(request,'rest_ubicacion/ubicacion.html')
+
 def telefonos(request):
     lista_Movil = Movil.objects.all()
     datos = {
@@ -50,7 +53,6 @@ def modificar_telefono(request, id):
         if formulario.is_valid():
             formulario.save() #insert a la BD
             datos['mensaje'] = 'Telefono modificado correctamente'
-            return redirect(to= 'telefonos')
         else:
             datos['mensaje'] = 'Telefono NO se modifico'
     

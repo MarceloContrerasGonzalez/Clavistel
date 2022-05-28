@@ -81,3 +81,14 @@ $("#bRegistro").click(function (event) {
   }
 });
 
+//confirmar eliminacion
+function confirmar(){
+  var respuesta = confirm("¿seguro que deseas eliminar este telefono?")
+  if(respuesta == true){
+    alert("Telefono Eliminado Correctamente")
+    return true;
+  }else{
+    alert("Se ha cancelado el proceso")
+    return false;
+  }
+}

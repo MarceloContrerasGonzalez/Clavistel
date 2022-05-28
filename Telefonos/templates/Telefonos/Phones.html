@@ -71,8 +71,8 @@
                     <a href="{%url 'modificar' mov.id_movil%}">
                         <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>
                     </a>
-                    <a href="{%url 'eliminar' mov.id_movil%}">
-                        <button type="submit" class="btn btn-primary" id="eliminar" value="Modificar">Eliminar</button>
+                    <a onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
+                        <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
                     </a>            
 
                 </div>

@@ -59,15 +59,16 @@
             <th scope="col">Sucursal</th>
             <th scope="col">Dirección</th>
             <th scope="col">Región</th>
+            <th scope="col">Detalle</th>
           </tr>
         </thead>
         <tbody>
+            <a href="{% url 'lista_sucursales'%}">Listado de Api</a>
             {% for suc in lista_Sucursal%}
             <tr>
               <th scope="row">{{suc.nombre_sucursal}}</th>
               <td>{{suc.direccion}}</td>
               <td>{{suc.region}}</td>
-              <a href="{% url 'lista_sucursales'%}">Listado de Api</a>
               <td><a href="{% url 'detalle_sucursal' suc.id_sucursal %}">Detalle Api</a></td>
             </tr> 
             {% endfor%}

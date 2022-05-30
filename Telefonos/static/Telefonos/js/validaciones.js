@@ -92,3 +92,26 @@ function confirmar(){
     return false;
   }
 }
+
+/* $(document).ready(function () {
+  $.get("http://127.0.0.1:8000/api/lista_sucursales?format=json", function (data) {
+    $.each(data.0, function (i, item) {
+      $("#Sucursales").append(
+          "<thead> " + 
+          "<tr>" +
+          "<td>Nombre de la Sucursal</td>" +
+          "<td>Dirección</td>" +
+          "<td>Región</td>" +
+          "</tr>" +
+          "</thead>" +
+          "<tbody>" +
+          "<tr>" +
+          "<td>"+ item.nombre_sucursal + "</td>" +
+          "<td>"+ item.direccion + "</td>" +
+          "<td>"+ item.region + "</td>" +
+          "</tr>" + 
+          "</tbody>"
+      );
+    }); 
+  });
+}); */

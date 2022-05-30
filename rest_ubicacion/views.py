@@ -46,3 +46,4 @@ def detalle_sucursal(request, idSuc):
     elif request.method == "DELETE":
         sucursal.delete()
         return Response(status= status.HTTP_204_NO_CONTENT)
+    

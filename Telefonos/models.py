@@ -45,7 +45,6 @@ class Region(models.Model):
 # TABLA Sucursal.
 class Sucursal(models.Model):
     id_sucursal = models.AutoField(primary_key=True,verbose_name='Código Sucursal')
-    img = models.ImageField(upload_to='Telefonos/static/Telefonos/img/imgdjango',verbose_name='Imagen')
     nombre_sucursal = models.CharField(max_length=100,verbose_name='Nombre Sucursal')
     direccion = models.CharField(max_length=100,verbose_name='Dirección')
     region = models.ForeignKey(Region, on_delete=models.CASCADE)

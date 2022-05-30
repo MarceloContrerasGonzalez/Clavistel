@@ -50,20 +50,30 @@
     </nav>
 
 
-    <div class="imagen-div">
-        <a href="#" class="imagen-a"></a>
-    </div>
-
     <!-- PRODUCTOS (x JSON) -->
-
-
-    <div class="panel-productos">
-        <section id="Telefonos" class="section-grid">
-
-            
-        </section>
-        <br>
-    </div>
+    
+    <hr>
+    <table>
+        <thead>
+          <tr>
+            <th scope="col">Sucursal</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Región</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for suc in lista_Sucursal%}
+            <tr>
+              <th scope="row">{{suc.nombre_sucursal}}</th>
+              <td>{{suc.direccion}}</td>
+              <td>{{suc.region}}</td>
+              <a href="{% url 'lista_sucursales'%}">Listado de Api</a>
+              <td><a href="{% url 'detalle_sucursal' suc.id_sucursal %}">Detalle Api</a></td>
+            </tr> 
+            {% endfor%}
+        </tbody>
+      </table>
+      
 
     <!-- Footer -->
     <footer class="footer">

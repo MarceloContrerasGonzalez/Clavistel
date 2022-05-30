@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Movil
+from .models import Movil, Sucursal
 from .forms import TelefonoForm
 
 # Create your views here.
@@ -16,7 +16,11 @@ def registro(request):
     return render(request,'registro/registro.html')
 
 def ubicacion(request):
-    return render(request,'rest_ubicacion/ubicacion.html')
+    lista_Sucursal = Sucursal.objects.all()
+    datos = {
+        'lista_Sucursal' : lista_Sucursal
+    }
+    return render(request,'rest_ubicacion/ubicacion.html', datos)
 
 def telefonos(request):
     lista_Movil = Movil.objects.all()
@@ -24,7 +28,6 @@ def telefonos(request):
         'lista_Movil' : lista_Movil
     }
     return render(request,'Telefonos/Phones.html', datos)
-
 
 def agregar_telefono(request):
     datos = {

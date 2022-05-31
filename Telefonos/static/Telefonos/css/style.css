@@ -134,6 +134,9 @@ table {
   margin: 5% 3%;
   
 }
+tbody, td, tfoot, th, thead, tr {
+    border-width: 1;
+}
 
 thead th:nth-child(1) {
   width: 10%;
@@ -686,7 +689,7 @@ th, td {
         padding: 3% 5%;
     }
     table {
-        width: 100%;
+        width: 98%;
         margin: 0 auto;
     }
     th, td {

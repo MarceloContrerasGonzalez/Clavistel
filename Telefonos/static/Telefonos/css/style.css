@@ -685,6 +685,13 @@ th, td {
         height: 100vh;
         padding: 3% 5%;
     }
+    table {
+        width: 100%;
+        margin: 0 auto;
+    }
+    th, td {
+        padding: 3px;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -737,10 +744,6 @@ th, td {
     #bloqueFormularioRegistro h1{
         font-size: 1.5em;
         
-    }
-    table{
-        width: 100%;
-        margin: 0 auto;
     }
 }
 

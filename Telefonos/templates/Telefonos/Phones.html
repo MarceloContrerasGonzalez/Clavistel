@@ -41,6 +41,9 @@
                     <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'agregar' %}">Agregar</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -53,10 +56,31 @@
 
     <!-- PRODUCTOS (x JSON) -->
 
+
     <div class="panel-productos">
         <section id="Telefonos" class="section-grid">
 
+            {% for mov in lista_Movil%}
+            <div class="producto product-item samsung gratis 1-meses">
+                <img src="{{mov.img.url}}" alt="">
+                <div class="informacion">
+                    <span class="tipo-envio">Envio con Normalidad</span>
+                    <span class="precio">${{mov.costo}}</span>
+                    <span class="costo-envio">{{mov.tipo_envio}}</span>
+                    <span class="descipcion">{{mov.nombre}}</span>
+                    <a href="{%url 'modificar' mov.id_movil%}">
+                        <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>
+                    </a>
+                    <a onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
+                        <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
+                    </a>            
+
+                </div>
+            </div>
+            {% endfor%}
+            
         </section>
+        <br>
     </div>
 
     <!-- Footer -->
@@ -104,7 +128,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
-    <script src="{% static 'Telefonos/js/validacion.js'%}"></script>
+    <script src="{% static 'Telefonos/js/validaciones.js'%}"></script>
 </body>
 
 </html>

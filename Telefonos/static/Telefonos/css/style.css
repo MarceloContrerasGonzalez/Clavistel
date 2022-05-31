@@ -125,6 +125,40 @@ nav ul li a {
 }
 
 /* BOTON */
+/* spacing */
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid rgb(26, 26, 26);
+  margin: 5% 3%;
+  
+}
+
+thead th:nth-child(1) {
+  width: 10%;
+}
+
+thead th:nth-child(2) {
+  width: 10%;
+}
+
+thead th:nth-child(3) {
+  width: 10%;
+}
+
+thead th:nth-child(4) {
+  width: 10%;
+}
+
+th, td {
+  padding: 20px;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 1px;
+}
 
 .button {
     background-color: #da4242e1;
@@ -269,7 +303,7 @@ nav ul li a {
 }
 
 .panel-productos {
-    margin: 0 17%;
+    margin: 3% 17%;
 }
 
 .section-grid {
@@ -382,6 +416,16 @@ nav ul li a {
 
 /* Formulario */
 
+#enviar, #limpia{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#datos {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #bloqueFormulario {
     background-color: #3c8cee70;
@@ -516,6 +560,7 @@ nav ul li a {
     display: none;
 }
 
+/* Agregar Telefonos */
 
 
 
@@ -523,6 +568,7 @@ nav ul li a {
 .footer {
     width: 100%;
     background-color: #0a1a2a;
+    margin-top: 150px;
 }
 
 .footer .grupo1 {
@@ -594,6 +640,10 @@ nav ul li a {
 
 /* Medias x responsividad */
 @media screen and (max-width:800px) {
+
+    #bloqueFormulario{
+        width: 70%;
+    }
     .footer .grupo1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -638,6 +688,13 @@ nav ul li a {
         width: 80%;
         height: 100vh;
         padding: 3% 5%;
+    }
+    table {
+        width: 98%;
+        margin: 0 auto;
+    }
+    th, td {
+        padding: 3px;
     }
 }
 

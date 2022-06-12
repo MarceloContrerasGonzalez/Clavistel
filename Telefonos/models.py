@@ -52,6 +52,13 @@ class Sucursal(models.Model):
     def __str__(self):
         return self.nombre_sucursal
 
+
+
+
+
+
+
+''' NO MIGRAN IMPORTANTE NO MIGRAR '''
 #Tabla Usuario
 class TipoUsuario(models.Model):
     id_tipo = models.AutoField(primary_key=True,verbose_name='id Usuario')
@@ -59,8 +66,8 @@ class TipoUsuario(models.Model):
 
     def __str__(self):
         return self.nombre_tipo_usuario
-    
-    
+
+
 class Usuario(models.Model):
     correo = models.CharField(max_length=100,primary_key=True,verbose_name='Correo Electronico')
     nombre_usuario = models.CharField(max_length=100,verbose_name='Nombre Usuario')

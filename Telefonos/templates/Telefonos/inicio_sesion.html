@@ -32,12 +32,13 @@
       <section id="bloqueFormularioLogin">
         <h1>INICIO DE SESION</h1>
         <hr>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="{% url 'login' %}" method="POST">
+          {% csrf_token %}
           <div>
             <p class="uppertext">Ingrese Su Usuario</p>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" required>
+            <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Usuario" required>
             <label for="floatingInput">Usuario</label>
             <div class="uppertext invalid-feedback">
               Ingrese su Usuario!
@@ -46,7 +47,7 @@
 
           <p class="uppertext">Ingrese Su Contraseña</p>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
             <label for="floatingPassword">Contraseña</label>
             <div class="uppertext invalid-feedback">
               Ingrese su Contraseña!

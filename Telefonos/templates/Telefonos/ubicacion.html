@@ -56,36 +56,38 @@
 
 
     <!-- PRODUCTOS (x JSON) -->
-    
-    <hr>
-    <table>
+    <div class="table-body">
+    <table class="table">
         <thead>
           <tr>
-            <th scope="col">Sucursal</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Región</th>
-            <th scope="col">Modificar</th>
-            <th scope="col">Eliminar</th>
+            <th>Sucursal</th>
+            <th>Dirección</th>
+            <th>Región</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
           </tr>
         </thead>
         <tbody>
-            <a href="{% url 'lista_sucursales'%}">Listado de Api</a>
+            {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
             {% for suc in lista_Sucursal%}
             <tr>
-              <th scope="row">{{suc.nombre_sucursal}}</th>
-              <td>{{suc.direccion}}</td>
-              <td>{{suc.region}}</td>
-              <td><a href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
+              <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
+              <td data-label="Dirección">{{suc.direccion}}</td>
+              <td data-label="Región">{{suc.region}}</td>
+              <td>
+                <button type="button" class="btn btn-primary">
+                    <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
+                </button>
               <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
-                <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
+                <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button>
               </a></td>
             </tr> 
             {% endfor%}
         </tbody>
       </table>
-      
-
-    <!-- Footer -->
+    </div>
+    
+      <!-- Footer -->
     <footer class="footer">
         <div class="grupo1">
             <div class="caja">

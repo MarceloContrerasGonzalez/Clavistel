@@ -33,10 +33,6 @@ nav ul li a {
     background-color: #0d6efd; /* No funcionara porque la clase de bootstrap ".bg-dark" esta con --!important--*/
 }
 
-.navbar{
-    height: 5.5rem;
-}
-
 
 
 /* SECCION PLANES (actual)*/
@@ -139,42 +135,64 @@ nav ul li a {
 
 /* BOTON */
 /* spacing */
-
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  border: 3px solid rgb(26, 26, 26);
-  margin: 5% 3%;
-  
+.table-body{
+    padding: 20px;
 }
 
+.table-body *{
+    box-sizing: border-box;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td, .table th{
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table tbody tr:nth-child(even){
+    background-color: #f5f5f5;
+}
+
+/* th-child */
 thead th:nth-child(1) {
-  width: 10%;
+    width: 5%;
+    background-color: darkblue;
+    color: #ffffff;
 }
-
+  
 thead th:nth-child(2) {
-  width: 10%;
+    width: 10%;
+    background-color: darkblue;
+    color: #ffffff;
 }
-
+  
 thead th:nth-child(3) {
-  width: 10%;
+    width: 8%;
+    background-color: darkblue;
+    color: #ffffff;
 }
 
 thead th:nth-child(4) {
-  width: 10%;
+    width: 2%;
+    background-color: darkblue;
+    color: #ffffff;
 }
-
+  
 thead th:nth-child(5) {
-    width: 10%;
-  }
-
-th, td {
-  padding: 20px;
+    width: 2%;
+    background-color: darkblue;
+    color: #ffffff;
 }
-tbody, td, tfoot, th, thead, tr {
-    border-color: inherit;
-    border-style: solid;
-    border-width: 1px;
+
+.modificar-btn {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .button {
@@ -706,13 +724,38 @@ tbody, td, tfoot, th, thead, tr {
         height: 100vh;
         padding: 3% 5%;
     }
-    table {
-        width: 98%;
-        margin: 0 auto;
+    
+    .table thead{
+        display: none;
     }
-    th, td {
-        padding: 3px;
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
     }
+
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 12px;
+    }
+    
+    .table td, .table th{
+        font-size: 12px;
+    }
+
 }
 
 @media screen and (min-width: 800px) {

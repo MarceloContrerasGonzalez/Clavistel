@@ -19,7 +19,7 @@
 
 <body class="inicio">
 
-    <!-- NAV MENU -->
+    <!-- NAV Principal -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
             <div class="logo">Clavistel</div>
@@ -55,6 +55,8 @@
         </div>
     </nav>
 
+    <!-- NAV Secundario -->
+
 
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -71,19 +73,19 @@
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{% static 'Telefonos/img/foto_persona_hogar.png'%}" alt="Los Angeles" class="d-block" style="width:100%; height:75vh">
+                <img src="{% static 'Telefonos/img/foto-carousel-00.png'%}" alt="Los Angeles" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'Telefonos/img/promocion_smartphone2.png'%}" alt="Chicago" class="d-block" style="width:100%; height:75vh">
+                <img src="{% static 'Telefonos/img/promocion_smartphone2.png'%}" alt="Chicago" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'Telefonos/img/promocion_smartphone3.png'%}" alt="New York" class="d-block" style="width:100%; height:75vh">
+                <img src="{% static 'Telefonos/img/promocion_smartphone3.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'Telefonos/img/promocion_smartphone.png'%}" alt="New York" class="d-block" style="width:100%; height:75vh">
+                <img src="{% static 'Telefonos/img/promocion_smartphone.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-            <img src="{% static 'Telefonos/img/promocion_smartphone4.png'%}" alt="New York" class="d-block" style="width:100%; height:75vh">
+            <img src="{% static 'Telefonos/img/promocion_smartphone4.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh  ">
             </div>
         </div>
     
@@ -98,7 +100,7 @@
 
     <!-- SECCION PLANES -->
 
-    <section id="plans-section">
+    {% comment %} <section id="plans-section">
         <div class="plans-container">
             <div>
                 <h1 id="plan-description">OFERTA DE NUEVO CLIENTE</h1>
@@ -166,9 +168,21 @@
                 </div>
             </div>
         </div>
+    </section> {% endcomment %}
+
+    <!-- Seccion Planes  -->
+    <section class="seccion-planes">
+        <h2 class="sec-planes-titulo">¿En que podemos ayudarte hoy?</h2>
+        <div class="opt-sec-planes">
+            <button type="button" class="btn btn-secondary btn-lg se-button">Pórtate a Clavistel</button>
+            <button type="button" class="btn btn-secondary btn-lg se-button">Renueva tu Equipo</button>
+            <button type="button" class="btn btn-secondary btn-lg se-button">Paga tu Cuenta</button>
+            <button type="button" class="btn btn-secondary btn-lg se-button">Recarga Fácil</button>
+        </div>
     </section>
 
-    <!-- SECCION  -->
+
+    <!-- Seccion Información  -->
 
     <section class="bloqueTitulo">
         <div id="info-container">

@@ -1,6 +1,8 @@
 from  django import forms
 from django.forms import ModelForm
 from .models import Movil, Sucursal
+from django.contrib.auth .forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class TelefonoForm(ModelForm):
     class Meta:
@@ -11,3 +13,8 @@ class SucursalForm(ModelForm):
     class Meta:
         model = Sucursal
         fields = ['id_sucursal','nombre_sucursal','direccion','region']
+        
+    
+class SignUpForm(UserCreationForm):
+    email = forms.EmailField(max_length=250, help_text='Requiered. Inform a valid email address.')
+    fields = ('username', 'email','password1', 'password2', 'is_staff')

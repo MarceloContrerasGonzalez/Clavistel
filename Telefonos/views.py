@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Movil, Sucursal
+from .forms import TelefonoForm, SucursalForm
 from .forms import TelefonoForm, SucursalForm, SignUpForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
@@ -114,10 +115,9 @@ def eliminar_sucursal(request,id):
 
     return redirect(to='ubicacion')
 
-''' REGISTRAR '''
+''' REGISTRO '''
 
 def add_user(request):
-    
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -126,8 +126,7 @@ def add_user(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('home') #home?
-    
+            return redirect('home')
     else:
         form = SignUpForm()
     return render(request, 'Telefonos/registro.html', {'form': form})

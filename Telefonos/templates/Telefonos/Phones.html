@@ -1,4 +1,5 @@
 {% load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,9 +45,11 @@
                     <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
+                    {% if request.user.is_authenticated and user.is_staff == 1%}
                     <li>
                         <a class="nav-link"  href="{% url 'agregar' %}">Agregar</a>
                     </li>
+                    {% else %} {% endif %}
                 </ul>
             </div>
         </div>
@@ -71,13 +74,14 @@
                     <span class="precio">${{mov.costo}}</span>
                     <span class="costo-envio">{{mov.tipo_envio}}</span>
                     <span class="descipcion">{{mov.nombre}}</span>
+                    {% if request.user.is_authenticated and user.is_staff == 1%}
                     <a href="{%url 'modificar' mov.id_movil%}">
                         <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>
                     </a>
                     <a onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
-                        <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
+                        <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button>
                     </a>            
-
+                    {% else %} {% endif %}
                 </div>
             </div>
             {% endfor%}

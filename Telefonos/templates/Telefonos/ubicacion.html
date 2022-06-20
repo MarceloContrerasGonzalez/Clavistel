@@ -1,4 +1,5 @@
 {% load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,16 +39,18 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
-                    </li>
-
+                    {% if request.user.is_authenticated %}  
                     <li>
                         <a class="nav-link"  href="{% url 'agregar_sucursal' %}">Agregar</a>
                     </li>
+                    {% else %} {% endif %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
+                    </li> 
+                    
                     
                 </ul>
             </div>
@@ -57,37 +60,57 @@
 
     <!-- PRODUCTOS (x JSON) -->
     <div class="table-body">
-    <table class="table">
-        <thead>
-          <tr>
-            <th>Sucursal</th>
-            <th>Dirección</th>
-            <th>Región</th>
-            <th>Modificar</th>
-            <th>Eliminar</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
+        <table class="table">
+            {% if request.user.is_authenticated and user.is_staff == 1%}
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                    <th>Región</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
             {% for suc in lista_Sucursal%}
             <tr>
-              <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
-              <td data-label="Dirección">{{suc.direccion}}</td>
-              <td data-label="Región">{{suc.region}}</td>
-              <td>
-                <button type="button" class="btn btn-primary">
-                    <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
-                </button>
-              <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
-                <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button>
-              </a></td>
+                <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
+                    <td data-label="Dirección">{{suc.direccion}}</td>
+                    <td data-label="Región">{{suc.region}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">
+                            <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
+                        </button>
+                    <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
+                        <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button></a></td>
             </tr> 
+        </tbody>
             {% endfor%}
+        {% else %}
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                    <th>Región</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
+            {% for suc in lista_Sucursal%}
+            <tr>
+                <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
+                    <td data-label="Dirección">{{suc.direccion}}</td>
+                    <td data-label="Región">{{suc.region}}</td>
+            </tr> 
+        </tbody>
+        {% endfor%}
+            {% endif %}
         </tbody>
       </table>
     </div>
-    
-      <!-- Footer -->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="grupo1">
             <div class="caja">

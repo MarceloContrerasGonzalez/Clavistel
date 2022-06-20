@@ -1,4 +1,5 @@
 {% load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,40 +17,54 @@
 </head>
 
 <body>
-    <!-- NAV MENU -->
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
-        <div class="container-fluid">
-            <div class="logo">Clavistel</div>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- NAV MENU -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+        <div class="logo">Clavistel</div>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <div class="navbar-collapse collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li>
+                    <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li>
+                    <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
+                </li>
+                <li>
+                    <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
+                </li>
+
+                <li>
+                    <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                </li>
+
+                {% if request.user.is_authenticated %}
                     <li>
-                        <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
-                    </li>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
                     <li>
-                        <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
-                    </li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                {% else %}
                     <li>
                         <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
                     </li>
                     <li>
+                        <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
+                    </li>
+                    <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
-                </ul>
-            </div>
+                {% endif %}
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     
     <section id="bloqueFormulario" class="tipo-letra">

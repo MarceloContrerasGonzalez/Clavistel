@@ -1,4 +1,5 @@
 {% load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,17 +39,29 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                    {% else %}
                     <li>
                         <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
                     </li>
                     <li>
+                        <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
+                    </li>
+                    <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
-
+                    {% endif%}
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
                     <li>
                         <a class="nav-link"  href="{% url 'agregar_sucursal' %}">Agregar</a>
                     </li>
-                    
+                    {% endif%}
                 </ul>
             </div>
         </div>
@@ -57,28 +70,30 @@
 
     <!-- PRODUCTOS (x JSON) -->
     
-    <hr>
     <table>
         <thead>
           <tr>
             <th scope="col">Sucursal</th>
             <th scope="col">Dirección</th>
             <th scope="col">Región</th>
+            {% if request.user.is_authenticated and user.is_staff == 1 %}
             <th scope="col">Modificar</th>
             <th scope="col">Eliminar</th>
+            {% endif %}
           </tr>
         </thead>
         <tbody>
-            <a href="{% url 'lista_sucursales'%}">Listado de Api</a>
             {% for suc in lista_Sucursal%}
             <tr>
               <th scope="row">{{suc.nombre_sucursal}}</th>
               <td>{{suc.direccion}}</td>
               <td>{{suc.region}}</td>
+              {% if request.user.is_authenticated and user.is_staff == 1 %}
               <td><a href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
               <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
                 <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
               </a></td>
+              {% endif %}
             </tr> 
             {% endfor%}
         </tbody>

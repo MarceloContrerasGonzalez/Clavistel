@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,15 +40,20 @@
                     <li>
                         <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
                     </li>
+
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
-                    </li>
+
+                    {% if request.user.is_authenticated and user.is_staff == 1%}
+                        <li>
+                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                        </li>   
+                        <li>
+                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                        </li> 
+                    {% endif %}
+
                 </ul>
             </div>
         </div>

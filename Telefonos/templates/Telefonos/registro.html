@@ -29,21 +29,38 @@
 
     <div class="lado-izquierdo">
       <section id="bloqueFormularioRegistro">
-        <h1>REGISTRO</h1>
+        <h2>REGISTRO</h2>
         <hr>
-        <form>
-          {% comment %} 
-
-          {% csrf_token %}
-          {% for field in form %}
-            {{ field.label_tag }}
-            {{ field }}
-          {% endfor %} 
+        <form method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+          <p class="form-fs field-lb-tg">{{field.label_tag}}</p>
           
-          {% endcomment %}
+          <p class="form-fs field-input">{{field}}</p>
+          <p class="form-fs field-hp-txt">{% if field.help_text %}</p>
+          {% endif %}
+            {% for error in field.errors %}
+            <p class="field-hp-txt" style="color: red">{{ error }}</p>
+            {% endfor %}
+          </p>
+        {% endfor %}
+        <hr>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <hr>
+        <div>
+          <p>Ya tienes una Cuenta? <a class="link" href="{% url 'inicio_sesion' %}"> Ingresa Aqui</a> </p>
+        </div>
+      </form>
+
+        {% comment %} 
+        <form>
+
+
           <div>
             <p class="uppertext">Ingrese Su Usuario</p>
           </div>
+
 
           <div class="form-floating">
             <input type="text" class="form-control" id="inputUsuario" placeholder="Usuario">
@@ -93,10 +110,9 @@
             <button id="bRegistro" class="btn btn-primary" type="submit">Registrarse</button>
           </div>
           <hr>
-          <div>
-            <p>Ya tienes una Cuenta? <a class="link" href="{% url 'inicio_sesion' %}"> Ingresa Aqui</a> </p>
-          </div> 
-        </form>
+          
+        </form> {% endcomment %}
+        
       </section>
     </div>
 

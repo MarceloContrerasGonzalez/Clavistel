@@ -5,7 +5,6 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
 
-
 * .inicio {
     /* font-family:'Noto Sans', sans-serif; */
     font-family: 'Anton', sans-serif;
@@ -13,15 +12,14 @@
 }
 
 /* Nav */
-
 nav .logo {
-    color: rgb(255, 255, 255);
+    color: rgb(224, 39, 39);
     font-size: 30px;
     padding-left: 60px;
     margin-right: 30px;
     font-family: 'Noto Sans', sans-serif;
 }
-        
+
 nav ul li a {
     font-size: 20px;
     line-height: 70px;
@@ -29,39 +27,34 @@ nav ul li a {
 }
 
 /* bootstrap 5 css */
-.bg-dark {  
-    background-color: #0d6efd; /* No funcionara porque la clase de bootstrap ".bg-dark" esta con --!important--*/
+.bg-dark {
+    background-color: #0d6efd;
+    /* No funcionara porque la clase de bootstrap ".bg-dark" esta con --!important--*/
 }
 
-
-
 /* SECCION PLANES (actual)*/
-
 .seccion-planes {
     margin: 4.5rem 0;
     text-align: center;
     font-family: 'Noto Sans', sans-serif;
 }
 
-.opt-sec-planes{
+.opt-sec-planes {
     text-align: center;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
-.se-button{
+
+.se-button {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
 }
 
 .btn-secondary {
-    background-color:white;
+    background-color: white;
 }
 
-
-
 /* SECCION/PLAN (antiguo)*/
-
-
 #plans-section {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.911) 0%, rgb(155, 218, 245) 100%);
     border-radius: 2cm;
@@ -96,7 +89,6 @@ nav ul li a {
     height: 420px;
     border-radius: 12px;
     transition: all 0.3s ease;
-
 }
 
 .plan:hover {
@@ -104,7 +96,6 @@ nav ul li a {
 }
 
 /* DESCIPCION PLAN */
-
 .plan h1 {
     font-size: 65px;
 }
@@ -135,11 +126,11 @@ nav ul li a {
 
 /* BOTON */
 /* spacing */
-.table-body{
+.table-body {
     padding: 20px;
 }
 
-.table-body *{
+.table-body * {
     box-sizing: border-box;
 }
 
@@ -148,14 +139,15 @@ nav ul li a {
     border-collapse: collapse;
 }
 
-.table td, .table th{
+.table td,
+.table th {
     padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: center;
     font-size: 16px;
 }
 
-.table tbody tr:nth-child(even){
+.table tbody tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
@@ -165,13 +157,13 @@ thead th:nth-child(1) {
     background-color: darkblue;
     color: #ffffff;
 }
-  
+
 thead th:nth-child(2) {
     width: 10%;
     background-color: darkblue;
     color: #ffffff;
 }
-  
+
 thead th:nth-child(3) {
     width: 8%;
     background-color: darkblue;
@@ -183,7 +175,7 @@ thead th:nth-child(4) {
     background-color: darkblue;
     color: #ffffff;
 }
-  
+
 thead th:nth-child(5) {
     width: 2%;
     background-color: darkblue;
@@ -210,7 +202,6 @@ thead th:nth-child(5) {
     cursor: pointer;
 }
 
-
 .first-part {
     border-radius: 12px 12px 0 0;
     background: linear-gradient(0deg, rgba(153, 195, 213, 0.9107843821122199) 0%, rgba(20, 133, 181, 1) 100%);
@@ -221,7 +212,6 @@ thead th:nth-child(5) {
 }
 
 /* INFORMACIONES */
-
 #info-container {
     background: radial-gradient(circle, rgba(193, 209, 212, 1) 0%, rgba(106, 141, 148, 0.591456651019783) 100%);
     border-radius: 15px;
@@ -229,7 +219,6 @@ thead th:nth-child(5) {
     margin-left: 7%;
     margin-right: 7%;
 }
-
 
 #info-description {
     padding: 20px;
@@ -241,9 +230,7 @@ thead th:nth-child(5) {
     display: block;
     padding: 2%;
     margin: auto;
-
 }
-
 
 .textoDetalle {
     display: inline-block;
@@ -259,15 +246,12 @@ thead th:nth-child(5) {
     padding-bottom: 10px;
 }
 
-
-
 .rancio {
     font-family: 'Barlow', sans-serif;
     color: black;
 }
 
 /* BENEFICIOS */
-
 .beneficios-titulo {
     margin-bottom: 70px;
     text-align: center;
@@ -278,7 +262,6 @@ thead th:nth-child(5) {
     border-radius: 20px;
     padding: 1%;
 }
-
 
 .beneficios-titulo h1 {
     margin-bottom: 20px;
@@ -319,7 +302,6 @@ thead th:nth-child(5) {
 }
 
 /*--------------- PROMOCIONES CELULARES --------------------*/
-
 .color-inicial {
     color: rgb(255, 255, 255);
 }
@@ -367,7 +349,6 @@ thead th:nth-child(5) {
 
 .producto:hover {
     box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
-
 }
 
 .producto>img {
@@ -447,11 +428,9 @@ thead th:nth-child(5) {
 }
 
 /* -----------Terminos y Condiciones-------------------- */
-
-
 /* Formulario */
-
-#enviar, #limpia{
+#enviar,
+#limpia {
     margin-left: auto;
     margin-right: auto;
 }
@@ -476,7 +455,6 @@ thead th:nth-child(5) {
 }
 
 /* dividir login/registro */
-
 .separar-pantalla {
     display: flex;
     flex-direction: column;
@@ -513,18 +491,20 @@ thead th:nth-child(5) {
     width: 60px;
     border-radius: 3px;
 }
-.volver{
+
+.volver {
     color: white;
     text-decoration: none;
     padding-left: 9px;
 }
-.volver:hover{
+
+.volver:hover {
     color: white;
 }
-/* Login */
-/* Login */
 
-.bloque-volver{
+/* -------------- LOGIN --------------- */
+
+.bloque-volver {
     text-decoration: none;
 }
 
@@ -540,13 +520,8 @@ thead th:nth-child(5) {
     padding: 3% 4%;
 }
 
-#bloqueFormularioLogin button {
-    height: 7vh;
-    width: 100%;
-    text-align: center;
-}
-
-#bloqueFormularioRegistro button {
+#bloqueFormularioLogin button,
+#bloqueFormularioRegistro button{
     height: 7vh;
     width: 100%;
     text-align: center;
@@ -561,9 +536,7 @@ thead th:nth-child(5) {
     text-decoration: none;
 }
 
-
-
-/* Registro */
+/* -------------- REGISTRO --------------- */
 
 #bloqueFormularioRegistro {
     text-align: center;
@@ -573,18 +546,16 @@ thead th:nth-child(5) {
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    /*     width: 30%; */
-
+    padding: 3% 4%;
+        width: 66%;
 }
 
 .tipo-letra {
     font-family: 'Roboto', sans-serif;
     font-family: 'Anek Tamil', sans-serif;
-
 }
-/* Errores */
 
+/* Errores */
 .errortext {
     text-align: justify;
     margin-bottom: 15px;
@@ -595,10 +566,29 @@ thead th:nth-child(5) {
     display: none;
 }
 
+.form-fs{ 
+    margin: 0;
+}
+
+.field-lb-tg, 
+.field-hp-txt {
+    margin: 0;
+    text-align: left;
+}
+
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+    margin: 0;
+    width: 100%;
+    padding: 1rem .75rem;
+    height: calc(1.5rem + 2px);
+    line-height: 1.25;
+}
+
+
 /* Agregar Telefonos */
-
-
-
 /* footer */
 .footer {
     width: 100%;
@@ -675,10 +665,10 @@ thead th:nth-child(5) {
 
 /* Medias x responsividad */
 @media screen and (max-width:800px) {
-
-    #bloqueFormulario{
+    #bloqueFormulario {
         width: 70%;
     }
+
     .footer .grupo1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -724,23 +714,26 @@ thead th:nth-child(5) {
         height: 100vh;
         padding: 3% 5%;
     }
-    
-    .table thead{
+
+    .table thead {
         display: none;
     }
 
-    .table, .table tbody, .table tr, .table td{
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
         display: block;
         width: 100%;
     }
 
-    .table td{
+    .table td {
         text-align: right;
         padding-left: 50%;
         position: relative;
     }
 
-    .table td::before{
+    .table td::before {
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -751,11 +744,11 @@ thead th:nth-child(5) {
         text-align: left;
         font-size: 12px;
     }
-    
-    .table td, .table th{
+
+    .table td,
+    .table th {
         font-size: 12px;
     }
-
 }
 
 @media screen and (min-width: 800px) {
@@ -786,31 +779,23 @@ thead th:nth-child(5) {
         left: 3%;
     }
 
-@media screen and (max-width: 1280px){
-    #bloqueFormularioRegistro input {
-        height: 6vh;
-        width: 100%;
-        top: auto;
-        bottom: auto;
-        text-align: justify;
-        
+    @media screen and (max-width: 1280px) {
+        #bloqueFormularioRegistro {
+            width: 70%;
+        }
+
+        .marcador {
+            display: none;
+        }
+
+        #bloqueFormularioRegistro hr {
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        #bloqueFormularioRegistro h1 {
+            font-size: 1.5em;
+
+        }
     }
-
-    .marcador{
-        display: none;
-    }
-    
-    #bloqueFormularioRegistro hr{
-        margin-bottom: 8px;
-        margin-top: 8px;
-    }
-
-    #bloqueFormularioRegistro h1{
-        font-size: 1.5em;
-        
-    }
-}
-
-
-
 }

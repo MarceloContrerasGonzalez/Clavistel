@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Movil, Sucursal
-from .forms import TelefonoForm, SucursalForm
 from .forms import TelefonoForm, SucursalForm, SignUpForm
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def home(request):
@@ -16,7 +14,15 @@ def consulta(request):
     return render(request,'Telefonos/Nesecitas_Ayuda.html')
 
 def registro(request):
-    return render(request,'Telefonos/registro.html')
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inicio_sesion')
+    else:
+        form = SignUpForm()
+    return render(request,'Telefonos/registro.html', {'form': form})
+
 
 def telefonos(request):
     lista_Movil = Movil.objects.all()
@@ -115,18 +121,3 @@ def eliminar_sucursal(request,id):
 
     return redirect(to='ubicacion')
 
-''' REGISTRO '''
-
-def add_user(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
-    else:
-        form = SignUpForm()
-    return render(request, 'Telefonos/registro.html', {'form': form})

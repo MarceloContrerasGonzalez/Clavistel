@@ -39,17 +39,29 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                    {% else %}
                     <li>
                         <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
                     </li>
                     <li>
+                        <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
+                    </li>
+                    <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
-                    {% if request.user.is_authenticated and user.is_staff == 1%}
+                    {% endif %}
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
                     <li>
                         <a class="nav-link"  href="{% url 'agregar' %}">Agregar</a>
                     </li>
-                    {% else %} {% endif %}
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -74,14 +86,14 @@
                     <span class="precio">${{mov.costo}}</span>
                     <span class="costo-envio">{{mov.tipo_envio}}</span>
                     <span class="descipcion">{{mov.nombre}}</span>
-                    {% if request.user.is_authenticated and user.is_staff == 1%}
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
                     <a href="{%url 'modificar' mov.id_movil%}">
                         <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>
                     </a>
                     <a onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
                         <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button>
                     </a>            
-                    {% else %} {% endif %}
+                    {% endif%}
                 </div>
             </div>
             {% endfor%}

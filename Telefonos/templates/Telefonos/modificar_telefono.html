@@ -19,54 +19,45 @@
 
 <body class="inicio">
 
-<!-- NAV MENU -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
-    <div class="container-fluid">
-        <div class="logo">Clavistel</div>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- NAV MENU -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+        <div class="container-fluid">
+            <div class="logo">Clavistel</div>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="navbar-collapse collapse" id="navbarsExample03">
-            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                <li>
-                    <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
-                </li>
-                <li>
-                    <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
-                </li>
-                <li>
-                    <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
-                </li>
-
-                <li>
-                    <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
-                </li>
-
-                {% if request.user.is_authenticated %}
+            <div class="navbar-collapse collapse" id="navbarsExample03">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li>
-                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
-                    </li>   
-                    <li>
-                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
-                    </li> 
-                {% else %}
-                    <li>
-                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
+                        <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
+                        <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
+                        <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
                     </li>
-                {% endif %}
-            </ul>
+
+                    <li>
+                        <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                    </li>
+
+                    {% if request.user.is_authenticated and user.is_staff == 1%}
+                        <li>
+                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                        </li>   
+                        <li>
+                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                        </li> 
+                    {% endif %}
+
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <section id="bloqueFormulario">
         <h2 class="tituloFormulario">Agregar Telefonos</h2>

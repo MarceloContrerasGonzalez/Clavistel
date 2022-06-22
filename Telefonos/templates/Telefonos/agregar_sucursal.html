@@ -1,5 +1,5 @@
 {% load static %}
-{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,24 +45,15 @@
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
 
-                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_authenticated and user.is_staff == 1%}
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
                         </li>   
                         <li>
                             <a class="nav-link">Bienvenido {{ user.username }}</a>                
                         </li> 
-                    {% else %}
-                        <li>
-                            <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
-                        </li>
-                        <li>
-                            <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
-                        </li>
                     {% endif %}
+
                 </ul>
             </div>
         </div>

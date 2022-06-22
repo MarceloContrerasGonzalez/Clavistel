@@ -39,19 +39,29 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    {% if request.user.is_authenticated %}  
+                    {% if request.user.is_authenticated %}
                     <li>
-                        <a class="nav-link"  href="{% url 'agregar_sucursal' %}">Agregar</a>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                    {% else %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
                     </li>
-                    {% else %} {% endif %}
+                    <li>
+                        <a class="nav-link" href="{% provider_login_url 'google' %}">Iniciar Con Google</a>
+                    </li>
                     <li>
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
+                    {% endif%}
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
                     <li>
-                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Inicio De Sesion</a>
-                    </li> 
-                    
-                    
+                        <a class="nav-link"  href="{% url 'agregar_sucursal' %}">Agregar</a>
+                    </li>
+                    {% endif%}
                 </ul>
             </div>
         </div>
@@ -72,16 +82,14 @@
                 </tr>
             </thead>
             <tbody>
-                {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
-            {% for suc in lista_Sucursal%}
+                {% for suc in lista_Sucursal%}
             <tr>
                 <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
                     <td data-label="Dirección">{{suc.direccion}}</td>
                     <td data-label="Región">{{suc.region}}</td>
-                    <td>
-                        <button type="button" class="btn btn-primary">
-                            <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
-                        </button>
+                    <td><button type="button" class="btn btn-primary">
+                        <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
+                    </button>
                     <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
                         <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button></a></td>
             </tr> 
@@ -96,19 +104,19 @@
                 </tr>
             </thead>
             <tbody>
-                {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
             {% for suc in lista_Sucursal%}
             <tr>
                 <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
-                    <td data-label="Dirección">{{suc.direccion}}</td>
-                    <td data-label="Región">{{suc.region}}</td>
+                <td data-label="Dirección">{{suc.direccion}}</td>
+                <td data-label="Región">{{suc.region}}</td>
             </tr> 
         </tbody>
-        {% endfor%}
-            {% endif %}
+        {% endfor%} {% endif %}
         </tbody>
       </table>
+      {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
     </div>
+      
 
     <!-- Footer -->
     <footer class="footer">

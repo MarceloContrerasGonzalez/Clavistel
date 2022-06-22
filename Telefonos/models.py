@@ -53,27 +53,3 @@ class Sucursal(models.Model):
         return self.nombre_sucursal
 
 
-
-
-
-
-
-''' NO MIGRAN IMPORTANTE NO MIGRAR '''
-#Tabla Usuario
-#class TipoUsuario(models.Model):
-#    id_tipo = models.AutoField(primary_key=True,verbose_name='id Usuario')
-#    nombre_tipo_usuario = models.CharField(max_length=100,verbose_name='Nombre tipo Usuario')#
-
-#    def __str__(self):
-#        return self.nombre_tipo_usuario
-
-
-#class Usuario(models.Model):
-#    correo = models.CharField(max_length=100,primary_key=True,verbose_name='Correo Electronico')
-#    nombre_usuario = models.CharField(max_length=100,verbose_name='Nombre Usuario')
-#    contrasena = models.CharField(max_length=100,verbose_name='Contrasena')
-#    tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
-    
-#    def __str__(self):
-#        return self.nombre_tipo_usuario
-''' buscar OAuth 2.0 (autorizacion abierta) '''

@@ -18,13 +18,12 @@ class SignUpForm(UserCreationForm):
     error_messages = {
         'password_mismatch': ('Las contraseñas deben ser iguales'),
     }
-    
-    
+
     username = forms.CharField(max_length=25, label='Usuario' ,help_text='Ingrese su Usuario.', error_messages={'unique': 'Este usuario ya existe'})
-    email = forms.EmailField(max_length=254, label='Correo' ,help_text='Ingrese un correo.', error_messages={'invalid': ' El Correo Es Invalido'})
+    email = forms.EmailField(max_length=254, label='Correo' ,help_text='Ingrese un correo.', error_messages={'invalid': 'Correo Invalido'})
     password1 = forms.CharField(max_length=50, widget=forms.PasswordInput , label='Contraseña', help_text='Ingrese una Contraseña valida.')
     password2 = forms.CharField(max_length=50, widget=forms.PasswordInput , label='Contraseña', help_text='Ingrese Nuevamente Su Contraseña.')
     is_staff = forms.BooleanField(required=False, label='Admin')
     class Meta:
         model = User
-        fields = ('username','email', 'password1', 'password2','is_staff')
+        fields = ('username','email', 'password1', 'password2','is_staff') 

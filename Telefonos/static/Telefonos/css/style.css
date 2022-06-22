@@ -5,17 +5,15 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&display=swap');
 
-
 * .inicio {
     /* font-family:'Noto Sans', sans-serif; */
     font-family: 'Anton', sans-serif;
     color: #393977;
 }
 
-/* menu */
-
+/* Nav */
 nav .logo {
-    color: rgb(255, 255, 255);
+    color: rgb(224, 39, 39);
     font-size: 30px;
     padding-left: 60px;
     margin-right: 30px;
@@ -28,31 +26,35 @@ nav ul li a {
     font-family: 'Noto Sans', sans-serif;
 }
 
-
-/* carrousel */
-.carousel-control-next-icon {
-    background-color: #141230;
+/* bootstrap 5 css */
+.bg-dark {
+    background-color: #0d6efd;
+    /* No funcionara porque la clase de bootstrap ".bg-dark" esta con --!important--*/
 }
 
-.carousel-control-prev-icon {
-    background-color: #141230;
+/* SECCION PLANES (actual)*/
+.seccion-planes {
+    margin: 4.5rem 0;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
 }
 
-.carousel-indicators {
-    margin-bottom: 30rem;
-    background-color: rgba(0, 0, 0, 0.156);
+.opt-sec-planes {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
-#carouselExampleIndicators {
-    margin: auto;
+.se-button {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 }
 
+.btn-secondary {
+    background-color: white;
+}
 
-
-
-/* SECCION/PLAN */
-
-
+/* SECCION/PLAN (antiguo)*/
 #plans-section {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.911) 0%, rgb(155, 218, 245) 100%);
     border-radius: 2cm;
@@ -87,7 +89,6 @@ nav ul li a {
     height: 420px;
     border-radius: 12px;
     transition: all 0.3s ease;
-
 }
 
 .plan:hover {
@@ -95,7 +96,6 @@ nav ul li a {
 }
 
 /* DESCIPCION PLAN */
-
 .plan h1 {
     font-size: 65px;
 }
@@ -126,38 +126,65 @@ nav ul li a {
 
 /* BOTON */
 /* spacing */
-
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  border: 3px solid rgb(26, 26, 26);
-  margin: 5% 3%;
-  
+.table-body {
+    padding: 20px;
 }
 
+.table-body * {
+    box-sizing: border-box;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* th-child */
 thead th:nth-child(1) {
-  width: 10%;
+    width: 5%;
+    background-color: darkblue;
+    color: #ffffff;
 }
 
 thead th:nth-child(2) {
-  width: 10%;
+    width: 10%;
+    background-color: darkblue;
+    color: #ffffff;
 }
 
 thead th:nth-child(3) {
-  width: 10%;
+    width: 8%;
+    background-color: darkblue;
+    color: #ffffff;
 }
 
 thead th:nth-child(4) {
-  width: 10%;
+    width: 2%;
+    background-color: darkblue;
+    color: #ffffff;
 }
 
-th, td {
-  padding: 20px;
+thead th:nth-child(5) {
+    width: 2%;
+    background-color: darkblue;
+    color: #ffffff;
 }
-tbody, td, tfoot, th, thead, tr {
-    border-color: inherit;
-    border-style: solid;
-    border-width: 1px;
+
+.modificar-btn {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .button {
@@ -175,7 +202,6 @@ tbody, td, tfoot, th, thead, tr {
     cursor: pointer;
 }
 
-
 .first-part {
     border-radius: 12px 12px 0 0;
     background: linear-gradient(0deg, rgba(153, 195, 213, 0.9107843821122199) 0%, rgba(20, 133, 181, 1) 100%);
@@ -186,7 +212,6 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 /* INFORMACIONES */
-
 #info-container {
     background: radial-gradient(circle, rgba(193, 209, 212, 1) 0%, rgba(106, 141, 148, 0.591456651019783) 100%);
     border-radius: 15px;
@@ -194,7 +219,6 @@ tbody, td, tfoot, th, thead, tr {
     margin-left: 7%;
     margin-right: 7%;
 }
-
 
 #info-description {
     padding: 20px;
@@ -206,9 +230,7 @@ tbody, td, tfoot, th, thead, tr {
     display: block;
     padding: 2%;
     margin: auto;
-
 }
-
 
 .textoDetalle {
     display: inline-block;
@@ -224,15 +246,12 @@ tbody, td, tfoot, th, thead, tr {
     padding-bottom: 10px;
 }
 
-
-
 .rancio {
     font-family: 'Barlow', sans-serif;
     color: black;
 }
 
 /* BENEFICIOS */
-
 .beneficios-titulo {
     margin-bottom: 70px;
     text-align: center;
@@ -243,7 +262,6 @@ tbody, td, tfoot, th, thead, tr {
     border-radius: 20px;
     padding: 1%;
 }
-
 
 .beneficios-titulo h1 {
     margin-bottom: 20px;
@@ -284,7 +302,6 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 /*--------------- PROMOCIONES CELULARES --------------------*/
-
 .color-inicial {
     color: rgb(255, 255, 255);
 }
@@ -332,7 +349,6 @@ tbody, td, tfoot, th, thead, tr {
 
 .producto:hover {
     box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
-
 }
 
 .producto>img {
@@ -412,11 +428,9 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 /* -----------Terminos y Condiciones-------------------- */
-
-
 /* Formulario */
-
-#enviar, #limpia{
+#enviar,
+#limpia {
     margin-left: auto;
     margin-right: auto;
 }
@@ -441,7 +455,6 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 /* dividir login/registro */
-
 .separar-pantalla {
     display: flex;
     flex-direction: column;
@@ -478,18 +491,20 @@ tbody, td, tfoot, th, thead, tr {
     width: 60px;
     border-radius: 3px;
 }
-.volver{
+
+.volver {
     color: white;
     text-decoration: none;
     padding-left: 9px;
 }
-.volver:hover{
+
+.volver:hover {
     color: white;
 }
-/* Login */
-/* Login */
 
-.bloque-volver{
+/* -------------- LOGIN --------------- */
+
+.bloque-volver {
     text-decoration: none;
 }
 
@@ -505,13 +520,8 @@ tbody, td, tfoot, th, thead, tr {
     padding: 3% 4%;
 }
 
-#bloqueFormularioLogin button {
-    height: 7vh;
-    width: 100%;
-    text-align: center;
-}
-
-#bloqueFormularioRegistro button {
+#bloqueFormularioLogin button,
+#bloqueFormularioRegistro button{
     height: 7vh;
     width: 100%;
     text-align: center;
@@ -526,9 +536,7 @@ tbody, td, tfoot, th, thead, tr {
     text-decoration: none;
 }
 
-
-
-/* Registro */
+/* -------------- REGISTRO --------------- */
 
 #bloqueFormularioRegistro {
     text-align: center;
@@ -538,18 +546,16 @@ tbody, td, tfoot, th, thead, tr {
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    /*     width: 30%; */
-
+    padding: 3% 4%;
+        width: 66%;
 }
 
 .tipo-letra {
     font-family: 'Roboto', sans-serif;
     font-family: 'Anek Tamil', sans-serif;
-
 }
-/* Errores */
 
+/* Errores */
 .errortext {
     text-align: justify;
     margin-bottom: 15px;
@@ -560,10 +566,38 @@ tbody, td, tfoot, th, thead, tr {
     display: none;
 }
 
+.form-fs{ 
+    margin: 0;
+}
+
+.field-lb-tg, 
+.field-hp-txt {
+    margin: 0;
+    text-align: left;
+}
+
+#bloqueFormularioRegistro form p{
+    margin-bottom: 0;
+}
+
+.field-error{
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+    margin: 0;
+    width: 100%;
+    padding: 1rem .75rem;
+    height: calc(1.5rem + 2px);
+    line-height: 1.25;
+}
+
+
 /* Agregar Telefonos */
-
-
-
 /* footer */
 .footer {
     width: 100%;
@@ -640,10 +674,10 @@ tbody, td, tfoot, th, thead, tr {
 
 /* Medias x responsividad */
 @media screen and (max-width:800px) {
-
-    #bloqueFormulario{
+    #bloqueFormulario {
         width: 70%;
     }
+
     .footer .grupo1 {
         width: 90%;
         grid-template-columns: repeat(1, 1fr);
@@ -689,12 +723,40 @@ tbody, td, tfoot, th, thead, tr {
         height: 100vh;
         padding: 3% 5%;
     }
-    table {
-        width: 98%;
-        margin: 0 auto;
+
+    .table thead {
+        display: none;
     }
-    th, td {
-        padding: 3px;
+
+    .table,
+    .table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .table td,
+    .table th {
+        font-size: 12px;
     }
 }
 
@@ -726,35 +788,23 @@ tbody, td, tfoot, th, thead, tr {
         left: 3%;
     }
 
-@media screen and (max-width: 1280px){
-    #bloqueFormularioRegistro input {
-        height: 6vh;
-        width: 100%;
-        top: auto;
-        bottom: auto;
-        text-align: justify;
-        
-    }
+    @media screen and (max-width: 1280px) {
+        #bloqueFormularioRegistro {
+            width: 70%;
+        }
 
-    .marcador{
-        display: none;
-    }
-    
-    #bloqueFormularioRegistro hr{
-        margin-bottom: 8px;
-        margin-top: 8px;
-    }
+        .marcador {
+            display: none;
+        }
 
-    #bloqueFormularioRegistro h1{
-        font-size: 1.5em;
-        
+        #bloqueFormularioRegistro hr {
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        #bloqueFormularioRegistro h1 {
+            font-size: 1.5em;
+
+        }
     }
 }
-
-
-
-}
-
-
-
-/* https://www.youtube.com/watch?v=fHqjQBRQxUI  min 8:24 */

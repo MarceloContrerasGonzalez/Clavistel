@@ -33,22 +33,20 @@
         <hr>
         <form method="post">
         {% csrf_token %}
+        
         {% for field in form %}
-          <p>
-            {{field.label_tag}}
-            <br>
-            {{field}}
-            <br>
-          {% if field.help_text %}
-            <small style="color: grey">{{ field.help_text }}</small>
+          <p class="form-fs field-lb-tg">{{field.label_tag}}</p>
+          
+          <p class="form-fs field-input">{{field}}</p>
+          <p class="form-fs field-hp-txt">{% if field.help_text %}</p>
           {% endif %}
-          {% for error in field.errors %}
-            <p style="color: red">{{ error }}</p>
-          {% endfor %}
+            {% for error in field.errors %}
+            <p class="field-error" style="color: red">{{ error }}</p>
+            {% endfor %}
           </p>
         {% endfor %}
         <hr>
-        <button type="submit">Registrar</button>
+        <button type="submit" class="btn btn-primary">Registrar</button>
         <hr>
         <div>
           <p>Ya tienes una Cuenta? <a class="link" href="{% url 'inicio_sesion' %}"> Ingresa Aqui</a> </p>
@@ -114,10 +112,6 @@
           <hr>
           
         </form> {% endcomment %}
-
-
-
-
         
       </section>
     </div>

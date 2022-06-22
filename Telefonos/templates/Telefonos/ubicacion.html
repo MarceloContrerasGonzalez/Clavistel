@@ -69,35 +69,53 @@
 
 
     <!-- PRODUCTOS (x JSON) -->
-    
-    <table>
-        <thead>
-          <tr>
-            <th scope="col">Sucursal</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Región</th>
-            {% if request.user.is_authenticated and user.is_staff == 1 %}
-            <th scope="col">Modificar</th>
-            <th scope="col">Eliminar</th>
-            {% endif %}
-          </tr>
-        </thead>
-        <tbody>
+    <div class="table-body">
+        <table class="table">
+            {% if request.user.is_authenticated and user.is_staff == 1%}
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                    <th>Región</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for suc in lista_Sucursal%}
+            <tr>
+                <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
+                    <td data-label="Dirección">{{suc.direccion}}</td>
+                    <td data-label="Región">{{suc.region}}</td>
+                    <td><button type="button" class="btn btn-primary">
+                        <a class="modificar-btn" href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
+                    </button>
+                    <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
+                        <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button></a></td>
+            </tr> 
+        </tbody>
+            {% endfor%}
+        {% else %}
+            <thead>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Dirección</th>
+                    <th>Región</th>
+                </tr>
+            </thead>
+            <tbody>
             {% for suc in lista_Sucursal%}
             <tr>
-              <th scope="row">{{suc.nombre_sucursal}}</th>
-              <td>{{suc.direccion}}</td>
-              <td>{{suc.region}}</td>
-              {% if request.user.is_authenticated and user.is_staff == 1 %}
-              <td><a href="{% url 'modificar_sucursal' suc.id_sucursal %}">Modificar</a></td>
-              <td><a onclick="return confirmar2()" href="{% url 'eliminar_sucursal' suc.id_sucursal %}">
-                <button type="submit" class="btn btn-primary" id="eliminar" value="Eliminar">Eliminar</button>
-              </a></td>
-              {% endif %}
+                <td data-label="Sucursal">{{suc.nombre_sucursal}}</th>
+                <td data-label="Dirección">{{suc.direccion}}</td>
+                <td data-label="Región">{{suc.region}}</td>
             </tr> 
-            {% endfor%}
+        </tbody>
+        {% endfor%} {% endif %}
         </tbody>
       </table>
+      {% comment %} <a href="{% url 'lista_sucursales'%}">Listado de Api</a> {% endcomment %}
+    </div>
       
 
     <!-- Footer -->

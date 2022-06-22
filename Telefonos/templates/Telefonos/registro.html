@@ -41,7 +41,7 @@
           <p class="form-fs field-hp-txt">{% if field.help_text %}</p>
           {% endif %}
             {% for error in field.errors %}
-            <p class="field-hp-txt" style="color: red">{{ error }}</p>
+            <p class="field-error" style="color: red">{{ error }}</p>
             {% endfor %}
           </p>
         {% endfor %}

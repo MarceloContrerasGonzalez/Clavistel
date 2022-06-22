@@ -576,6 +576,15 @@ thead th:nth-child(5) {
     text-align: left;
 }
 
+#bloqueFormularioRegistro form p{
+    margin-bottom: 0;
+}
+
+.field-error{
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
 #id_username,
 #id_email,
 #id_password1,

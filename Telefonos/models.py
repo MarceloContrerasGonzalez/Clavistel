@@ -1,5 +1,5 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
+
 
 # Tablas Telefonos
 
@@ -51,3 +51,5 @@ class Sucursal(models.Model):
     
     def __str__(self):
         return self.nombre_sucursal
+
+

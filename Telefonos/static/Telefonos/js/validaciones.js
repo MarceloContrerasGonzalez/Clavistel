@@ -91,7 +91,30 @@ function confirmar(){
     alert("Se ha cancelado el proceso")
     return false;
   }
-}
+};
+
+
+//confirmar eliminacion sucursal
+function confirmar2(){
+  var respuesta = confirm("¿seguro que deseas eliminar esta Sucursal?")
+  if(respuesta == true){
+    alert("Sucursal Eliminada Correctamente")
+    return true;
+  }else{
+    alert("Se ha cancelado el proceso")
+    return false;
+  }
+};
+
+//confirmar cerrar sesion
+function confirmar3(){
+  var respuesta = confirm("¿seguro que deseas cerrar sesion?")
+  if(respuesta == true){
+    return true;
+  }else{
+    return false;
+  }
+};
 
 /* $(document).ready(function () {
   $.get("http://127.0.0.1:8000/api/lista_sucursales?format=json", function (data) {

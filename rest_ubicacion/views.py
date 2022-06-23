@@ -1,14 +1,17 @@
 from django.shortcuts import render
 from rest_framework import status #(codigo de error o exit)
-from rest_framework.decorators import api_view #(listar registros)
+from rest_framework.decorators import api_view, permission_classes #(listar registros)
 from rest_framework.response import Response #(dar respuesta)
 from rest_framework.parsers import JSONParser #(convertir llos objetos en json)
 from django.views.decorators.csrf import csrf_exempt #(seguridad)
 from Telefonos.models import Sucursal
 from rest_ubicacion.serializers import SucursalSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 @csrf_exempt 
 @api_view(['GET','POST'])
+@permission_classes((IsAuthenticated,))
 def lista_sucursales(request):
     if request.method == 'GET':
         listaSucursal = Sucursal.objects.all()
@@ -25,6 +28,7 @@ def lista_sucursales(request):
 
 
 @api_view(['GET','PUT', 'DELETE'])
+@permission_classes((IsAuthenticated,))
 def detalle_sucursal(request, idSuc):
     try:
         sucursal = Sucursal.objects.get(id_sucursal = idSuc)

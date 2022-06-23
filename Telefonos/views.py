@@ -1,26 +1,28 @@
 from django.shortcuts import render, redirect
 from .models import Movil, Sucursal
-from .forms import TelefonoForm
+from .forms import TelefonoForm, SucursalForm, SignUpForm
+from django.contrib.auth import login, authenticate
 
 # Create your views here.
 def home(request):
     return render(request,'Telefonos/index.html')
 
-def login(request):
-    return render(request,'login/login.html')
+def inicio_sesion(request):
+    return render(request,'Telefonos/inicio_sesion.html')
 
 def consulta(request):
-    return render(request,'consulta/Nesecitas_Ayuda.html')
+    return render(request,'Telefonos/Nesecitas_Ayuda.html')
 
 def registro(request):
-    return render(request,'registro/registro.html')
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('inicio_sesion')
+    else:
+        form = SignUpForm()
+    return render(request,'Telefonos/registro.html', {'form': form})
 
-def ubicacion(request):
-    lista_Sucursal = Sucursal.objects.all()
-    datos = {
-        'lista_Sucursal' : lista_Sucursal
-    }
-    return render(request,'rest_ubicacion/ubicacion.html', datos)
 
 def telefonos(request):
     lista_Movil = Movil.objects.all()
@@ -66,3 +68,56 @@ def eliminar_telefono(request, id):
     movil.delete()
     
     return redirect(to= 'telefonos')
+
+
+
+''' API SUCURSALES '''
+
+
+
+def ubicacion(request):
+    lista_Sucursal = Sucursal.objects.all()
+    datos = {
+        'lista_Sucursal' : lista_Sucursal
+    }
+    return render(request,'Telefonos/ubicacion.html', datos)
+
+
+def agregar_sucursal(request):
+    datos = {
+        'sucform' : SucursalForm()
+    }
+    
+    if (request.method == 'POST'):
+        formulario = SucursalForm(request.POST, request.FILES)
+        if formulario.is_valid():
+            formulario.save() #insert a la BD
+            datos['mensaje'] = 'Se ha añadido la Sucursal'
+        else:
+            datos['mensaje'] = 'NO se ha añadido la Sucursal'
+  
+    return render(request,'Telefonos/agregar_sucursal.html', datos)
+
+def modificar_sucursal(request, id):
+    sucursal = Sucursal.objects.get(id_sucursal=id)
+    
+    datos = {
+        'sucform':SucursalForm(instance=sucursal)
+    }
+    
+    if (request.method == 'POST'):
+        formulario = SucursalForm(request.POST, request.FILES, instance=sucursal)
+        if formulario.is_valid():
+            formulario.save() #insert a la BD
+            datos['mensaje'] = 'Telefono modificado correctamente'
+        else:
+            datos['mensaje'] = 'Telefono NO se modifico'
+    
+    return render(request,'Telefonos/modificar_sucursal.html', datos)
+
+def eliminar_sucursal(request,id):
+    sucursal = Sucursal.objects.get(id_sucursal=id)
+    sucursal.delete()
+
+    return redirect(to='ubicacion')
+

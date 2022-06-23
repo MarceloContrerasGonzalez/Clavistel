@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,122 +41,86 @@
                     <li>
                         <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
                     </li>
+
                     <li>
-                        <a class="nav-link"  href="{% url 'login' %}">Inicio De Sesion</a>
+                        <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
-                    </li>
+
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                        </li>   
+                        <li>
+                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                        </li> 
+                    {% else %}
+                        <li>
+                            <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
+                        </li>
+                    {% endif %}
+
+                    
+
                 </ul>
             </div>
         </div>
     </nav>
 
 
-    <!-- Carrusel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
         </div>
+
+        <!-- The slideshow/carousel -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{% static 'Telefonos/img/plan_huawei.webp'%}" class="d-block w-100" alt="...">
+                <img src="{% static 'Telefonos/img/foto-carousel-00.png'%}" alt="Los Angeles" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'Telefonos/img/plan_motorola.webp'%}" class="d-block w-100" alt="...">
+                <img src="{% static 'Telefonos/img/promocion_smartphone2.png'%}" alt="Chicago" class="d-block" style="width:100%; height:70vh">
             </div>
             <div class="carousel-item">
-                <img src="{% static 'Telefonos/img/plan_samsung.webp'%}" class="d-block w-100" alt="...">
+                <img src="{% static 'Telefonos/img/promocion_smartphone3.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'Telefonos/img/promocion_smartphone.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh">
+            </div>
+            <div class="carousel-item">
+            <img src="{% static 'Telefonos/img/promocion_smartphone4.png'%}" alt="New York" class="d-block" style="width:100%; height:70vh  ">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+
+        <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
     </div>
 
     <!-- SECCION PLANES -->
 
-    <section id="plans-section">
-        <div class="plans-container">
-            <div>
-                <h1 id="plan-description">OFERTA DE NUEVO CLIENTE</h1>
-                <h3>
-                    Nuestra oferta para nuevos clientes le permite probar durante 3 meses al precio más bajo posible
-                </h3>
+        <!-- Seccion Planes  -->
+        <section class="seccion-planes">
+            <h2 class="sec-planes-titulo">¿En que podemos ayudarte hoy?</h2>
+            <div class="opt-sec-planes">
+                <button type="button" class="btn btn-secondary btn-lg se-button">Pórtate a Clavistel</button>
+                <button type="button" class="btn btn-secondary btn-lg se-button">Renueva tu Equipo</button>
+                <button type="button" class="btn btn-secondary btn-lg se-button">Paga tu Cuenta</button>
+                <button type="button" class="btn btn-secondary btn-lg se-button">Recarga Fácil</button>
             </div>
-            <div class="plan-cards">
-                <div class="plan">
-                    <div class="first-part">
-                        <p>5g - 4g LTE DATA</p>
-                        <h1 class="plan-gb">4GB</h1>
-                    </div>
-                    <h2>$12.990</h2>
-                    <ul class="plan-ul">
-                        <li class="plan-li">Llamadas y mensajes de texto ilimitados</li>
-                        <li class="plan-li">Cobertura nacional</li>
-                        <li class="plan-li">Utiliza 5G o 4G LTE</li>
-                        <li class="plan-li"> </li>
-                    </ul>
-                    <button class="button">Ver Detalles</button>
-                    <p class="p-suelto">$30mil por 3 meses de servicio</p>
-                </div>
-                <div class="plan">
-                    <div class="first-part">
-                        <p>5g - 4g LTE DATA</p>
-                        <h1 class="plan-gb">10GB</h1>
-                    </div>
-                    <h2>$18.990</h2>
-                    <ul class="plan-ul">
-                        <li class="plan-li">Llamadas y mensajes de texto ilimitados</li>
-                        <li class="plan-li">Cobertura nacional</li>
-                        <li class="plan-li">Utiliza 5G o 4G LTE</li>
-                    </ul>
-                    <button class="button">Ver Detalles</button>
-                    <p class="p-suelto">$30mil por 3 meses de servicio</p>
-                </div>
-                <div class="plan">
-                    <div class="first-part">
-                        <p>5g - 4g LTE DATA</p>
-                        <h1 class="plan-gb">15GB</h1>
-                    </div>
-                    <h2>$23.990</h2>
-                    <ul class="plan-ul">
-                        <li class="plan-li">Llamadas y mensajes de texto ilimitados</li>
-                        <li class="plan-li">Cobertura nacional</li>
-                        <li class="plan-li">Utiliza 5G o 4G LTE</li>
-                    </ul>
-                    <button class="button">Ver Detalles</button>
-                    <p class="p-suelto">$30mil por 3 meses de servicio</p>
-                </div>
-                <div class="plan">
-                    <div class="first-part">
-                        <p>5g - 4g LTE DATA</p>
-                        <h1 class="plan-gb">ILIMITADO</h1>
-                    </div>
-                    <h2>$28.990</h2>
-                    <ul class="plan-ul">
-                        <li class="plan-li">Llamadas y mensajes de texto ilimitados</li>
-                        <li class="plan-li">Cobertura nacional</li>
-                        <li class="plan-li">Utiliza 5G o 4G LTE</li>
-                    </ul>
-                    <button class="button">Ver Detalles</button>
-                    <p class="p-suelto">$30mil por 3 meses de servicio</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <!-- SECCION  -->
 
@@ -268,6 +233,7 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
+    <script src="{% static 'Telefonos/js/validaciones.js'%}"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Movil, Sucursal
 from .forms import TelefonoForm, SucursalForm, SignUpForm
-from django.contrib.auth import login, authenticate
+
 
 # Create your views here.
 def home(request):

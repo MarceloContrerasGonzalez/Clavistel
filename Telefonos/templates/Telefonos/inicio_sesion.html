@@ -1,4 +1,5 @@
 {% load static%}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,6 +62,9 @@
           <div>
             <p>No Estas Registrado? <a class="link" href="{% url 'registro' %}"> Registrate Aquí</a> </p>
           </div>
+          <a class="btn btn-google btn-outline-secondary border border-secondary" href="{% provider_login_url 'google' %}" role="button"> Google</a>
+          
+
         </form>
       </section>
     </div>

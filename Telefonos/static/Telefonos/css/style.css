@@ -13,7 +13,7 @@
 
 /* Nav */
 nav .logo {
-    color: rgb(224, 39, 39);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     padding-left: 60px;
     margin-right: 30px;
@@ -125,6 +125,10 @@ nav ul li a {
 }
 
 /* BOTON */
+
+.btn-group-lg>.btn, .btn-lg {
+    margin-bottom: 10px;
+}
 /* spacing */
 .table-body {
     padding: 20px;
@@ -592,10 +596,13 @@ thead th:nth-child(5) {
     margin: 0;
     width: 100%;
     padding: 1rem .75rem;
-    height: calc(1.5rem + 2px);
+    height: calc(2.5rem + 2px);
     line-height: 1.25;
 }
 
+.btn-google {
+    width: 80%;
+}
 
 /* Agregar Telefonos */
 /* footer */

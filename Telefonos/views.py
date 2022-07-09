@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+import Telefonos
+from Telefonos.Carrito import Carrito
 from .models import Movil, Sucursal
 from .forms import TelefonoForm, SucursalForm, SignUpForm
-from django.contrib.auth import login, authenticate
+
 
 # Create your views here.
 def home(request):
@@ -121,3 +123,33 @@ def eliminar_sucursal(request,id):
 
     return redirect(to='ubicacion')
 
+#carrito
+
+def carrito(request):
+    productos = Movil.objects.all()
+    return render(request,'Telefonos/carrito.html', {'telefonos':productos})
+
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get( id_movil=producto_id)
+    carrito.agregar(producto)
+    return redirect("carrito")
+
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get(id_movil=producto_id)
+    carrito.eliminar(producto)
+    return redirect('carrito')
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get(id_movil=producto_id)
+    carrito.restar(producto)
+    return redirect('carrito')
+
+def limpiar_producto(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect('carrito')

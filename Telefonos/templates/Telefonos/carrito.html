@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clavistel</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="{% static 'Telefonos/css/style.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,12 +18,12 @@
 
 </head>
 
-<body class="inicio">
+<body id="inicio-carrito">
 
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-            <div class="logo">Clavistel</div>
+            <div class="logo navbar-nav"><a class="nav-link"  href="{% url 'home' %}">Clavistel</a></div>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -31,10 +31,7 @@
             </button>
 
             <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-                    <li>
-                        <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
-                    </li>
+                <ul class="navbar-nav mb-2 mb-sm-0">
                     <li>
                         <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
@@ -45,7 +42,6 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-
                     {% if request.user.is_authenticated %}
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
@@ -54,109 +50,79 @@
                             <a class="nav-link">Bienvenido {{ user.username }}</a>                
                         </li> 
                     {% else %}
-                        <li>
+                        <li id="r-nav-link">
                             <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
                         </li>
-                        <li>
+                        <li id="r-nav-link">
                             <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
                         </li>
                     {% endif %}
-
-                    
-
                 </ul>
             </div>
         </div>
     </nav>
+    
 
     <!-- carrito -->
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-12 align-self-center">
-                <h1 class="display-1">Carrito</h1>
-            </div>
+    <div class="table-body-carrito">
+        <div id="title-carrito">
+            <h1>Carrito</h1>
+            <hr>
         </div>
-        <div class="row">
-            <div class="col-8">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            {% for telefonos in telefonos %}
-                            <div class="col-6">
-                                <div class="card" style="height: 10rem; width: 23rem; margin: 5px 8px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{telefonos.nombre}}</h5>
-                                        <p class="card-text">{{telefonos.marca}}</p>
-                                        <p class="card-text">{{telefonos.costo}}</p>
-                                        <a href="{% url 'agregar_producto' telefonos.id_movil%}" class="btn btn-primary">Agregar</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
+        
+        <table id="table-carrito">
+            {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items %}
+            <tr>
+                <td class="td-carrito"><img src="{{value.imagen}}" alt=""></td>
+                <td class="td-carrito td-desc">
+                <p class="carrito-p1">{{value.nombre}}</p>
+                <a href="{%url 'eliminar_producto' value.producto_id%}" class="badge btn btn-dark badge-dark">Eliminar</a>
+            </td>
+            <td class="td-carrito">
+                <div class="counter">
+                    <a href="{%url 'restar_producto' value.producto_id%}" class="down badge btn btn-dark badge-dark">-</a>
+                    <span>{{value.cantidad}}</span>
+                    <a href="{%url 'agregar_producto' value.producto_id%}" class="up badge btn btn-dark badge-dark">+</a> 
+                </div>
+                </td>
+                <td class="td-carrito">${{value.acumulado}}
+                </td> 
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">
+                    <div class="alert alert-danger text-center">
+                        Tu Carrito Esta Vacio
                     </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="alert alert-primary" role="alert">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="row" colspan="4" class="text-center">
-                                    Carrito
-                                </th>
-                            </tr>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">subtotal</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {% if request.session.carrito.items %}
-                            {% for key, value in request.session.carrito.items %}
-                            <tr>
-                                <td>{{value.nombre}}</td>
-                                <td>{{value.precio}}</td>
-                                <td>{{value.cantidad}}</td>
-                                <td>{{value.acumulado}}
-                                    <a href="{%url 'agregar_producto' value.producto_id%}" class="badge btn btn-dark badge-dark">+</a>
-                                    <a href="{%url 'restar_producto' value.producto_id%}" class="badge btn btn-dark badge-dark">-</a>
-                                </td> 
-                            </tr>
-                            {% endfor %}
-                            {% else %}
-                            <tr>
-                                <td colspan="4">
-                                    <div class="alert alert-danger text-center">
-                                        Tu Carrito Esta Vacio
-                                    </div>
-                                </td>
-                            </tr>
-                            {% endif %}
-                                <tr>
-                                    <th scope="row">
-                                        Total:
-                                    </th>
-
-                                    <td colspan="4">
-                                        ${{total_carrito}}
-                                    </td>
-                                </tr>
-                        </tbody>
-                    </table>
-                    <hr>
-                </div>
-                <div class="row text-center">
-                    <div class="col-6"><a href="{%url 'limpiar_producto' %}" class="btn btn-danger">Limpiar</a></div>
-                    <div class="col-6"><a href="#" class="btn btn-success">guardar</a></div>
-                </div>
-            </div>
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+            <th scope="row">
+                Total:
+            </th>
+            <td colspan="4">
+                ${{total_carrito}}
+            </td>
+            </tr>
+        </table>
+    <hr>
+    </div>
+    <div class="row text-center">
+        <div class="col-6">
+            <a href="{%url 'limpiar_producto' %}" class="btn btn-danger">
+                Limpiar
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="#" class="btn btn-success">
+                guardar
+            </a>
         </div>
     </div>
+
 
 
     <!-- Footer -->
@@ -195,7 +161,9 @@
     </footer>
 
     <!-- script -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

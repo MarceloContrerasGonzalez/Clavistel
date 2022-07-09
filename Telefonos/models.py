@@ -25,6 +25,7 @@ class Movil(models.Model):
     img = models.ImageField(upload_to='Telefonos/static/Telefonos/img/imgdjango',verbose_name='imagen')
     costo = models.IntegerField(verbose_name='precio')
     nombre = models.CharField(max_length=100,verbose_name='Nombre Celular')
+    cant = models.IntegerField(default=10, verbose_name='cantidad')
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     tipo_envio = models.ForeignKey(TipoEnvio, on_delete=models.CASCADE)
 

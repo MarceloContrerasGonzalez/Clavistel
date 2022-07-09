@@ -129,7 +129,6 @@ def carrito(request):
     productos = Movil.objects.all()
     return render(request,'Telefonos/carrito.html', {'telefonos':productos})
 
-
 def agregar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Movil.objects.get( id_movil=producto_id)

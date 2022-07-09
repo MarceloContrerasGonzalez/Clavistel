@@ -14,6 +14,7 @@ class Carrito:
         id = str(Movil.id_movil)
         if id not in self.carrito.keys():
             self.carrito[id]={
+                "imagen": Movil.img.url,
                 "producto_id": Movil.id_movil,
                 "nombre": Movil.nombre,
                 "precio": Movil.costo,

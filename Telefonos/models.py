@@ -55,3 +55,13 @@ class Sucursal(models.Model):
         return self.nombre_sucursal
 
 
+#Tablas Carrito
+
+class boleta(models.Model):
+    num_boleta = models.AutoField(primary_key=True,verbose_name='Código Boleta')
+    nom_cliente = models.CharField(max_length=50,verbose_name='Nombre Cliente')
+    estado = models.IntegerField(default=0, verbose_name="Estado")
+    fecha = models.DateTimeField(auto_now_add=True, verbose_name="Fecha")
+    
+    def __str__(self):
+        return self.num_orden

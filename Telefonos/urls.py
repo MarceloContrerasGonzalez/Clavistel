@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal
+from .views import historial, home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, historial
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -12,6 +12,8 @@ urlpatterns =[
     path('telefonos', telefonos, name='telefonos'),
     path('registro', registro, name='registro'),
     path('agregar', agregar_telefono, name='agregar'),
+    path('carrito', carrito, name='carrito'),
+    path('historial', historial, name='historial'),
     path('modificar/<id>', modificar_telefono, name='modificar'),
     path('eliminar/<id>', eliminar_telefono, name='eliminar'),
     path('ubicacion', ubicacion, name='ubicacion'),

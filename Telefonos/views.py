@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import Movil, Sucursal
 from .forms import TelefonoForm, SucursalForm, SignUpForm
-from django.contrib.auth import login, authenticate
+
 
 # Create your views here.
 def home(request):
     return render(request,'Telefonos/index.html')
+
+def carrito(request):
+    return render(request,'Telefonos/carrito.html')
+
+def historial(request):
+    return render(request,'Telefonos/historial.html')
 
 def inicio_sesion(request):
     return render(request,'Telefonos/inicio_sesion.html')

@@ -159,4 +159,6 @@ SITE_ID = 3
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+#comando para quitar la pagina en blanco de google
 SOCIALACCOUNT_LOGIN_ON_GET=True

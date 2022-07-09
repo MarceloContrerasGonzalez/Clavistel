@@ -1,5 +1,6 @@
-{% load static%}
+{% load static %}
 {% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,13 +8,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nesecitas_Ayuda?</title>
+    <title>Historial_Compra</title>
     <link rel="stylesheet" href="{% static 'Telefonos/css/style.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -28,7 +30,7 @@
             </button>
 
             <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <ul class="navbar-nav mb-2 mb-sm-0">
                     <li>
                         <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
@@ -39,7 +41,6 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-
                     {% if request.user.is_authenticated %}
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
@@ -48,68 +49,37 @@
                             <a class="nav-link">Bienvenido {{ user.username }}</a>                
                         </li> 
                     {% else %}
-                        <li>
+                        <li id="r-nav-link">
                             <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
                         </li>
-                        <li>
-                            <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
+                        <li id="r-nav-link">
+                            <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
                         </li>
                     {% endif %}
-
-                    
-
                 </ul>
             </div>
         </div>
     </nav>
 
-    
-    <section id="bloqueFormulario" class="tipo-letra">
-        <form class="row g-3 needs-validation" novalidate>
-            <h2>
-                Consultas
-            </h2>
-            <!-- Area del Nombre -->
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Ingrese Su Nombre Aquí"
-                    required>
-                <div class="invalid-feedback">
-                    Ingrese un nombre!
-                </div>
-            </div>
-            <!-- Area del Apelido -->
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Ingrese Su Apellido Aquí"
-                    required>
-                <div class="invalid-feedback">
-                    Ingrese un Apellido!
-                </div>
-            </div>
-            <!-- Area del Correo -->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Su Correo Aquí"
-                    required aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">No Compartiremos Tu Correo Con Nadie.</div>
-                <div class="invalid-feedback"> Ingrese un Correo Valido!</div>
-            </div>
-            <!-- Area de la Consulta -->
-
-            <div class="mb-3">
-                <label for="validationTextarea" class="form-label">Consulta</label>
-                <textarea class="form-control" id="validationTextarea" placeholder="Inserte su consulta Aquí"
-                    required></textarea>
-                <div class="invalid-feedback">
-                    Ingrese Su Duda o Consulta Correctamente!.
-                </div>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-        </form>
-    </section>
+    <!-- Tabla historial -->
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Numero de compra</th>
+            <th scope="col">Nombre del Comprador</th>
+            <th scope="col">Estado de la compra</th>
+            <th scope="col">Fecha de la compra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>*num.compra*</th>
+            <td>*nom_cliente*</td>
+            <td>*estado*</td>
+            <td>*fecha*</td>
+          </tr>
+        </tbody>
+      </table>
 
     <!-- Footer -->
     <footer class="footer">
@@ -125,7 +95,9 @@
             <div class="caja">
                 <h2>SOBRE NOSOTROS</h2>
                 <p>
-                    Clavistel es una empresa pionera en el desarrollo de las telecomunicaciones en Chile. Buscamos ser una de las mayores empresas de telecomunicaciones del país, entregando conectividad y entretenimiento a familias, empresas e instituciones.
+                    Clavistel es una empresa pionera en el desarrollo de las telecomunicaciones en Chile. Buscamos ser
+                    una de las mayores empresas de telecomunicaciones del país, entregando conectividad y
+                    entretenimiento a familias, empresas e instituciones.
                 </p>
             </div>
 
@@ -143,6 +115,8 @@
             <small>&copy; 2021 <b>Clavistel CL</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
+
+    <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -154,7 +128,6 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0ad30db840.js" crossorigin="anonymous"></script>
     <script src="{% static 'Telefonos/js/validaciones.js'%}"></script>
-    
 </body>
 
 </html>

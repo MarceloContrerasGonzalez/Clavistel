@@ -83,6 +83,7 @@
                     <span class="precio">${{mov.costo}}</span>
                     <span class="costo-envio">{{mov.tipo_envio}}</span>
                     <span class="descipcion">{{mov.nombre}}</span>
+                    <span class="cantidad">{{mov.cant}} disponibles</span>
                     {% if request.user.is_authenticated and user.is_staff == 1 %}
                     <a href="{%url 'modificar' mov.id_movil%}">
                         <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>

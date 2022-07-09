@@ -28,9 +28,23 @@ nav ul li a {
 
 /* bootstrap 5 css */
 .bg-dark {
-    background-color: #0d6efd;
+    background-color: #ffffff;
     /* No funcionara porque la clase de bootstrap ".bg-dark" esta con --!important--*/
 }
+
+/* .navbar-collapse {
+    flex-grow: 0.65 !important;
+}   */
+
+/* .r-nav-link {
+    float: right;
+} */
+
+/* @media (min-width: 57    6px) {
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: 2.5rem !important;
+    padding-left: 2.5rem !important;
+}} */
 
 /* SECCION PLANES (actual)*/
 .seccion-planes {
@@ -125,6 +139,10 @@ nav ul li a {
 }
 
 /* BOTON */
+
+.btn-group-lg>.btn, .btn-lg {
+    margin-bottom: 10px;
+}
 /* spacing */
 .table-body {
     padding: 20px;
@@ -427,6 +445,11 @@ thead th:nth-child(5) {
     color: rgb(52, 131, 250);
 }
 
+
+.cantidad {
+    color: rgb(143, 143, 143);
+}
+
 /* -----------Terminos y Condiciones-------------------- */
 /* Formulario */
 #enviar,
@@ -600,7 +623,80 @@ thead th:nth-child(5) {
     width: 80%;
 }
 
-/* Agregar Telefonos */
+/* ------ CARRITO ------- */
+
+#title-carrito {
+    padding-bottom: 2%;
+}
+
+.table-body-carrito {
+    padding: 4% 10%;
+}
+
+#title-carrito {
+    text-align: center; 
+}
+#table-carrito {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+#title-carrito, #table-carrito {
+    font-size: 20px;
+    font-family: 'Barlow', sans-serif;
+}
+.td-carrito, .td-carrito {
+    padding: 40px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.carrito-p2 {
+    font-size: 18px;
+    color: #0d6efd;
+}
+
+/* ------ IMAGEN CARRITO ------- */
+
+.td-carrito img{
+    width: 100px;
+    max-height: 110px;
+}
+
+/* ------ BOTON AUTO-INCREMENTAL CARRITO ------- */
+
+.counter {
+    width: 150px;
+    margin: auto;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 12px;
+}
+
+.counter input {
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: white;
+    color: black;
+    appearance: none;
+    outline: 0;
+}
+.counter span {
+    display: block;
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #0052cc;
+    user-select: none;
+}
+/* ------ CIERRE CARRITO ------- */
+
 /* footer */
 .footer {
     width: 100%;

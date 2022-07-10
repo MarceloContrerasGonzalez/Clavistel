@@ -1,23 +1,23 @@
 from django.shortcuts import render, redirect
-from .models import Movil, Sucursal
+import Telefonos
+from Telefonos.Carrito import Carrito
+from .models import Movil, Sucursal, Boleta
 from .forms import TelefonoForm, SucursalForm, SignUpForm
+import random
 
 
 # Create your views here.
 def home(request):
     return render(request,'Telefonos/index.html')
 
-def carrito(request):
-    return render(request,'Telefonos/carrito.html')
-
-def historial(request):
-    return render(request,'Telefonos/historial.html')
-
 def inicio_sesion(request):
     return render(request,'Telefonos/inicio_sesion.html')
 
 def consulta(request):
     return render(request,'Telefonos/Nesecitas_Ayuda.html')
+
+def historial(request):
+    return render(request,'Telefonos/historial.html')
 
 def registro(request):
     if request.method == 'POST':
@@ -126,4 +126,73 @@ def eliminar_sucursal(request,id):
     sucursal.delete()
 
     return redirect(to='ubicacion')
+
+#carrito
+
+def carrito(request):
+    productos = Movil.objects.all()
+    return render(request,'Telefonos/carrito.html', {'telefonos':productos})
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get( id_movil=producto_id)
+    carrito.agregar(producto)
+    return redirect("carrito")
+
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get(id_movil=producto_id)
+    carrito.eliminar(producto)
+    return redirect('carrito')
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Movil.objects.get(id_movil=producto_id)
+    carrito.restar(producto)
+    return redirect('carrito')
+
+def limpiar_producto(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect('carrito')
+
+def restar_stock(cantidad, id_telefono):
+    compra = Movil.objects.get(id_movil = id_telefono)
+    compra.cant -= cantidad
+    compra.save()
+
+def comprar(request):   
+    producto = ''
+    precio_total = 0
+    
+    if "carrito" in request.session.keys():
+        for key, value in request.session["carrito"].items():
+            restar_stock(int(value["cantidad"]),int(value["producto_id"]))
+            
+    nom_cli = request.user.username
+    num_compra = random.randint(100000,999999)
+
+    while Boleta.objects.filter(num_boleta=num_compra).exists():
+        num_compra+=1
+    else:
+        Boleta.objects.create(num_boleta=num_compra,nom_cliente=str(nom_cli),estado=0)
+            
+    limpiar_producto(request)
+    return redirect("carrito")
+
+#historial
+
+def historial_boleta(request):
+    if request.user.is_authenticated and request.user.is_staff == 1:
+        listaBoleta = Boleta.objects.all()
+        datos = {
+            'historial_Boleta':listaBoleta
+        }
+    else:
+        listaBoleta= Boleta.objects.filter(nom_cliente = request.user.username)
+        datos = {
+            'historial_Boleta':listaBoleta
+        }
+    return render (request,'Telefonos/historial.html',datos)    
 

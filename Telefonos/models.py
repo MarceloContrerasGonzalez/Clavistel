@@ -25,15 +25,14 @@ class Movil(models.Model):
     img = models.ImageField(upload_to='Telefonos/static/Telefonos/img/imgdjango',verbose_name='imagen')
     costo = models.IntegerField(verbose_name='precio')
     nombre = models.CharField(max_length=100,verbose_name='Nombre Celular')
-    cant = models.IntegerField(verbose_name='cantidad')
+    cant = models.IntegerField(default=10, verbose_name='cantidad')
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     tipo_envio = models.ForeignKey(TipoEnvio, on_delete=models.CASCADE)
 
-    
     def __str__(self):
         return self.nombre
 
-
+''' ---------------------------------------------------------------------------------- '''
 #Tablas Sucursal
 
 # TABLA Region.
@@ -54,14 +53,18 @@ class Sucursal(models.Model):
     def __str__(self):
         return self.nombre_sucursal
 
-
 #Tablas Carrito
 
-class boleta(models.Model):
+class Boleta(models.Model):
     num_boleta = models.AutoField(primary_key=True,verbose_name='Código Boleta')
     nom_cliente = models.CharField(max_length=50,verbose_name='Nombre Cliente')
     estado = models.IntegerField(default=0, verbose_name="Estado")
     fecha = models.DateTimeField(auto_now_add=True, verbose_name="Fecha")
     
     def __str__(self):
-        return self.num_orden
+        return str(self.num_boleta)
+    
+''' class Despacho(models.Model):
+    id_despacho = models.AutoField(primary_key=True,verbose_name='Número Despacho')
+    nom_destinatario = 
+    direccion =  '''

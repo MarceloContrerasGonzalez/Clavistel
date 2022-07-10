@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial_Compra</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="{% static 'Telefonos/css/style.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,8 @@
 
 </head>
 
-<body>
+<body id="inicio-carrito">
+
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
@@ -60,26 +61,37 @@
             </div>
         </div>
     </nav>
-
-    <!-- Tabla historial -->
-    <table class="table">
+    
+     
+    
+    <div class="container mt-5">
+        <table class="table">
         <thead>
           <tr>
-            <th scope="col">Numero de compra</th>
-            <th scope="col">Nombre del Comprador</th>
-            <th scope="col">Estado de la compra</th>
-            <th scope="col">Fecha de la compra</th>
+            <th scope="col-1">N° Boleta</th>
+            <th scope="col-2">Cliente</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th>*num.compra*</th>
-            <td>*nom_cliente*</td>
-            <td>*estado*</td>
-            <td>*fecha*</td>
-          </tr>
+            {% for his in historial_Boleta %}
+                <tr>
+                    <th>{{his.num_boleta}}</th>
+                    <td>{{his.nom_cliente}}</td>
+                    <td>{{his.fecha}}</td>
+                    {% if his.estado == 0 %}
+                        <td>Preparando Despacho</td>
+                    {% elif his.estado == 1 %}
+                        <td>Despachando...</td>
+                    {% else%}
+                        <td>Despachado</td>
+                    {% endif %}    
+                </tr>
+            {% endfor%}
         </tbody>
-      </table>
+    </table>   
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -116,7 +128,7 @@
         </div>
     </footer>
 
-    <!-- scripts -->
+    <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

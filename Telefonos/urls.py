@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import historial, home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, historial
+from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto,comprar,historial_boleta
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -12,8 +12,6 @@ urlpatterns =[
     path('telefonos', telefonos, name='telefonos'),
     path('registro', registro, name='registro'),
     path('agregar', agregar_telefono, name='agregar'),
-    path('carrito', carrito, name='carrito'),
-    path('historial', historial, name='historial'),
     path('modificar/<id>', modificar_telefono, name='modificar'),
     path('eliminar/<id>', eliminar_telefono, name='eliminar'),
     path('ubicacion', ubicacion, name='ubicacion'),
@@ -24,6 +22,13 @@ urlpatterns =[
     path('', TemplateView.as_view(template_name="index.html")),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view(),name="logout"),
+    path('carrito', carrito, name='carrito'),
+    path('agregar/<int:producto_id>/',agregar_producto,name="agregar_producto"),
+    path('eliminar/<int:producto_id>/',eliminar_producto,name="eliminar_producto"),
+    path('restar/<int:producto_id>/',restar_producto,name="restar_producto"),
+    path('limpiar/',limpiar_producto,name="limpiar_producto"),
+    path('historial',historial_boleta,name="historial"),
+    path('comprar/',comprar,name="comprar"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

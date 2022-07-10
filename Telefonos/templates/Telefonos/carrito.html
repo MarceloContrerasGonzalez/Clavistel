@@ -44,6 +44,9 @@
                     </li>
                     {% if request.user.is_authenticated %}
                         <li>
+                            <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                        </li>
+                        <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
                         </li>   
                         <li>
@@ -62,81 +65,66 @@
         </div>
     </nav>
     
+
+    <!-- carrito -->
     <div class="table-body-carrito">
         <div id="title-carrito">
             <h1>Carrito</h1>
             <hr>
         </div>
         
-    <table id="table-carrito">
-      <tr>
-        <td class="td-carrito"><img src="{% static 'Telefonos/img/telefonos/xiaomi/xiaomi-redmi-9i-sport-128gb.jpg'%}"></td>
-        <td class="td-carrito td-desc">
-            <p class="carrito-p1">Aquí ira la descripción del producto a tener en el carrito</p>
-            <p class="carrito-p2">Eliminar</p>
-        </td>
-        <td class="td-carrito">
-            <div class="counter">
-                <span onclick="decreaseCount(event, this)" class="down">-</span>
-                <input type="text" value="1">
-                <span onclick="increaseCount(event, this)" class="up">+</span>
-            </div>
-        </td>
-        <td class="td-carrito">$4.500</td>
-      </tr>
-      <tr>
-        <td class="td-carrito"><img src="{% static 'Telefonos/img/telefonos/motorola/motorola-edge-20-fusion-128gb.jpg'%}"></td>
-        <td class="td-carrito td-desc">
-            <p class="carrito-p1">Aquí ira la descripción del producto a tener en el carrito</p>
-            <p class="carrito-p2">Eliminar</p>
-        </td>
-        <td class="td-carrito">
-            <div class="counter">
-                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input type="text" value="1">
-                <span class="up" onclick='increaseCount(event, this)'>+</span>
-            </div>
-        </td>
-        <td class="td-carrito">$4.500</td>
-      </tr>
-      <tr>
-        <td class="td-carrito"><img src="{% static 'Telefonos/img/telefonos/huawei/huawei-mate-x2-4g-256gb.jpg'%}"></td>
-        <td class="td-carrito td-desc">
-            <p class="carrito-p1">Aquí ira la descripción del producto a tener en el carrito</p>
-            <p class="carrito-p2">Eliminar</p>
-        </td>
-        <td class="td-carrito">
-            <div class="counter">
-                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input type="text" value="1">
-                <span class="up" onClick='increaseCount(event, this)'>+</span>
-            </div>
-        </td>
-        <td class="td-carrito">$4.500</td>
-      </tr>
-      <tr>
-        <td class="td-carrito"><img src="{% static 'Telefonos/img/telefonos/apple/apple-iphone-13-mini.jpg'%}"></td>
-        <td class="td-carrito td-desc">
-            <p class="carrito-p1">Aquí ira la descripción del producto a tener en el carrito</p>
-            <p class="carrito-p2">Eliminar</p>
-        </td>
-        <td class="td-carrito">
-            <div class="counter">
-                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                <input type="text" value="1">
-                <span class="up" onClick='increaseCount(event, this)'>+</span>
-            </div>
-        </td>
-        <td class="td-carrito">$4.500</td>
-      </tr>
-      <tr>
-        <td class="td-carrito"></td>
-        <td class="td-carrito"></td>
-        <td class="td-carrito">Total envío</td>
-        <td class="td-carrito">$18.000</td>
-      </tr>
-    </table>
-</div>
+        <table id="table-carrito">
+            {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items %}
+            <tr>
+                <td class="td-carrito"><img src="{{value.imagen}}" alt=""></td>
+                <td class="td-carrito td-desc">
+                <p class="carrito-p1">{{value.nombre}}</p>
+                <a href="{%url 'eliminar_producto' value.producto_id%}" class="badge btn btn-dark badge-dark">Eliminar</a>
+            </td>
+            <td class="td-carrito">
+                <div class="counter">
+                    <a href="{%url 'restar_producto' value.producto_id%}" class="down badge btn btn-dark badge-dark">-</a>
+                    <span>{{value.cantidad}}</span>
+                    <a href="{%url 'agregar_producto' value.producto_id%}" class="up badge btn btn-dark badge-dark">+</a> 
+                </div>
+                </td>
+                <td class="td-carrito">${{value.acumulado}}
+                </td> 
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">
+                    <div class="alert alert-danger text-center">
+                        Tu Carrito Esta Vacio
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+            <th scope="row">
+                Total:
+            </th>
+            <td colspan="4">
+                ${{total_carrito}}
+            </td>
+            </tr>
+        </table>
+    <hr>
+    </div>
+    <div class="row text-center">
+        <div class="col-6">
+            <a href="{%url 'limpiar_producto' %}" class="btn btn-danger">
+                Limpiar
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="{%url 'comprar' %}" class="btn btn-success">
+                Comprar
+            </a>
+        </div>
+    </div>
 
 
 

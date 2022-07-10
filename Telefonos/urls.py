@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import despacho, home, inicio_sesion, consulta, seguimiento_despacho, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto,comprar,historial_boleta,despacho,agregar_despacho,seguimiento_despacho
+from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto,comprar,historial_boleta,despacho,agregar_despacho,seguimiento_despacho
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView

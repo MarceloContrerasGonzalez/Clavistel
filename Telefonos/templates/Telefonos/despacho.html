@@ -121,14 +121,13 @@
                         {{despForm.as_table}}
                     </div>
                     <div class="botonesAgregar">
-                        <button type="submit" class="btn btn-primary" id="enviar" value="Enviar">Enviar</button>            
+                            <button type="submit" class="btn btn-primary" id="enviar" value="Enviar" href="{%url 'seguimiento_despacho' %}">Enviar</button>
                         <button type="reset" class="btn btn-primary" id="limpia" value="Limpiar">Limpiar</button>
                     </div>
                     <div id = "exito" class="alert alert-succes" role = "alert" >
                         {{mensaje}}
                     </div>
                 </form>
-                <td style="text-decoration: none;"><a class="btn btn-success" href="{%url 'seguimiento_despacho' %}">Seguimiento Despacho</a></td>
         
             </section>
         </div>

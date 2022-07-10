@@ -174,14 +174,13 @@ def comprar(request):
             productos += value["nombre"] + ', '
             precio_total += value["acumulado"]
             
-            
-    nom_cli = request.user.username
-    num_compra = random.randint(100000,999999)
+            nom_cli = request.user.username
+            num_compra = random.randint(100000,999999)
 
-    while Boleta.objects.filter(num_boleta=num_compra).exists():
-        num_compra+=1
-    else:
-        Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
+            while Boleta.objects.filter(num_boleta=num_compra).exists():
+                num_compra+=1
+            else:
+                Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
             
     limpiar_producto(request)
     return redirect("despacho")
@@ -220,7 +219,7 @@ def agregar_despacho(request):
         else:
             datos['mensaje'] = 'Telefono NO se guardó'
   
-    return render(request,'Telefonos/carrito.html', datos)
+    return render(request,'Telefonos/despacho.html', datos)
 
 #seguimiento del despacho
 def seguimiento_despacho(request):
@@ -234,7 +233,7 @@ def seguimiento_despacho(request):
         datos = {
             'lista_Despacho':listaDespacho
         }
-    return render (request,'Telefonos/seguimiento_despacho.html',datos)    
+    return render (request,'Telefonos/seguimiento_despacho.html',datos)  
 
 #cambiar estado a despachando...
 #def cambiar_despachando(request): 

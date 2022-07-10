@@ -74,6 +74,7 @@ class Despacho(models.Model):
     direccion =  models.CharField(max_length=250,verbose_name='Dirección')
     num_casa = models.IntegerField(default=450, verbose_name="Número de la casa/depa")
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
+    num_boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
     
     def __str__(self):
         return str(self.id_despacho)

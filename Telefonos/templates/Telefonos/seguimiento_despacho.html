@@ -18,7 +18,7 @@
 
 </head>
 
-<body id="body-despacho">
+<body id="body-despacho body-seguimiento">
 
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
@@ -74,6 +74,7 @@
                     <th>Fecha salida</th>
                     <th>Fecha llegada</th>
                     <th>Estado</th>
+                    <th>Cambiar Estado</th>
                 </tr>
             </thead>
         <tbody class="tbody-h">
@@ -86,7 +87,8 @@
                     <td data-label="Región">{{seg.region}}</td>
                     <td data-label="Fecha salida">Fecha de salida aquí</td>
                     <td data-label="Fecha llegada">Fecha de llegada aquí</td>
-                    <td data-label="Estado"><a class="btn btn-success" href='##'>Cambiar estado</a></td>
+                    <td data-label="Estado">Estado</td>
+                    <td data-label="Cambiar Estado"><a class="btn btn-warning" href='##'>1</a><a class="btn btn-success" href='##'>2</a></td>
                 </tr>
             {% endfor%}
         </tbody>

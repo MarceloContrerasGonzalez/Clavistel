@@ -17,7 +17,7 @@ class SucursalForm(ModelForm):
 class DespachoForm(ModelForm):
     class Meta:
         model = Despacho
-        fields = ['id_despacho','nom_destinatario','direccion','num_casa','region']
+        fields = ['id_despacho','nom_destinatario','direccion','num_casa','region','num_boleta']
         
 class SignUpForm(UserCreationForm):
     error_messages = {

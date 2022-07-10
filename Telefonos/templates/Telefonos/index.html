@@ -45,9 +45,6 @@
                     <li>
                         <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'despacho' %}">Despacho</a>
-                    </li>
                     {% if request.user.is_authenticated %}
                         <li>
                             <a class="nav-link"  href="{% url 'historial' %}">Historial</a>

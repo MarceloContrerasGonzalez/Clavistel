@@ -184,7 +184,7 @@ def comprar(request):
         Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
             
     limpiar_producto(request)
-    return redirect("carrito")
+    return redirect("despacho")
 
 #historial
 
@@ -206,7 +206,7 @@ def historial_boleta(request):
 def despacho(request):
     return render(request,'Telefonos/despacho.html')
 
-
+#agregar un despacho
 def agregar_despacho(request):
     datos = {
         'despForm' : DespachoForm()
@@ -220,8 +220,9 @@ def agregar_despacho(request):
         else:
             datos['mensaje'] = 'Telefono NO se guardó'
   
-    return render(request,'Telefonos/despacho.html', datos)
+    return render(request,'Telefonos/carrito.html', datos)
 
+#seguimiento del despacho
 def seguimiento_despacho(request):
     if request.user.is_authenticated and request.user.is_staff == 1:
         listaDespacho = Despacho.objects.all()
@@ -229,8 +230,20 @@ def seguimiento_despacho(request):
             'lista_Despacho':listaDespacho
         }
     else:
-        listaDespacho= Despacho.objects.filter(nom_destinatario = request.user.username)
+        listaDespacho= Despacho.objects.filter(nom_destinatario = request.user.username) #compararlo con el numero de la boleta (fk)
         datos = {
             'lista_Despacho':listaDespacho
         }
     return render (request,'Telefonos/seguimiento_despacho.html',datos)    
+
+#cambiar estado a despachando...
+#def cambiar_despachando(request): 
+
+#cambiar estado a despachado    
+#def cambiar_despachado(request): 
+
+#antes que me muera, falta hacer que al generar un despacho, se autocomplete con el numero de la boleta del detalle recién linkeado,
+#falta poder comparar el numero de la boleta del despacho con ese mismo numero de la boleta para ver su seguimiento,
+#falta mostrar las horas de partida y llegada del paquete en el seguimiento del despacho, y también mostrar el estado en que se encuentra,
+#falta hacer 2 funciones que cambien el estado a despachando y despachado, 
+#creo que eso 

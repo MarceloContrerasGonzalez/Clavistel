@@ -157,14 +157,35 @@ nav ul li a {
     color: #ffffff;
 }
 
+/* child de seguimiento.html */
+#body-seguimiento .table-body-s .table-s .thead-h th:nth-child(3) {
+    width: 10%;
+    background-color: rgb(102, 102, 102);
+    color: #ffffff;
+}
+
 .table-s .thead-h th:nth-child(4) {
     width: 12%;
     background-color: rgb(102, 102, 102);
     color: #ffffff;
 }
 
+/* child de seguimiento.html */
+#body-seguimiento .table-body-s .table-s .thead-h th:nth-child(4) {
+    width: 4%;
+    background-color: rgb(102, 102, 102);
+    color: #ffffff;
+}
+
 .table-s .thead-h th:nth-child(5) {
     width: 4%;
+    background-color: rgb(102, 102, 102);
+    color: #ffffff;
+}
+
+/* child de seguimiento.html */
+#body-seguimiento .table-s .thead-h th:nth-child(5) {
+    width: 5%;
     background-color: rgb(102, 102, 102);
     color: #ffffff;
 }
@@ -186,6 +207,22 @@ nav ul li a {
     background-color: rgb(102, 102, 102);
     color: #ffffff;
 }
+
+/* child de seguimiento.html */
+#body-seguimiento .table-body-s .table-s .thead-h th:nth-child(8) {
+    width: 6%;
+    background-color: rgb(102, 102, 102);
+    color: #ffffff;
+}
+
+/* child de seguimiento.html */
+.table-s .thead-h th:nth-child(9) {
+    width: 6%;
+    background-color: rgb(102, 102, 102);
+    color: #ffffff;
+}
+
+
 
 /* ------------------ DESPACHO -------------------- */
 

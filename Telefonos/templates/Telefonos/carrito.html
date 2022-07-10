@@ -38,9 +38,11 @@
                     <li>
                         <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
                     </li>
-
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
                     </li>
                     {% if request.user.is_authenticated %}
                         <li>

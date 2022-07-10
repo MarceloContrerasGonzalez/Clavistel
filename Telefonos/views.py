@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 import Telefonos
 from Telefonos.Carrito import Carrito
-from .models import Movil, Sucursal, Boleta
-from .forms import TelefonoForm, SucursalForm, SignUpForm
+from .models import Movil, Sucursal, Boleta, Despacho
+from .forms import TelefonoForm, SucursalForm, DespachoForm, SignUpForm
 import random
 
 
@@ -163,12 +163,17 @@ def restar_stock(cantidad, id_telefono):
     compra.save()
 
 def comprar(request):   
-    producto = ''
+    productos = ''
     precio_total = 0
+    cant = 0
     
     if "carrito" in request.session.keys():
         for key, value in request.session["carrito"].items():
             restar_stock(int(value["cantidad"]),int(value["producto_id"]))
+            cant += value["cantidad"]
+            productos += value["nombre"] + ', '
+            precio_total += value["acumulado"]
+            
             
     nom_cli = request.user.username
     num_compra = random.randint(100000,999999)
@@ -176,7 +181,7 @@ def comprar(request):
     while Boleta.objects.filter(num_boleta=num_compra).exists():
         num_compra+=1
     else:
-        Boleta.objects.create(num_boleta=num_compra,nom_cliente=str(nom_cli),estado=0)
+        Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
             
     limpiar_producto(request)
     return redirect("carrito")
@@ -196,3 +201,36 @@ def historial_boleta(request):
         }
     return render (request,'Telefonos/historial.html',datos)    
 
+# despacho
+
+def despacho(request):
+    return render(request,'Telefonos/despacho.html')
+
+
+def agregar_despacho(request):
+    datos = {
+        'despForm' : DespachoForm()
+    }
+    
+    if (request.method == 'POST'):
+        formulario = DespachoForm(request.POST)
+        if formulario.is_valid():
+            formulario.save() #insert a la BD
+            datos['mensaje'] = 'Se ha añadido el despacho'
+        else:
+            datos['mensaje'] = 'Telefono NO se guardó'
+  
+    return render(request,'Telefonos/despacho.html', datos)
+
+def seguimiento_despacho(request):
+    if request.user.is_authenticated and request.user.is_staff == 1:
+        listaDespacho = Despacho.objects.all()
+        datos = {
+            'lista_Despacho':listaDespacho
+        }
+    else:
+        listaDespacho= Despacho.objects.filter(nom_destinatario = request.user.username)
+        datos = {
+            'lista_Despacho':listaDespacho
+        }
+    return render (request,'Telefonos/seguimiento_despacho.html',datos)    

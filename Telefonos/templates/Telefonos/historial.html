@@ -62,31 +62,38 @@
         </div>
     </nav>
     
-     
     
-    <div class="container mt-5">
-        <table class="table">
-        <thead>
-          <tr>
-            <th scope="col-1">N° Boleta</th>
-            <th scope="col-2">Cliente</th>
-            <th scope="col">Estado</th>
-            <th scope="col">Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div class="table-body-s">
+        <table class="table-s table-bordered table table-hover">
+            <thead class="thead-h">
+                <tr>
+                    <th>N° Boleta</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Artículos</th>
+                    <th>Cantidad de artículos</th>
+                    <th>Monto total</th>
+                    <th>Estado</th>
+                    <th>Compra</th>
+                </tr>
+            </thead>
+        <tbody class="tbody-h">
             {% for his in historial_Boleta %}
                 <tr>
-                    <th>{{his.num_boleta}}</th>
-                    <td>{{his.nom_cliente}}</td>
-                    <td>{{his.fecha}}</td>
+                    <td data-label="N° Boleta"># {{his.num_boleta}}</th>
+                    <td data-label="Cliente">{{his.nom_cliente}}</td>
+                    <td data-label="Fecha">{{his.fecha}}</td>
+                    <td data-label="Artículos">{{his.nom_productos}}</td>
+                    <td data-label="Cantidad de artículos">{{his.cantidad}}</td>
+                    <td data-label="Monto total">${{his.cant_total}}</td>
                     {% if his.estado == 0 %}
-                        <td>Preparando Despacho</td>
+                        <td data-label="Estado">Preparando Despacho</td>
                     {% elif his.estado == 1 %}
-                        <td>Despachando...</td>
+                        <td data-label="Estado">Despachando...</td>
                     {% else%}
-                        <td>Despachado</td>
+                        <td data-label="Estado">Despachado</td>
                     {% endif %}    
+                    <td data-label="Compra"><a class="btn btn-success" href="{%url 'despacho' %}">Ver Compra</a></td>
                 </tr>
             {% endfor%}
         </tbody>

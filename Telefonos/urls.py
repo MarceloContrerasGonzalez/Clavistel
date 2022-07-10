@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto
+from .views import comprar, home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto, comprar
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -27,6 +27,8 @@ urlpatterns =[
     path('eliminar/<int:producto_id>/',eliminar_producto,name="eliminar_producto"),
     path('restar/<int:producto_id>/',restar_producto,name="restar_producto"),
     path('limpiar/',limpiar_producto,name="limpiar_producto"),
+    path('comprar/',comprar,name="comprar"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

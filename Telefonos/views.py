@@ -1,3 +1,5 @@
+from itertools import product
+import re
 from django.shortcuts import render, redirect
 import Telefonos
 from Telefonos.Carrito import Carrito
@@ -152,3 +154,24 @@ def limpiar_producto(request):
     carrito = Carrito(request)
     carrito.limpiar()
     return redirect('carrito')
+
+def guardar_carrito(request):
+    carrito = Carrito(request)
+    carrito.guardar_carrito()
+    return redirect('carrito')
+
+def restar_stock (cantidad,telefono_id):
+    compra = Movil.objects.get(id_movil= telefono_id)
+    compra.cant -= cantidad
+    compra.save()
+    
+def comprar(request):
+    if "carrito" in request.session.keys():
+            for key, value in request.session["carrito"].items():
+                restar_stock(int(value["cantidad"]), int(value["producto_id"]))
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("carrito")
+                
+    
+

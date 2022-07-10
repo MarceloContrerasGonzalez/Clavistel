@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class TelefonoForm(ModelForm):
     class Meta:
         model = Movil
-        fields = ['id_movil','nombre','img','costo','marca','tipo_envio']
+        fields = ['id_movil','nombre','img','costo','marca','tipo_envio','cant']
         
 class SucursalForm(ModelForm):
     class Meta:

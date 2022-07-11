@@ -81,8 +81,8 @@
                     <th>Estado</th>
                     {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <th>Estado</th>
-                    <th>Seguimiento</th>
                     {% endif%}
+                    <th>Seguimiento</th>
                 </tr>
             </thead>
         <tbody class="tbody-h">
@@ -101,15 +101,16 @@
                     {% elif his.estado == 2 %}
                         <td data-label="Estado">Recibido</td>    
                     {% endif %}    
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <td data-label="Cambiar Estado">
                         <a class="btn btn-warning" href="{%url 'cambiar_en_camino' his.num_boleta %}">1</a>
                         <a class="btn btn-success" href="{%url 'cambiar_enviado' his.num_boleta %}">2</a>
                     </td>
+                
+                    {% endif%}
                     <td>
                         <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">VER Seguimiento</a>
                     </td>
-                    {% endif%}
                 </tr>
             {% endfor%}
         </tbody>

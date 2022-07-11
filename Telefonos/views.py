@@ -185,7 +185,7 @@ def comprar(request):
             Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
             
             limpiar_producto(request)
-            return redirect("despacho")
+            return redirect("home")
     return redirect("carrito")
 
 #historial
@@ -242,12 +242,7 @@ def cambiar_enviado(self, num_b):
     return redirect('historial')
 
 def seguimiento(request,id_bol):
-    if request.user.is_authenticated and request.user.is_superuser == 1:
-        listaSeguimiento = Boleta.objects.all()
-        datos = {
-            'listaSeguimiento':listaSeguimiento
-        }
-    else:
+    if request.user.is_authenticated:
         listaSeguimiento = Boleta.objects.filter(num_boleta = id_bol) #compararlo con el numero de la boleta (fk)
         datos = {
             'listaSeguimiento':listaSeguimiento

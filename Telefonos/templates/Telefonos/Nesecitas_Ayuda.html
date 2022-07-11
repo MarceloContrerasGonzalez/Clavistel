@@ -39,16 +39,19 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'carrito' %}">carrito</a>
-                    </li>
                     {% if request.user.is_authenticated %}
-                        <li>
-                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
-                        </li>   
-                        <li>
-                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
-                        </li> 
+                    <li>
+                        <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
+                    </li>
+                    <li>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
                     {% else %}
                         <li>
                             <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>

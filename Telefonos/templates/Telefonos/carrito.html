@@ -41,12 +41,12 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
-                    </li>
                     {% if request.user.is_authenticated %}
                         <li>
                             <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                        </li>
+                        <li>
+                            <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
                         </li>
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
@@ -59,7 +59,7 @@
                             <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
                         </li>
                         <li id="r-nav-link">
-                            <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
+                            <a class="nav-link"  href="{% url 'registro' %}">Regístro</a>
                         </li>
                     {% endif %}
                 </ul>

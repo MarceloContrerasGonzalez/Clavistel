@@ -27,41 +27,46 @@
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav mb-2 mb-sm-0">
-                    <li>
-                        <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
-                    </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
-                    </li>
+        <div class="navbar-collapse collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li>
+                    <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
+                </li>
+                <li>
+                    <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
+                </li>
 
+                <li>
+                    <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                </li>
+                {% if request.user.is_authenticated %}
                     <li>
-                        <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                        <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
                     </li>
-                    {% if request.user.is_authenticated %}
-                        <li>
-                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
-                        </li>   
-                        <li>
-                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
-                        </li> 
-                    {% else %}
-                        <li id="r-nav-link">
-                            <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
-                        </li>
-                        <li id="r-nav-link">
-                            <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
-                        </li>
-                    {% endif %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
+                    </li>
+                    <li>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                {% else %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'registro' %}">Regístro</a>
+                    </li>
+                {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-    
     
     <div class="table-body-s">
         <table class="table-s table-bordered table table-hover">
@@ -74,8 +79,8 @@
                     <th>Cantidad de artículos</th>
                     <th>Monto total</th>
                     <th>Estado</th>
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
-                    <th>Cambiar Estado</th>
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                    <th>Estado</th>
                     {% endif%}
                     <th>Seguimiento</th>
                 </tr>
@@ -94,18 +99,17 @@
                     {% elif his.estado == 1 %}
                         <td data-label="Estado">Despachando...</td>
                     {% elif his.estado == 2 %}
-                        <td data-label="Estado">Recibido</td>
-                    {% else %}
-                        <td data-label="Estado">despacho null</td>    
+                        <td data-label="Estado">Recibido</td>    
                     {% endif %}    
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <td data-label="Cambiar Estado">
-                        <a class="btn btn-warning" href="{%url 'historialuno' his.num_boleta %}">1</a>
-                        <a class="btn btn-success" href="{%url 'historialdos' his.num_boleta %}">2</a>
+                        <a class="btn btn-warning" href="{%url 'cambiar_en_camino' his.num_boleta %}">1</a>
+                        <a class="btn btn-success" href="{%url 'cambiar_enviado' his.num_boleta %}">2</a>
                     </td>
+                
                     {% endif%}
-                    <td data-label="Seguimiento">
-                        <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">Ver</a>
+                    <td>
+                        <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">VER Seguimiento</a>
                     </td>
                 </tr>
             {% endfor%}
@@ -113,6 +117,7 @@
     </table>   
     </div>
 
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="grupo1">

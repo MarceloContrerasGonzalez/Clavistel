@@ -864,7 +864,7 @@ nav ul li a {
     color: #0052cc;
     user-select: none;
 }
-/* ------ CIERRE CARRITO --------------------------------------------------------------- */
+/* ------ CIERRE CARRITO ------- */
 
 .hh-grayBox {
 	background-color: #F8F8F8;
@@ -942,10 +942,12 @@ nav ul li a {
 .order-tracking:first-child:before{display: none;}
 .order-tracking.completed:before{background-color: #27aa80;}
 
+/* seguimient */
 
-
-/* ------ CIERRE CARRITO --------------------------------------------------------------- */
-
+#titulo-seguimiento {
+    text-align: center;
+    color: #000;
+}
 
 
 /* Medias x responsividad */
@@ -1057,7 +1059,6 @@ nav ul li a {
     .table-s th {
         font-size: 12px;
     }
-
 }
 
 @media screen and (min-width: 800px) {
@@ -1109,6 +1110,5 @@ nav ul li a {
             font-size: 1.5em;
 
         }
-        
     }
 }

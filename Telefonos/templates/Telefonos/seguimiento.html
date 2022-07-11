@@ -71,6 +71,10 @@
         </div>
     </nav>
 
+    <div>
+        <h1 id="titulo-seguimiento" class="mt-5">Ve el Estado de tu Pedido aquí</h1>
+    </div>
+
     <div class="container">
         <div class=" mt-5">
             <div class="col-12 col-m-10 hh-grayBox pt45 pb20">
@@ -79,25 +83,25 @@
 
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Preparando Despacho<br><span>{{seg.fecha}}</span></p>
+                        <p>Preparando Envío<br><span>{{seg.fechaPreparacion}}</span></p>
                     </div>
 
                     {% if seg.estado == 1 or seg.estado == 2%}
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Listo para Comenzar Envío<br><span></span></p>
+                        <p>Producto Enviado<br><span></span></p>
                     </div>
                     {% else %}
                     <div class="col order-tracking">
                         <span class="is-complete"></span>
-                        <p>Listo para Comenzar Envío<br><span></span></p>
+                        <p>Producto Enviado<br><span></span></p>
                     </div>
                     {% endif %}
 
-                    {% if seg.status == 2 %}
+                    {% if seg.estado == 2 %}
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Producto Recibido<br><span>{{seg.fecha}}</span></p>
+                        <p>Producto Recibido<br><span>{{seg.fechaDespacho}}</span></p>
                     </div>
                     {% else %}
                     <div class="col order-tracking">

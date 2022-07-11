@@ -36,12 +36,13 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                    <li>
-                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
-                    </li>
+                    
                     {% if request.user.is_authenticated %}
                     <li>
                         <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
                     </li>
                     <li>
                         <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
@@ -57,7 +58,7 @@
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
                     {% endif %}
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <li>
                         <a class="nav-link"  href="{% url 'agregar' %}">Agregar</a>
                     </li>
@@ -87,10 +88,16 @@
                     <span class="costo-envio">{{mov.tipo_envio}}</span>
                     <span class="descipcion">{{mov.nombre}}</span>
                     <span class="cant">{{mov.cant}} disponibles</span>
-                    <span>
-                        <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-success">Agregar</a>
-                    </span>
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    {% if request.user.is_authenticated %}
+                        <span>  
+                            {% if mov.cant > 0 %}
+                            <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-success">Agregar</a>
+                            {% else %}
+                            <a href="#" class="btn btn-secondary">Agotado</a>
+                            {% endif %}
+                        </span>
+                    {% endif %}
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <span>
                         <a class="btn btn-primary" href="{%url 'modificar' mov.id_movil%}">
                             Modificar

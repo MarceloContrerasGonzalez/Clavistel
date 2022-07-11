@@ -178,20 +178,20 @@ def comprar(request):
             nom_cli = request.user.username
             num_compra = random.randint(100000,999999)
         if request.user.is_staff == 1:
-            precio_total = round(precio_total * 0.95)    
-            
+            precio_total = round(precio_total * 0.95)
         while Boleta.objects.filter(num_boleta=num_compra).exists():
-            num_compra+=1            
+            num_compra+=1
         else:
-            Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)        
-
-    limpiar_producto(request)
-    return redirect("telefonos")
+            Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
+            
+            limpiar_producto(request)
+            return redirect("home")
+    return redirect("carrito")
 
 #historial
 
 def historial_boleta(request):
-    if request.user.is_authenticated and request.user.is_staff == 1:
+    if request.user.is_authenticated and request.user.is_superuser == 1:
         listaBoleta = Boleta.objects.all()
         datos = {
             'historial_Boleta':listaBoleta
@@ -224,47 +224,30 @@ def agregar_despacho(request):
   
     return render(request,'Telefonos/despacho.html', datos)
 
-#seguimiento del despacho
-def seguimiento_despacho(request):
-    if request.user.is_authenticated and request.user.is_staff == 1:
-        listaDespacho = Despacho.objects.all()
-        datos = {
-            'lista_Despacho':listaDespacho
-        }
-    else:
-        listaDespacho= Despacho.objects.filter(nom_destinatario = request.user.username) #compararlo con el numero de la boleta (fk)
-        datos = {
-            'lista_Despacho':listaDespacho
-        }
-    return render (request,'Telefonos/seguimiento_despacho.html',datos)  
+
+#cambiar estado a despachando...
+def cambiar_en_camino(self, num_b): 
+    boleta = Boleta.objects.get(num_boleta=num_b)
+    boleta.estado = 1
+    boleta.save()
+    
+    return redirect('historial')
+
+#cambiar estado a despachado
+def cambiar_enviado(self, num_b): 
+    boleta = Boleta.objects.get(num_boleta=num_b)
+    boleta.estado = 2
+    boleta.save()
+    
+    return redirect('historial')
 
 def seguimiento(request,id_bol):
-    if request.user.is_authenticated and request.user.is_superuser == 1:
-        listaSeguimiento = Boleta.objects.all()
-        datos = {
-            'listaSeguimiento':listaSeguimiento
-        }
-    else:
+    if request.user.is_authenticated:
         listaSeguimiento = Boleta.objects.filter(num_boleta = id_bol) #compararlo con el numero de la boleta (fk)
         datos = {
             'listaSeguimiento':listaSeguimiento
         }
     return render (request,'Telefonos/seguimiento.html',datos)  
-
-#cambiar estado a despachando...
-def cambiar_en_camino(request, num_b): 
-    boleta = Boleta.objects.get(num_boleta=num_b)
-    boleta.estado = 1
-    boleta.save()
-    return redirect("historial")
-
-#cambiar estado a despachado
-def cambiar_enviado(request, num_c): 
-    boleta = Boleta.objects.get(num_boleta=num_c)
-    boleta.estado = -1
-    boleta.save()
-    return redirect("historial")
-
 
 #antes que me muera, falta hacer que al generar un despacho, se autocomplete con el numero de la boleta del detalle recién linkeado,
 #falta poder comparar el numero de la boleta del despacho con ese mismo numero de la boleta para ver su seguimiento,

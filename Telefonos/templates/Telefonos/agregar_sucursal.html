@@ -42,7 +42,13 @@
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
 
-                    {% if request.user.is_authenticated and user.is_staff == 1%}
+                    {% if request.user.is_authenticated%}
+                        <li>
+                            <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                        </li>
+                        <li>
+                            <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
+                        </li>
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
                         </li>   
@@ -50,7 +56,6 @@
                             <a class="nav-link">Bienvenido {{ user.username }}</a>                
                         </li> 
                     {% endif %}
-
                 </ul>
             </div>
         </div>

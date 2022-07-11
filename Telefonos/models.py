@@ -55,7 +55,6 @@ class Sucursal(models.Model):
 
 #Tablas Carrito
 
-
 def HoraPreparacion():
     return datetime.today() + timedelta(hours=16)
 
@@ -74,10 +73,10 @@ class Boleta(models.Model):
     cant_total = models.IntegerField(verbose_name='Cantidad total')
     cantidad = models.IntegerField(default=5, verbose_name='Cantidades')
     
+    
     def __str__(self):
         return str(self.num_boleta)
     
-
 class Despacho(models.Model):
     id_despacho = models.AutoField(primary_key=True,verbose_name='Número Despacho')
     nom_destinatario = models.CharField(max_length=250,verbose_name='Nombre Destinatario')
@@ -88,4 +87,3 @@ class Despacho(models.Model):
     
     def __str__(self):
         return str(self.id_despacho)
-    

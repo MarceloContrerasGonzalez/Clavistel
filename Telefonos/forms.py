@@ -13,7 +13,7 @@ class SucursalForm(ModelForm):
     class Meta:
         model = Sucursal
         fields = ['id_sucursal','nombre_sucursal','direccion','region']
-
+        
 class DespachoForm(ModelForm):
     class Meta:
         model = Despacho
@@ -28,7 +28,7 @@ class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, label='Correo' ,help_text='Ingrese un correo.', error_messages={'invalid': 'Correo Invalido'})
     password1 = forms.CharField(max_length=50, widget=forms.PasswordInput , label='Contraseña', help_text='Ingrese una Contraseña valida.')
     password2 = forms.CharField(max_length=50, widget=forms.PasswordInput , label='Contraseña', help_text='Ingrese Nuevamente Su Contraseña.')
-    
+    is_staff = forms.BooleanField(label='Suscripción')
     class Meta:
         model = User
         fields = ('username','email', 'password1', 'password2','is_staff') 

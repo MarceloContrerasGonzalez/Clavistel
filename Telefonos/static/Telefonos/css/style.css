@@ -11,6 +11,8 @@
     color: #393977;
 }
 
+
+
 /* Nav */
 nav .logo {
     color: rgb(255, 255, 255);
@@ -722,11 +724,19 @@ nav ul li a {
 
 /* Agregar Telefonos */
 /* footer */
-.footer {
+footer {
     width: 100%;
     background-color: #0a1a2a;
-    margin-top: 150px;
+    margin-top: auto;
+    bottom: 0%;
+    height: auto;
 }
+
+
+main{
+    min-height: 61vh;
+}
+
 
 .footer .grupo1 {
     width: 100%;

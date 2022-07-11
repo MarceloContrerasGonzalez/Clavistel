@@ -61,27 +61,29 @@
             </div>
         </div>
     </nav>
-
-    <section id="bloqueFormulario">
-        <h2 class="tituloFormulario">Agregar Telefonos</h2>
-        <br>
-
-        <form class="row g-3" id="agregarForm" method="POST" id="formulario" enctype="multipart/form-data">
-            {% csrf_token %}
-
-            <div class="row" id="datos"> 
-                {{form.as_table}}
-            </div>
-            <div class="botonesAgregar">
-                <button type="submit" class="btn btn-primary" id="enviar" value="Modificar">Cambiar</button>
-            </div>
-            <div id = "exito" class="alert alert-succes" role = "alert" >
-                {{mensaje}}
-            </div>
-        </form>
+    <main>
+        <section id="bloqueFormulario">
+            <h2 class="tituloFormulario">Agregar Telefonos</h2>
+            <br>
     
+            <form class="row g-3" id="agregarForm" method="POST" id="formulario" enctype="multipart/form-data">
+                {% csrf_token %}
+    
+                <div class="row" id="datos"> 
+                    {{form.as_table}}
+                </div>
+                <div class="botonesAgregar">
+                    <button type="submit" class="btn btn-primary" id="enviar" value="Modificar">Cambiar</button>
+                </div>
+                <div id = "exito" class="alert alert-succes" role = "alert" >
+                    {{mensaje}}
+                </div>
+            </form>
+        
+    
+        </section>
+    </main>
 
-    </section>
     
         
 

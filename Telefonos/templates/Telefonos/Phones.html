@@ -69,53 +69,55 @@
     </nav>
 
 
-    <div class="imagen-div">
-        <a href="#" class="imagen-a"></a>
-    </div>
-
-    <!-- PRODUCTOS (x JSON) -->
-
-
-    <div class="panel-productos">
-        <section id="Telefonos" class="section-grid">
-
-            {% for mov in lista_Movil%}
-            <div class="producto product-item samsung gratis 1-meses">
-                <img src="{{mov.img.url}}" alt="">
-                <div class="informacion">
-                    <span class="tipo-envio">Envio con Normalidad</span>
-                    <span class="precio">${{mov.costo}}</span>
-                    <span class="costo-envio">{{mov.tipo_envio}}</span>
-                    <span class="descipcion">{{mov.nombre}}</span>
-                    <span class="cant">{{mov.cant}} disponibles</span>
-                    {% if request.user.is_authenticated %}
-                        <span>  
-                            {% if mov.cant > 0 %}
-                            <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-success">Agregar</a>
-                            {% else %}
-                            <a href="#" class="btn btn-secondary">Agotado</a>
-                            {% endif %}
+    <main>
+        <div class="imagen-div">
+            <a href="#" class="imagen-a"></a>
+        </div>
+    
+        <!-- PRODUCTOS (x JSON) -->
+    
+    
+        <div class="panel-productos">
+            <section id="Telefonos" class="section-grid">
+    
+                {% for mov in lista_Movil%}
+                <div class="producto product-item samsung gratis 1-meses">
+                    <img src="{{mov.img.url}}" alt="">
+                    <div class="informacion">
+                        <span class="tipo-envio">Envio con Normalidad</span>
+                        <span class="precio">${{mov.costo}}</span>
+                        <span class="costo-envio">{{mov.tipo_envio}}</span>
+                        <span class="descipcion">{{mov.nombre}}</span>
+                        <span class="cant">{{mov.cant}} disponibles</span>
+                        {% if request.user.is_authenticated %}
+                            <span>  
+                                {% if mov.cant > 0 %}
+                                <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-success">Agregar</a>
+                                {% else %}
+                                <a href="#" class="btn btn-secondary">Agotado</a>
+                                {% endif %}
+                            </span>
+                        {% endif %}
+                        {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                        <span>
+                            <a class="btn btn-primary" href="{%url 'modificar' mov.id_movil%}">
+                                Modificar
+                            </a>
                         </span>
-                    {% endif %}
-                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
-                    <span>
-                        <a class="btn btn-primary" href="{%url 'modificar' mov.id_movil%}">
-                            Modificar
-                        </a>
-                    </span>
-                    <span>
-                        <a class="btn btn-danger" onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
-                            Eliminar
-                        </a>
-                    </span>            
-                    {% endif%}
+                        <span>
+                            <a class="btn btn-danger" onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
+                                Eliminar
+                            </a>
+                        </span>            
+                        {% endif%}
+                    </div>
                 </div>
-            </div>
-            {% endfor%}
-            
-        </section>
-        <br>
-    </div>
+                {% endfor%}
+                
+            </section>
+            <br>
+        </div>    
+    </main>
 
     <!-- Footer -->
     <footer class="footer">

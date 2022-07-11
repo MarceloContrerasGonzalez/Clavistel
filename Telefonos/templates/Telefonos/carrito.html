@@ -67,8 +67,8 @@
         </div>
     </nav>
     
-
-    <!-- carrito -->
+    <main> 
+        <!-- carrito -->
     <div class="table-body-carrito">
         <div id="title-carrito">
             <h1>Carrito</h1>
@@ -113,22 +113,25 @@
             </td>
             </tr>
         </table>
-    <hr>
-    </div>
-    <div class="row text-center">
-        <div class="col-6">
-            <a href="{%url 'limpiar_producto' %}" class="btn btn-danger">
-                Limpiar
-            </a>
+        <hr>
         </div>
+        <div class="row text-center" style="margin-right:0;" >
+            <div class="col-6">
+                <a href="{%url 'limpiar_producto' %}" class="btn btn-danger">
+                    Limpiar
+                </a>
+            </div>
         <div class="col-6">
             <a href="{%url 'comprar' %}" class="btn btn-success">
                 Comprar
             </a>
         </div>
     </div>
+    </main>
 
+    
 
+    <br>
 
     <!-- Footer -->
     <footer class="footer">

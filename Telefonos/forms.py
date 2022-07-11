@@ -13,7 +13,7 @@ class SucursalForm(ModelForm):
     class Meta:
         model = Sucursal
         fields = ['id_sucursal','nombre_sucursal','direccion','region']
-        
+
 class DespachoForm(ModelForm):
     class Meta:
         model = Despacho

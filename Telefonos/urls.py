@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto,comprar,historial_boleta,despacho,agregar_despacho,seguimiento_despacho
+from .views import home, inicio_sesion, consulta, telefonos, registro, agregar_telefono, modificar_telefono, eliminar_telefono, ubicacion, agregar_sucursal, modificar_sucursal, eliminar_sucursal, carrito, agregar_producto,eliminar_producto,limpiar_producto,restar_producto,comprar,historial_boleta,despacho,agregar_despacho,seguimiento_despacho,cambiar_en_camino,cambiar_enviado
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
@@ -31,6 +31,8 @@ urlpatterns =[
     path('comprar/',comprar,name="comprar"),
     path('despacho',agregar_despacho,name="despacho"),
     path('seguimiento_despacho',seguimiento_despacho,name="seguimiento_despacho"),
+    path('historial/<int:num_b>/',cambiar_en_camino,name="historialuno"),
+    path('historial/<int:num_c>/',cambiar_enviado,name="historialdos"),
     
 ]
 

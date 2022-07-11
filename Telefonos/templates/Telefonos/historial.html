@@ -74,7 +74,9 @@
                     <th>Cantidad de artículos</th>
                     <th>Monto total</th>
                     <th>Estado</th>
-                    <th>Compra</th>
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    <th>Cambiar Estado</th>
+                    {% endif%}
                 </tr>
             </thead>
         <tbody class="tbody-h">
@@ -90,10 +92,17 @@
                         <td data-label="Estado">Preparando Despacho</td>
                     {% elif his.estado == 1 %}
                         <td data-label="Estado">Despachando...</td>
-                    {% else%}
-                        <td data-label="Estado">Despachado</td>
+                    {% elif his.estado == -1 %}
+                        <td data-label="Estado">Recibido</td>
+                    {% else %}
+                        <td data-label="Estado">despacho null</td>    
                     {% endif %}    
-                    <td data-label="Compra"><a class="btn btn-success" href="{%url 'seguimiento_despacho' %}">Ver Compra</a></td>
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    <td data-label="Cambiar Estado">
+                        <a class="btn btn-warning" href="{%url 'historialuno' his.num_boleta %}">1</a>
+                        <a class="btn btn-success" href="{%url 'historialdos' his.num_boleta %}">2</a>
+                    </td>
+                    {% endif%}
                 </tr>
             {% endfor%}
         </tbody>

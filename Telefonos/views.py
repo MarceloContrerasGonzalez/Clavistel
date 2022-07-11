@@ -172,18 +172,21 @@ def comprar(request):
             restar_stock(int(value["cantidad"]),int(value["producto_id"]))
             cant += value["cantidad"]
             productos += value["nombre"] + ', '
+            
             precio_total += value["acumulado"]
             
             nom_cli = request.user.username
             num_compra = random.randint(100000,999999)
-
-            while Boleta.objects.filter(num_boleta=num_compra).exists():
-                num_compra+=1
-            else:
-                Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)
+        if request.user.is_staff == 1:
+            precio_total = round(precio_total * 0.95)    
             
+        while Boleta.objects.filter(num_boleta=num_compra).exists():
+            num_compra+=1            
+        else:
+            Boleta.objects.create(num_boleta=num_compra, nom_cliente=str(nom_cli), estado=0, nom_productos=productos,cant_total=precio_total,cantidad=cant)        
+
     limpiar_producto(request)
-    return redirect("despacho")
+    return redirect("telefonos")
 
 #historial
 
@@ -236,10 +239,19 @@ def seguimiento_despacho(request):
     return render (request,'Telefonos/seguimiento_despacho.html',datos)  
 
 #cambiar estado a despachando...
-#def cambiar_despachando(request): 
+def cambiar_en_camino(request, num_b): 
+    boleta = Boleta.objects.get(num_boleta=num_b)
+    boleta.estado = 1
+    boleta.save()
+    return redirect("historial")
 
-#cambiar estado a despachado    
-#def cambiar_despachado(request): 
+#cambiar estado a despachado
+def cambiar_enviado(request, num_c): 
+    boleta = Boleta.objects.get(num_boleta=num_c)
+    boleta.estado = -1
+    boleta.save()
+    return redirect("historial")
+
 
 #antes que me muera, falta hacer que al generar un despacho, se autocomplete con el numero de la boleta del detalle recién linkeado,
 #falta poder comparar el numero de la boleta del despacho con ese mismo numero de la boleta para ver su seguimiento,

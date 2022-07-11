@@ -975,6 +975,7 @@ nav ul li a {
     .table-s th {
         font-size: 12px;
     }
+
 }
 
 @media screen and (min-width: 800px) {
@@ -1026,5 +1027,6 @@ nav ul li a {
             font-size: 1.5em;
 
         }
+        
     }
 }

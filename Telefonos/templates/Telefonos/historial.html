@@ -27,109 +27,96 @@
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav mb-2 mb-sm-0">
+        <div class="navbar-collapse collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li>
+                    <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
+                </li>
+                <li>
+                    <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
+                </li>
+
+                <li>
+                    <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                </li>
+                {% if request.user.is_authenticated %}
                     <li>
-                        <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
+                        <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="{% url 'consulta' %}">Dudas</a>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
                     </li>
                     <li>
-                        <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
+                        <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
+                    </li>   
+                    <li>
+                        <a class="nav-link">Bienvenido {{ user.username }}</a>                
+                    </li> 
+                {% else %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
                     </li>
-                    {% if request.user.is_authenticated %}
-                        <li>
-                            <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
-                        </li>
-                        <li>
-                            <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
-                        </li>
-                        <li>
-                            <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
-                        </li>   
-                        <li>
-                            <a class="nav-link">Bienvenido {{ user.username }}</a>                
-                        </li> 
-                    {% else %}
-                        <li id="r-nav-link">
-                            <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
-                        </li>
-                        <li id="r-nav-link">
-                            <a class="nav-link"  href="{% url 'registro' %}">Regístro</a>
-                        </li>
-                    {% endif %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'registro' %}">Regístro</a>
+                    </li>
+                {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
     
-
-    <!-- carrito -->
-    <div class="table-body-carrito">
-        <div id="title-carrito">
-            <h1>Carrito</h1>
-            <hr>
-        </div>
-        
-        <table id="table-carrito">
-            {% if request.session.carrito.items %}
-            {% for key, value in request.session.carrito.items %}
-            <tr>
-                <td class="td-carrito"><img src="{{value.imagen}}" alt=""></td>
-                <td class="td-carrito td-desc">
-                <p class="carrito-p1">{{value.nombre}}</p>
-                <a href="{%url 'eliminar_producto' value.producto_id%}" class="badge btn btn-dark badge-dark">Eliminar</a>
-            </td>
-            <td class="td-carrito">
-                <div class="counter">
-                    <a href="{%url 'restar_producto' value.producto_id%}" class="down badge btn btn-dark badge-dark">-</a>
-                    <span>{{value.cantidad}}</span>
-                    <a href="{%url 'agregar_producto' value.producto_id%}" class="up badge btn btn-dark badge-dark">+</a> 
-                </div>
-                </td>
-                <td class="td-carrito">${{value.acumulado}}
-                </td> 
-            </tr>
-            {% endfor %}
-            {% else %}
-            <tr>
-                <td colspan="4">
-                    <div class="alert alert-danger text-center">
-                        Tu Carrito Esta Vacio
-                    </div>
-                </td>
-            </tr>
-            {% endif %}
-            <tr>
-            <th scope="row">
-                Total:
-            </th>
-            <td colspan="4">
-                ${{total_carrito}}
-            </td>
-            </tr>
-        </table>
-    <hr>
-    </div>
-    <div class="row text-center">
-        <div class="col-6">
-            <a href="{%url 'limpiar_producto' %}" class="btn btn-danger">
-                Limpiar
-            </a>
-        </div>
-        <div class="col-6">
-            <a href="{%url 'comprar' %}" class="btn btn-success">
-                Comprar
-            </a>
-        </div>
+    <div class="table-body-s">
+        <table class="table-s table-bordered table table-hover">
+            <thead class="thead-h">
+                <tr>
+                    <th>N° Boleta</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Artículos</th>
+                    <th>Cantidad de artículos</th>
+                    <th>Monto total</th>
+                    <th>Estado</th>
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                    <th>Estado</th>
+                    <th>Seguimiento</th>
+                    {% endif%}
+                </tr>
+            </thead>
+        <tbody class="tbody-h">
+            {% for his in historial_Boleta %}
+                <tr>
+                    <td data-label="N° Boleta"># {{his.num_boleta}}</th>
+                    <td data-label="Cliente">{{his.nom_cliente}}</td>
+                    <td data-label="Fecha">{{his.fecha}}</td>
+                    <td data-label="Artículos">{{his.nom_productos}}</td>
+                    <td data-label="Cantidad de artículos">{{his.cantidad}}</td>
+                    <td data-label="Monto total">${{his.cant_total}}</td>
+                    {% if his.estado == 0 %}
+                        <td data-label="Estado">Preparando Despacho</td>
+                    {% elif his.estado == 1 %}
+                        <td data-label="Estado">Despachando...</td>
+                    {% elif his.estado == 2 %}
+                        <td data-label="Estado">Recibido</td>    
+                    {% endif %}    
+                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    <td data-label="Cambiar Estado">
+                        <a class="btn btn-warning" href="{%url 'cambiar_en_camino' his.num_boleta %}">1</a>
+                        <a class="btn btn-success" href="{%url 'cambiar_enviado' his.num_boleta %}">2</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">VER Seguimiento</a>
+                    </td>
+                    {% endif%}
+                </tr>
+            {% endfor%}
+        </tbody>
+    </table>   
     </div>
 
-
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="grupo1">

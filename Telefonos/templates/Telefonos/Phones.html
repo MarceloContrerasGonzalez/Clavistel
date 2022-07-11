@@ -18,7 +18,7 @@
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
         <div class="container-fluid">
-            <div class="logo">Clavistel</div>
+            <div class="logo navbar-nav"><a class="nav-link"  href="{% url 'home' %}">Clavistel</a></div>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,9 +28,6 @@
             <div class="navbar-collapse collapse" id="navbarsExample03">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li>
-                        <a class="nav-link"  href="{% url 'home' %}">Inicio</a>
-                    </li>
-                    <li>
                         <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
                     <li>
@@ -39,8 +36,14 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
-                
+                    
                     {% if request.user.is_authenticated %}
+                    <li>
+                        <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                    </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
+                    </li>
                     <li>
                         <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
                     </li>   
@@ -55,15 +58,11 @@
                         <a class="nav-link"  href="{% url 'registro' %}">Registro</a>
                     </li>
                     {% endif %}
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
                     <li>
                         <a class="nav-link"  href="{% url 'agregar' %}">Agregar</a>
                     </li>
                     {% endif %}
-                    <li>
-                        <a class="nav-link"  href="{% url 'carrito' %}">carrito</a>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -88,21 +87,27 @@
                     <span class="precio">${{mov.costo}}</span>
                     <span class="costo-envio">{{mov.tipo_envio}}</span>
                     <span class="descipcion">{{mov.nombre}}</span>
-                    <span class="descipcion">Cantidad: {{mov.cant}}</span>
-                    
-                    {% if mov.cant > 0 %}
-                    <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-primary">Agregar</a>
-                    {% else %}
-                    <td><a href="#" class="btn btn-secondary+">Producto Agotado</a></td>
+                    <span class="cant">{{mov.cant}} disponibles</span>
+                    {% if request.user.is_authenticated %}
+                        <span>  
+                            {% if mov.cant > 0 %}
+                            <a href="{% url 'agregar_producto' mov.id_movil%}" class="btn btn-success">Agregar</a>
+                            {% else %}
+                            <a href="#" class="btn btn-secondary">Agotado</a>
+                            {% endif %}
+                        </span>
                     {% endif %}
-
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
-                    <a href="{%url 'modificar' mov.id_movil%}">
-                        <button type="submit" class="btn btn-primary" id="modificar" value="Modificar">Modificar</button>
-                    </a>
-                    <a onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
-                        <button type="submit" class="btn btn-danger" id="eliminar" value="Eliminar">Eliminar</button>
-                    </a>            
+                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                    <span>
+                        <a class="btn btn-primary" href="{%url 'modificar' mov.id_movil%}">
+                            Modificar
+                        </a>
+                    </span>
+                    <span>
+                        <a class="btn btn-danger" onclick="return confirmar()" href="{%url 'eliminar' mov.id_movil%}">
+                            Eliminar
+                        </a>
+                    </span>            
                     {% endif%}
                 </div>
             </div>

@@ -79,30 +79,30 @@
 
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Preparando Retiro<br><span>{{seg.fecha}}</span></p>
+                        <p>Preparando Despacho<br><span>{{seg.fecha}}</span></p>
                     </div>
 
                     {% if seg.estado == 1 or seg.estado == 2%}
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Listo para retirar<br><span></span></p>
+                        <p>Listo para Comenzar Envío<br><span></span></p>
                     </div>
                     {% else %}
                     <div class="col order-tracking">
                         <span class="is-complete"></span>
-                        <p>Listo para retirar<br><span></span></p>
+                        <p>Listo para Comenzar Envío<br><span></span></p>
                     </div>
                     {% endif %}
 
                     {% if seg.status == 2 %}
                     <div class="col order-tracking completed">
                         <span class="is-complete"></span>
-                        <p>Producto Retirado<br><span>{{seg.fecha}}</span></p>
+                        <p>Producto Recibido<br><span>{{seg.fecha}}</span></p>
                     </div>
                     {% else %}
                     <div class="col order-tracking">
                         <span class="is-complete"></span>
-                        <p>Producto Retirado<br><span></span></p>
+                        <p>Producto Recibido<br><span></span></p>
                     </div>
                     {% endif %}
 

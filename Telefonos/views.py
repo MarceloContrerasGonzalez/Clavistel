@@ -238,6 +238,19 @@ def seguimiento_despacho(request):
         }
     return render (request,'Telefonos/seguimiento_despacho.html',datos)  
 
+def seguimiento(request,id_bol):
+    if request.user.is_authenticated and request.user.is_superuser == 1:
+        listaSeguimiento = Boleta.objects.all()
+        datos = {
+            'listaSeguimiento':listaSeguimiento
+        }
+    else:
+        listaSeguimiento = Boleta.objects.filter(num_boleta = id_bol) #compararlo con el numero de la boleta (fk)
+        datos = {
+            'listaSeguimiento':listaSeguimiento
+        }
+    return render (request,'Telefonos/seguimiento.html',datos)  
+
 #cambiar estado a despachando...
 def cambiar_en_camino(request, num_b): 
     boleta = Boleta.objects.get(num_boleta=num_b)

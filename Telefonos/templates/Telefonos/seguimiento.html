@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>Clavistel</title>
     <link rel="stylesheet" href="{% static 'Telefonos/css/style.css'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 
 </head>
 
-<body id="inicio-carrito">
+<body id="body-seguimiento" class="inicio">
 
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
@@ -31,7 +31,7 @@
             </button>
 
             <div class="navbar-collapse collapse" id="navbarsExample03">
-                <ul class="navbar-nav mb-2 mb-sm-0">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li>
                         <a class="nav-link"  href="{% url 'telefonos' %}">Celulares</a>
                     </li>
@@ -42,7 +42,13 @@
                     <li>
                         <a class="nav-link"  href="{% url 'ubicacion' %}">Sucursales</a>
                     </li>
+                    <li>
+                        <a class="nav-link"  href="{% url 'carrito' %}">Carrito</a>
+                    </li>
                     {% if request.user.is_authenticated %}
+                        <li>
+                            <a class="nav-link"  href="{% url 'historial' %}">Historial</a>
+                        </li>
                         <li>
                             <a onclick="return confirmar3()" class="nav-link"  href="{% url 'logout' %}">Cerrar Sesion</a>               
                         </li>   
@@ -50,68 +56,67 @@
                             <a class="nav-link">Bienvenido {{ user.username }}</a>                
                         </li> 
                     {% else %}
-                        <li id="r-nav-link">
+                        <li>
                             <a class="nav-link"  href="{% url 'inicio_sesion' %}">Iniciar sesión</a>
                         </li>
-                        <li id="r-nav-link">
+                        <li>
                             <a class="nav-link"  href="{% url 'registro' %}">Regístrate</a>
                         </li>
                     {% endif %}
+
+                    
+
                 </ul>
             </div>
         </div>
     </nav>
-    
-    
-    <div class="table-body-s">
-        <table class="table-s table-bordered table table-hover">
-            <thead class="thead-h">
-                <tr>
-                    <th>N° Boleta</th>
-                    <th>Cliente</th>
-                    <th>Fecha</th>
-                    <th>Artículos</th>
-                    <th>Cantidad de artículos</th>
-                    <th>Monto total</th>
-                    <th>Estado</th>
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
-                    <th>Cambiar Estado</th>
-                    {% endif%}
-                    <th>Seguimiento</th>
-                </tr>
-            </thead>
-        <tbody class="tbody-h">
-            {% for his in historial_Boleta %}
-                <tr>
-                    <td data-label="N° Boleta"># {{his.num_boleta}}</th>
-                    <td data-label="Cliente">{{his.nom_cliente}}</td>
-                    <td data-label="Fecha">{{his.fecha}}</td>
-                    <td data-label="Artículos">{{his.nom_productos}}</td>
-                    <td data-label="Cantidad de artículos">{{his.cantidad}}</td>
-                    <td data-label="Monto total">${{his.cant_total}}</td>
-                    {% if his.estado == 0 %}
-                        <td data-label="Estado">Preparando Despacho</td>
-                    {% elif his.estado == 1 %}
-                        <td data-label="Estado">Despachando...</td>
-                    {% elif his.estado == 2 %}
-                        <td data-label="Estado">Recibido</td>
+
+    <div class="container">
+        <div class=" mt-5">
+            <div class="col-12 col-m-10 hh-grayBox pt45 pb20">
+                <div class=" row justify-content-between">
+                    {% for seg in listaSeguimiento %}
+
+                    <div class="col order-tracking completed">
+                        <span class="is-complete"></span>
+                        <p>Preparando Retiro<br><span>{{seg.fecha}}</span></p>
+                    </div>
+
+                    {% if seg.estado == 1 or seg.estado == 2%}
+                    <div class="col order-tracking completed">
+                        <span class="is-complete"></span>
+                        <p>Listo para retirar<br><span></span></p>
+                    </div>
                     {% else %}
-                        <td data-label="Estado">despacho null</td>    
-                    {% endif %}    
-                    {% if request.user.is_authenticated and user.is_staff == 1 %}
-                    <td data-label="Cambiar Estado">
-                        <a class="btn btn-warning" href="{%url 'historialuno' his.num_boleta %}">1</a>
-                        <a class="btn btn-success" href="{%url 'historialdos' his.num_boleta %}">2</a>
-                    </td>
-                    {% endif%}
-                    <td data-label="Seguimiento">
-                        <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">Ver</a>
-                    </td>
-                </tr>
-            {% endfor%}
-        </tbody>
-    </table>   
+                    <div class="col order-tracking">
+                        <span class="is-complete"></span>
+                        <p>Listo para retirar<br><span></span></p>
+                    </div>
+                    {% endif %}
+
+                    {% if seg.status == 2 %}
+                    <div class="col order-tracking completed">
+                        <span class="is-complete"></span>
+                        <p>Producto Retirado<br><span>{{seg.fecha}}</span></p>
+                    </div>
+                    {% else %}
+                    <div class="col order-tracking">
+                        <span class="is-complete"></span>
+                        <p>Producto Retirado<br><span></span></p>
+                    </div>
+                    {% endif %}
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -149,9 +154,7 @@
     </footer>
 
     <!-- script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>

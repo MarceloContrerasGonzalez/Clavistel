@@ -72,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Telefonos.context_processor.total_carrito',
             ],
         },
     },
@@ -90,6 +91,18 @@ DATABASES = {
     }
 }
 
+#base de datos de oracle abajo (codigo)
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/service.name',
+#        'USER': 'system',
+#        'PASSWORD': 'oracle',        
+#    }
+#}
+
+#base de datos de oracle arriba (codigo)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -115,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-ec'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 

@@ -68,53 +68,56 @@
         </div>
     </nav>
 
+    <main>
+        <section id="bloqueFormulario" class="tipo-letra">
+            <form class="row g-3 needs-validation" novalidate>
+                <h2>
+                    Consultas
+                </h2>
+                <!-- Area del Nombre -->
+                <div class="col-md-4">
+                    <label for="validationCustom01" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="Ingrese Su Nombre Aquí"
+                        required>
+                    <div class="invalid-feedback">
+                        Ingrese un nombre!
+                    </div>
+                </div>
+                <!-- Area del Apelido -->
+                <div class="col-md-4">
+                    <label for="validationCustom02" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Ingrese Su Apellido Aquí"
+                        required>
+                    <div class="invalid-feedback">
+                        Ingrese un Apellido!
+                    </div>
+                </div>
+                <!-- Area del Correo -->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Su Correo Aquí"
+                        required aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">No Compartiremos Tu Correo Con Nadie.</div>
+                    <div class="invalid-feedback"> Ingrese un Correo Valido!</div>
+                </div>
+                <!-- Area de la Consulta -->
     
-    <section id="bloqueFormulario" class="tipo-letra">
-        <form class="row g-3 needs-validation" novalidate>
-            <h2>
-                Consultas
-            </h2>
-            <!-- Area del Nombre -->
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Ingrese Su Nombre Aquí"
-                    required>
-                <div class="invalid-feedback">
-                    Ingrese un nombre!
+                <div class="mb-3">
+                    <label for="validationTextarea" class="form-label">Consulta</label>
+                    <textarea class="form-control" id="validationTextarea" placeholder="Inserte su consulta Aquí"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Ingrese Su Duda o Consulta Correctamente!.
+                    </div>
                 </div>
-            </div>
-            <!-- Area del Apelido -->
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Ingrese Su Apellido Aquí"
-                    required>
-                <div class="invalid-feedback">
-                    Ingrese un Apellido!
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
                 </div>
-            </div>
-            <!-- Area del Correo -->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Correo</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Su Correo Aquí"
-                    required aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">No Compartiremos Tu Correo Con Nadie.</div>
-                <div class="invalid-feedback"> Ingrese un Correo Valido!</div>
-            </div>
-            <!-- Area de la Consulta -->
-
-            <div class="mb-3">
-                <label for="validationTextarea" class="form-label">Consulta</label>
-                <textarea class="form-control" id="validationTextarea" placeholder="Inserte su consulta Aquí"
-                    required></textarea>
-                <div class="invalid-feedback">
-                    Ingrese Su Duda o Consulta Correctamente!.
-                </div>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-        </form>
-    </section>
+            </form>
+        </section>
+    </main>
+    
+    
 
     <!-- Footer -->
     <footer class="footer">

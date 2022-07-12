@@ -67,56 +67,57 @@
             </div>
         </div>
     </nav>
+    <main>
+        <div class="table-body-s">
+            <table class="table-s table-bordered table table-hover">
+                <thead class="thead-h">
+                    <tr>
+                        <th>N° Boleta</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Artículos</th>
+                        <th>Cantidad de artículos</th>
+                        <th>Monto total</th>
+                        <th>Estado</th>
+                        {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                        <th>Estado</th>
+                        {% endif%}
+                        <th>Seguimiento</th>
+                    </tr>
+                </thead>
+            <tbody class="tbody-h">
+                {% for his in historial_Boleta %}
+                    <tr>
+                        <td data-label="N° Boleta"># {{his.num_boleta}}</th>
+                        <td data-label="Cliente">{{his.nom_cliente}}</td>
+                        <td data-label="Fecha">{{his.fecha}}</td>
+                        <td data-label="Artículos">{{his.nom_productos}}</td>
+                        <td data-label="Cantidad de artículos">{{his.cantidad}}</td>
+                        <td data-label="Monto total">${{his.cant_total}}</td>
+                        {% if his.estado == 0 %}
+                            <td data-label="Estado">Preparando Despacho</td>
+                        {% elif his.estado == 1 %}
+                            <td data-label="Estado">Despachando...</td>
+                        {% elif his.estado == 2 %}
+                            <td data-label="Estado">Recibido</td>    
+                        {% endif %}    
+                        {% if request.user.is_authenticated and user.is_superuser == 1 %}
+                        <td data-label="Cambiar Estado">
+                            <a class="btn btn-warning" href="{%url 'cambiar_en_camino' his.num_boleta %}">1</a>
+                            <a class="btn btn-success" href="{%url 'cambiar_enviado' his.num_boleta %}">2</a>
+                        </td>
+                    
+                        {% endif%}
+                        <td>
+                            <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">VER Seguimiento</a>
+                        </td>
+                    </tr>
+                {% endfor%}
+            </tbody>
+        </table>   
+        </div>
+    </main>
     
-    <div class="table-body-s">
-        <table class="table-s table-bordered table table-hover">
-            <thead class="thead-h">
-                <tr>
-                    <th>N° Boleta</th>
-                    <th>Cliente</th>
-                    <th>Fecha</th>
-                    <th>Artículos</th>
-                    <th>Cantidad de artículos</th>
-                    <th>Monto total</th>
-                    <th>Estado</th>
-                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
-                    <th>Estado</th>
-                    {% endif%}
-                    <th>Seguimiento</th>
-                </tr>
-            </thead>
-        <tbody class="tbody-h">
-            {% for his in historial_Boleta %}
-                <tr>
-                    <td data-label="N° Boleta"># {{his.num_boleta}}</th>
-                    <td data-label="Cliente">{{his.nom_cliente}}</td>
-                    <td data-label="Fecha">{{his.fecha}}</td>
-                    <td data-label="Artículos">{{his.nom_productos}}</td>
-                    <td data-label="Cantidad de artículos">{{his.cantidad}}</td>
-                    <td data-label="Monto total">${{his.cant_total}}</td>
-                    {% if his.estado == 0 %}
-                        <td data-label="Estado">Preparando Despacho</td>
-                    {% elif his.estado == 1 %}
-                        <td data-label="Estado">Despachando...</td>
-                    {% elif his.estado == 2 %}
-                        <td data-label="Estado">Recibido</td>    
-                    {% endif %}    
-                    {% if request.user.is_authenticated and user.is_superuser == 1 %}
-                    <td data-label="Cambiar Estado">
-                        <a class="btn btn-warning" href="{%url 'cambiar_en_camino' his.num_boleta %}">1</a>
-                        <a class="btn btn-success" href="{%url 'cambiar_enviado' his.num_boleta %}">2</a>
-                    </td>
-                
-                    {% endif%}
-                    <td>
-                        <a class="btn btn-success" href="{%url 'seguimiento' his.num_boleta %}">VER Seguimiento</a>
-                    </td>
-                </tr>
-            {% endfor%}
-        </tbody>
-    </table>   
-    </div>
-
     
     <!-- Footer -->
     <footer class="footer">

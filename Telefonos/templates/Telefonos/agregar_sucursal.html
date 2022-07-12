@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="inicio">
+<body id="body-despacho" class="inicio">
 
     <!-- NAV MENU -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
@@ -60,28 +60,29 @@
             </div>
         </div>
     </nav>
-
-    <section id="bloqueFormulario">
-        <h2 class="tituloFormulario">Agregar Sucursal</h2>
-        <br>
-
-        <form class="row g-3" id="agregarForm" method="POST" id="formulario" enctype="multipart/form-data">
-            {% csrf_token %}
-
-            <div class="row" id="datos"> 
-                {{sucform.as_table}}
-            </div>
-            <div class="botonesAgregar">
-                <button type="submit" class="btn btn-primary" id="enviar" value="Enviar">Enviar</button>            
-                <button type="reset" class="btn btn-primary" id="limpia" value="Limpiar">Limpiar</button>
-            </div>
-            <div id = "exito" class="alert alert-succes" role = "alert" >
-                {{mensaje}}
-            </div>
-        </form>
+    <main>
+        <section id="bloqueFormulario">
+            <h2 class="tituloFormulario">Agregar Sucursal</h2>
+            <br>
     
-
-    </section>
+            <form class="row g-3" id="agregarForm" method="POST" id="formulario" enctype="multipart/form-data">
+                {% csrf_token %}
+    
+                <div class="row" id="datos"> 
+                    {{sucform.as_table}}
+                </div>
+                <div class="botonesAgregar">
+                    <button type="submit" class="btn btn-primary" id="enviar" value="Enviar">Enviar</button>            
+                    <button type="reset" class="btn btn-primary" id="limpia" value="Limpiar">Limpiar</button>
+                </div>
+                <div id = "exito" class="alert alert-succes" role = "alert" >
+                    {{mensaje}}
+                </div>
+            </form>
+        </section>
+        <br>
+    </main>
+    
     
         
 
